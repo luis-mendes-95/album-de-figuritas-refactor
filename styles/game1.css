@@ -1,0 +1,16 @@
+.background_book_game1{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: -50%;
+    animation: appearBookFromRight 1.5s ease-in-out;
+}
+
+@keyframes appearBookFromRight {
+    0% {
+        right: -150%;
+    }
+    100% {
+        right: -50%;
+    }
+  }
