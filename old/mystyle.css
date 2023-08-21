@@ -1,0 +1,48 @@
+
+#inpA,#inpT,#inpTransport, #iNA, #iNToys, #iNTransports{
+	font-family: "Arial", "sans-serif";
+	background-color: transparent;
+	border: 1px dashed black;
+	text-align: center;
+
+}
+
+#iNA, #iNToys, #iNTransports{
+	font-size: 6vh;
+}
+
+#inpA, #inpT, #inpTransport{
+	font-size: 3vh;
+	text-transform: uppercase;
+}
+
+#inpA, #iNA{
+	color:rgba(4, 158, 55, 1);
+}
+
+#inpT, #iNToys{
+	color:rgba(4, 53, 158,1);
+}
+
+#inpTransport, #iNTransports{
+	color:rgba(201, 126, 5, 1);
+}
+
+
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}

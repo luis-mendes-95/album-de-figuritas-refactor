@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="160.20537"
+   height="160.28168"
+   id="svg8184"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="bola.svg">
+  <defs
+     id="defs8186">
+    <style
+       type="text/css"
+       id="style13042">
+   
+    .fil4 {fill:url(#id0)}
+    .fil9 {fill:url(#id1)}
+    .fil6 {fill:url(#id2)}
+    .fil1 {fill:url(#id3)}
+    .fil5 {fill:url(#id4)}
+    .fil0 {fill:url(#id5)}
+    .fil8 {fill:url(#id6)}
+    .fil3 {fill:url(#id7)}
+    .fil7 {fill:url(#id8)}
+    .fil2 {fill:url(#id9)}
+   
+  </style>
+    <style
+       type="text/css"
+       id="style6">
+    .str0 {stroke:#006633;stroke-width:282.22}
+    .str1 {stroke:#AB754F;stroke-width:282.22}
+    .fil2 {fill:none}
+    .fil3 {fill:#606062}
+    .fil5 {fill:#CE8F64}
+    .fil4 {fill:#006633}
+    .fil8 {fill:#009933}
+    .fil9 {fill:#00B33C}
+    .fil10 {fill:#00C943}
+    .fil0 {fill:#00D447}
+    .fil1 {fill:#00DB49}
+    .fil6 {fill:#B88059}
+    .fil11 {fill:#BA8058}
+    .fil12 {fill:#D49264}
+    .fil7 {fill:#E49C6D}
+  </style>
+    <linearGradient
+       gradientTransform="matrix(0.52321996,0,0,0.52321996,2015.4535,3072.5352)"
+       osb:paint="solid"
+       id="linearGradient4191">
+      <stop
+         id="stop4193"
+         offset="0"
+         style="stop-color:#f56991;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="matrix(0.35946858,0,0,0.22423084,-331.07911,5516.4706)"
+       osb:paint="solid"
+       id="linearGradient4201">
+      <stop
+         id="stop4203"
+         offset="0"
+         style="stop-color:#ff9f80;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(-699.20463,883.12976)"
+       osb:paint="solid"
+       id="linearGradient4211">
+      <stop
+         id="stop4213"
+         offset="0"
+         style="stop-color:#ffc48c;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="matrix(0.66768435,0,0,0.66768435,-186.89148,394.64653)"
+       osb:paint="solid"
+       id="linearGradient4221">
+      <stop
+         id="stop4223"
+         offset="0"
+         style="stop-color:#effab4;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(2399.1562,2075.6965)"
+       osb:paint="solid"
+       id="linearGradient4231">
+      <stop
+         id="stop4233"
+         offset="0"
+         style="stop-color:#d1f2a5;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="matrix(0.19125385,0,0,0.19125385,-5853.5573,-43518.098)"
+       osb:paint="solid"
+       id="linearGradient4241">
+      <stop
+         id="stop4243"
+         offset="0"
+         style="stop-color:#3fb5ae;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="translate(106155.96,125143.42)"
+       osb:paint="solid"
+       id="linearGradient4251">
+      <stop
+         id="stop4253"
+         offset="0"
+         style="stop-color:#555555;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="matrix(110.20782,22.122239,-29.697412,82.096171,6262470.8,4271320.2)"
+       osb:paint="solid"
+       id="linearGradient4269">
+      <stop
+         id="stop4271"
+         offset="0"
+         style="stop-color:#ffffff;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient59274"
+       osb:paint="solid"
+       gradientTransform="matrix(-0.19399818,0,0,-0.19399818,259.22818,12173.784)">
+      <stop
+         style="stop-color:#930033;stop-opacity:1;"
+         offset="0"
+         id="stop59276" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient12614"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop12616" />
+    </linearGradient>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_33_FILL">
+      <path
+         id="path19344"
+         d="m 78.95,50.3 1,3.1 q 1.05,-3.3 1.25,-6 l -2.25,2.9 z"
+         inkscape:connector-curvature="0"
+         style="fill:#333333;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_32_FILL">
+      <path
+         id="path19341"
+         d="m 71.15,14.1 0.75,5.35 3.4,0 q -1.7,-2.7 -4.15,-5.35 z"
+         inkscape:connector-curvature="0"
+         style="fill:#333333;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_31_FILL">
+      <path
+         id="path19338"
+         d="M 7.3,62.8 6.15,59.25 Q 5.2,55.85 5.3,51.35 l 0,-1.1 L 3.65,50 q 0.7,3.9 0.7,7.55 1.25,2.95 2.8,5.3 L 7.3,62.8 z"
+         inkscape:connector-curvature="0"
+         style="fill:#e6e6e6;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_30_FILL">
+      <path
+         id="path19335"
+         d="m 3.65,50 -1.8,-0.15 q 0.85,3.9 2.5,7.7 0,-3.65 -0.7,-7.55 z"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_29_FILL">
+      <path
+         id="path19332"
+         d="M 62.35,75.95 62.3,75.8 55.75,75.2 Q 55,75.1 54.35,75.65 51.6,78.15 51.2,78.5 49.4,80.05 47.8,81 l -0.3,0.2 q 7.85,-1.05 14.85,-5.25 z"
+         inkscape:connector-curvature="0"
+         style="fill:#333333;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_28_FILL">
+      <path
+         id="path19329"
+         d="m 8.6,20.15 q 0.75,0.05 1.05,-0.3 1.4,-2.05 4.5,-5.95 3.15,-3.9 4.45,-5.85 -6.95,4.8 -11.45,11.9 1.3,0.2 1.45,0.2 z"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_27_FILL">
+      <path
+         id="path19326"
+         d="m 18.85,7.85 -0.25,0.2 q -1.3,1.95 -4.45,5.85 -3.1,3.9 -4.5,5.95 -0.3,0.35 -1.05,0.3 -0.15,0 -1.45,-0.2 l -1.1,1.85 3.7,0.6 Q 12.85,15.5 19.7,9.45 19.25,8.2 18.85,7.85 z"
+         inkscape:connector-curvature="0"
+         style="fill:#e6e6e6;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_26_FILL">
+      <path
+         id="path19323"
+         d="M 37.3,7.05 Q 37.8,7.1 38.25,6.8 L 40.5,5.05 Q 34.65,5.9 24.45,4.75 21.85,5.95 19.2,7.6 l 1.25,1.5 1.15,-0.15 q 1.9,-0.4 5.7,-1.25 5.2,-0.85 10,-0.65 z"
+         inkscape:connector-curvature="0"
+         style="fill:#333333;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_25_FILL">
+      <path
+         id="path19320"
+         d="m 24.5,4.7 q 8,0 13.85,-3.55 Q 30.95,1.7 24.5,4.7 z"
+         inkscape:connector-curvature="0"
+         style="fill:#999999;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_24_FILL">
+      <path
+         id="path19317"
+         d="m 46.15,1.6 0.4,-0.3 Q 42.35,0.85 38.35,1.15 32.5,4.7 24.5,4.7 L 24.45,4.75 Q 34.65,5.9 40.5,5.05 L 41.35,4.4 q 2.95,-2.15 4.8,-2.8 z"
+         inkscape:connector-curvature="0"
+         style="fill:#666666;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_23_FILL">
+      <path
+         id="path19314"
+         d="m 24.95,67.15 q -4.95,1 -9.75,1.3 0.45,2.15 2.8,2.7 2.3,0.6 4.1,-0.8 1.5,-0.9 2.95,-3.05 l -0.1,-0.15 z"
+         inkscape:connector-curvature="0"
+         style="fill:#999999;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_22_FILL">
+      <path
+         id="path19311"
+         d="m 25.05,67.3 q -1.45,2.15 -2.95,3.05 -1.8,1.4 -4.1,0.8 -2.35,-0.55 -2.8,-2.7 l -3.75,0.1 q 2.1,2.35 4.85,4.5 5.95,2.75 9.3,-0.6 0.4,-0.85 0.2,-2.35 -0.15,-0.9 -0.75,-2.8 z"
+         inkscape:connector-curvature="0"
+         style="fill:#666666;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_21_FILL">
+      <path
+         id="path19308"
+         d="m 26.6,69.35 -0.5,-2.45 -0.95,0.2 -0.1,0.2 q 0.6,1.9 0.75,2.8 0.2,1.5 -0.2,2.35 -3.35,3.35 -9.3,0.6 6.35,5.1 14.3,7.3 l -0.1,-0.4 q -1.45,-3.65 -1.7,-4.2 -1.45,-3.15 -2.2,-6.4 z"
+         inkscape:connector-curvature="0"
+         style="fill:#333333;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_20_FILL">
+      <path
+         id="path19305"
+         d="m 25.15,67.1 -0.2,0.05 0.1,0.15 0.1,-0.2 z"
+         inkscape:connector-curvature="0"
+         style="fill:#666666;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_19_FILL">
+      <path
+         id="path19302"
+         d="M 14.4,37.45 Q 11.7,33 10.5,27.65 9.65,32.95 7.25,37.8 q -2.4,4.85 -5.9,8.35 l -0.1,-0.05 0.45,3.1 3.4,0.35 q 3.65,-7.3 9.3,-12.1 z"
+         inkscape:connector-curvature="0"
+         style="fill:#333333;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_18_FILL">
+      <path
+         id="path19299"
+         d="m 8,22.85 -0.7,-0.1 q -0.05,0.2 -3.5,9.7 -2.15,5.85 -2.8,9.85 0.1,2.6 0.25,3.8 l 0.1,0.05 Q 4.85,42.65 7.25,37.8 9.65,32.95 10.5,27.65 9.9,25.1 9.7,23.25 L 8,22.85 z"
+         inkscape:connector-curvature="0"
+         style="fill:#666666;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_17_FILL">
+      <path
+         id="path19296"
+         d="M 7.3,22.75 5.65,22.45 Q 0.75,31.9 1,42.3 q 0.65,-4 2.8,-9.85 3.45,-9.5 3.5,-9.7 z"
+         inkscape:connector-curvature="0"
+         style="fill:#999999;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_16_FILL">
+      <path
+         id="path19293"
+         d="m 81.65,45.1 q 0.4,-5.05 -0.35,-9.8 -0.2,-1.55 -0.7,-3.7 0.5,6.05 -3.1,9.7 -2.75,3.2 -6.8,4.4 -4.25,1.25 -8.3,-0.2 l 0,1.25 q 2.8,0.45 8.25,1.2 4.75,0.7 8.05,1.5 0.7,-0.9 2.15,-2.75 0.15,-0.2 0.5,-0.7 0.25,-0.45 0.3,-0.9 z"
+         inkscape:connector-curvature="0"
+         style="fill:#e6e6e6;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_15_FILL">
+      <path
+         id="path19290"
+         d="m 74.1,19.9 -2,-0.05 q -0.3,0 -0.6,0.3 L 60.75,29.8 q 1.55,10.35 1.65,15.7 4.05,1.45 8.3,0.2 4.05,-1.2 6.8,-4.4 3.6,-3.65 3.1,-9.7 -1.2,-4.5 -3.1,-8.25 -1.4,-2 -3.4,-3.45 z"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_14_FILL">
+      <path
+         id="path19287"
+         d="m 74.1,19.9 q 2,1.45 3.4,3.45 Q 76.75,21.8 76,20.55 75.6,19.9 75,19.9 l -0.9,0 z"
+         inkscape:connector-curvature="0"
+         style="fill:#e6e6e6;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_13_FILL">
+      <path
+         id="path19284"
+         d="m 61.95,48 q 1.614453,-0.246289 3.1,-0.1 L 62.4,47.45 61.95,48 m 10.95,1.25 -6.4,-1.1 q 3.070117,0.751953 5.55,3.35 4.15,4.4 2.65,9.85 -1.45,5.4 -7.7,8.75 -6.25,3.35 -12.35,2 L 55,74.15 q 0.15,0.65 0.75,0.65 l 6.9,0.5 q 0.6,0.05 1.15,-0.25 Q 74.7,67.6 79.35,55.3 79.5,54.9 79.4,54.35 l -1,-3.85 q -0.15,-0.45 -0.7,-0.55 -3.2,-0.4 -4.8,-0.7 z"
+         inkscape:connector-curvature="0"
+         style="fill:#e6e6e6;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_12_FILL">
+      <path
+         id="path19281"
+         d="m 61.95,48 -1.15,1.35 q -4.3,5 -7.65,8 -0.35,0.3 -0.3,0.75 l 0.55,5.8 q 0.1,0.9 0.35,2.6 0.2,2.25 0.9,5.6 6.1,1.35 12.35,-2 6.25,-3.35 7.7,-8.75 1.5,-5.45 -2.65,-9.85 -4.2,-4.4 -10.1,-3.5 z"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_11_FILL">
+      <path
+         id="path19278"
+         d="m 35.9,54.55 q -0.3,-0.05 -0.65,0.2 L 34.7,55.3 q -3.3,3.4 -6.75,9.35 l -1.1,1.85 q -0.25,0.3 -0.1,0.7 l 4.5,12.75 q 0.25,0.7 0.95,0.8 1.55,0.4 3.45,0.65 3.45,-0.65 6.55,-2.05 5.8,-2.65 7.25,-9.35 1.5,-6.8 -3.1,-11.4 -1,-1.55 -2.5,-2.45 l -7.95,-1.6 z"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_10_FILL">
+      <path
+         id="path19275"
+         d="m 52.05,57.8 -8.2,-1.65 q 1.5,0.9 2.5,2.45 4.6,4.6 3.1,11.4 -1.45,6.7 -7.25,9.35 -3.1,1.4 -6.55,2.05 5.15,0.75 10.4,0.15 0.65,-0.05 1.2,-0.55 l 7,-5.8 q 0.4,-0.35 0.3,-0.9 l -1.3,-6.9 q -1.05,-5.5 -1.1,-7.25 l -0.1,-2.35 z"
+         inkscape:connector-curvature="0"
+         style="fill:#e6e6e6;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_9_FILL">
+      <path
+         id="path19272"
+         d="M 71,20.15 Q 71.65,19.6 71.45,18.7 L 70.1,13.6 q -0.2,-0.9 -0.9,-1.5 -2.65,-2.5 -6.35,-4.95 2.4,3.7 2.7,7.5 0.3,4.1 -1.9,7.25 -2.3,3.85 -7.8,5.4 2.55,1.05 4.4,1.95 l 0.7,-0.6 q 4.8,-4.2 7.25,-6.25 0.4,-0.35 2.8,-2.25 z"
+         inkscape:connector-curvature="0"
+         style="fill:#e6e6e6;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_8_FILL">
+      <path
+         id="path19269"
+         d="m 55.85,27.3 q 5.5,-1.55 7.8,-5.4 2.2,-3.15 1.9,-7.25 -0.3,-3.8 -2.7,-7.5 Q 56.3,3.1 48.75,1.65 47.3,1.35 46,2.15 44.45,3.05 42.4,4.6 40.1,6.35 38.9,7.2 l -0.8,0.6 q 0.75,2.4 2.25,7.05 l 1.9,7.1 q 6.65,2.35 13.6,5.35 z"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_7_FILL">
+      <path
+         id="path19266"
+         d="m 28.05,37.4 -4,0.05 q 5.85,1.5 6.15,8.9 0.25,6.9 -3.95,11.55 -3.05,3.7 -7.55,6.05 -4.8,2.5 -9.2,2.25 l 1.05,1.35 q 0.65,0.7 1.5,0.65 l 13.4,-1.6 q 0.8,-0.05 1.1,-0.85 0.25,-0.8 0.9,-1.95 3.25,-5.55 7.2,-9.15 0.3,-0.2 0.45,-0.35 -3.5,-6.9 -7.05,-16.9 z"
+         inkscape:connector-curvature="0"
+         style="fill:#e6e6e6;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_6_FILL">
+      <path
+         id="path19263"
+         d="m 13.9,38.35 q -0.1,0.2 -0.45,0.55 l -7.4,10.6 q -0.5,0.8 -0.25,1.55 l 0.45,4.5 q 0.25,2.1 1.9,7.65 0.45,1.65 1.35,3 4.4,0.25 9.2,-2.25 4.5,-2.35 7.55,-6.05 4.2,-4.65 3.95,-11.55 -0.3,-7.4 -6.15,-8.9 l -8.2,0.1 q -1.35,0 -1.95,0.8 z"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_5_FILL">
+      <path
+         id="path19260"
+         d="m 41.9,22.1 -0.65,-2.15 q -2.4,-6.4 -3.5,-11.5 -0.1,-0.6 -0.25,-0.7 -0.15,-0.1 -0.75,-0.05 l -1.9,0.15 q 2.5,4.1 2.05,9.45 -0.35,3.5 -2.35,9.45 -0.45,2.9 -3.5,5.1 -2.75,1.95 -6.15,2.5 -5.65,1.45 -11.2,0.55 l 0.8,1.65 0.35,0.55 0.5,-0.05 q 3.15,-0.45 8.55,-0.35 1.45,0.05 4.4,-0.05 0.55,0 0.85,-0.4 L 41.9,22.1 z"
+         inkscape:connector-curvature="0"
+         style="fill:#e6e6e6;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_4_FILL">
+      <path
+         id="path19257"
+         d="m 36.9,17.3 q 0.45,-5.35 -2.05,-9.45 -3.3,0.3 -4.95,0.55 l -8.7,1.2 q -1.1,0.15 -1.65,0.8 l -0.3,0.25 q -3.35,3.05 -7.3,8.85 -0.5,0.7 -1.5,2.55 -0.55,0.9 -0.15,2 l 0.65,2.45 q 0.85,4.15 2.75,8.4 5.55,0.9 11.2,-0.55 3.4,-0.55 6.15,-2.5 3.05,-2.2 3.5,-5.1 2,-5.95 2.35,-9.45 z"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_3_FILL">
+      <path
+         id="path19254"
+         d="m 59.6,29.85 -7.3,-2.9 Q 46.4,26.8 40.1,30.2 37,32 34.95,35.65 q -0.55,0.95 -3.1,6.95 1.45,3.35 2.65,4.85 1.9,2.25 4.9,2.85 4.85,0.7 7.55,0.5 4.25,-0.3 7,-2.6 3.3,-3.65 4.8,-8.65 1.4,-4.8 0.85,-9.7 z"
+         inkscape:connector-curvature="0"
+         style="fill:#666666;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_FILL">
+      <path
+         id="path19251"
+         d="m 52.3,26.95 -9.95,-4.2 q -2.1,2.25 -6.55,7.3 -4.25,4.85 -6.6,7.35 0.8,1.2 2.65,5.2 2.55,-6 3.1,-6.95 Q 37,32 40.1,30.2 46.4,26.8 52.3,26.95 z"
+         inkscape:connector-curvature="0"
+         style="fill:#999999;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_1_FILL">
+      <path
+         id="path19248"
+         d="m 61.3,46.6 -1.25,-13.8 0,-2.8 -0.45,-0.15 q 0.55,4.9 -0.85,9.7 -1.5,5 -4.8,8.65 -2.75,2.3 -7,2.6 -2.7,0.2 -7.55,-0.5 -3,-0.6 -4.9,-2.85 -1.2,-1.5 -2.65,-4.85 -1.85,-4 -2.65,-5.2 l 0,0.05 0.05,0.25 4.85,12 q 0.9,2.3 1.25,3.45 0.25,0.8 1.05,0.85 4.8,0.45 10.65,1.7 1.55,0.3 4.65,1.1 0.9,0.15 1.4,-0.45 1.95,-2.15 2.9,-3.2 l 5.1,-5.7 q 0.3,-0.35 0.2,-0.85 z"
+         inkscape:connector-curvature="0"
+         style="fill:#333333;stroke:none" />
+    </g>
+    <g
+       id="botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_0_FILL">
+      <path
+         id="path19245"
+         d="M 70.65,12.15 Q 58.55,0 41.45,0 24.3,-0.05 12.15,12.1 0,24.2 0,41.35 0,58.75 12.25,70.85 24.35,82.75 41.3,82.8 58.45,82.85 70.6,70.7 82.8,58.5 82.8,41.35 82.75,24.25 70.65,12.15 M 81.3,35.3 q 0.75,4.75 0.35,9.8 -0.05,0.45 -0.3,0.9 -0.35,0.5 -0.5,0.7 -1.45,1.85 -2.15,2.75 -3.3,-0.8 -8.05,-1.5 -5.45,-0.75 -8.25,-1.2 0.05,-3.7 -0.5,-8.4 -0.3,-2.6 -1.15,-8.55 L 71.5,20.15 q 0.3,-0.3 0.6,-0.3 L 75,19.9 q 0.6,0 1,0.65 4.1,6.9 5.3,14.75 M 71.45,18.7 q 0.2,0.9 -0.45,1.45 -2.4,1.9 -2.8,2.25 -2.45,2.05 -7.25,6.25 l -0.7,0.6 q -10.05,-4.55 -18,-7.3 l -1.9,-7.1 Q 38.85,10.2 38.1,7.8 l 0.8,-0.6 q 1.2,-0.85 3.5,-2.6 2.05,-1.55 3.6,-2.45 1.3,-0.8 2.75,-0.5 11.7,2.25 20.45,10.45 0.7,0.6 0.9,1.5 l 1.35,5.1 m 0.45,0.75 -0.75,-5.35 q 2.45,2.65 4.15,5.35 l -3.4,0 m -30.65,0.5 0.65,2.15 q -3.4,3.55 -4.05,4.25 l -8.7,9.9 q -0.3,0.4 -0.85,0.4 -2.95,0.1 -4.4,0.05 -5.4,-0.1 -8.55,0.35 L 14.85,37.1 14.5,36.55 Q 12.05,31.65 10.95,26.5 L 10.3,24.05 q -0.4,-1.1 0.15,-2 1,-1.85 1.5,-2.55 3.95,-5.8 7.3,-8.85 l 0.3,-0.25 Q 20.1,9.75 21.2,9.6 l 8.7,-1.2 q 2.4,-0.3 6.85,-0.7 0.6,-0.05 0.75,0.05 0.15,0.1 0.25,0.7 1.1,5.1 3.5,11.5 M 46.15,1.6 Q 44.3,2.25 41.35,4.4 39.6,5.65 38.25,6.8 37.8,7.1 37.3,7.05 32.5,6.85 27.3,7.7 23.5,8.55 21.6,8.95 L 20.45,9.1 19.2,7.6 Q 31.6,-0.35 46.55,1.3 l -0.4,0.3 m 13.9,28.4 0,2.8 1.25,13.8 q 0.1,0.5 -0.2,0.85 l -5.1,5.7 q -0.95,1.05 -2.9,3.2 -0.5,0.6 -1.4,0.45 Q 48.6,56 47.05,55.7 41.2,54.45 36.4,54 35.6,53.95 35.35,53.15 35,52 34.1,49.7 l -4.85,-12 -0.05,-0.25 q 2.3,-2.45 6.6,-7.4 4.35,-4.95 6.55,-7.3 L 60.05,30 m 2.35,17.45 10.5,1.8 q 1.6,0.3 4.8,0.7 0.55,0.1 0.7,0.55 l 1,3.85 q 0.1,0.55 -0.05,0.95 -4.65,12.3 -15.55,19.75 -0.55,0.3 -1.15,0.25 l -6.9,-0.5 Q 55.15,74.8 55,74.15 53.95,69.1 53.75,66.5 53.5,64.8 53.4,63.9 l -0.55,-5.8 q -0.05,-0.45 0.3,-0.75 3.35,-3 7.65,-8 l 1.6,-1.9 M 18.85,7.85 Q 19.25,8.2 19.7,9.45 12.85,15.5 9.75,22.4 L 6.05,21.8 Q 10.7,13.45 18.85,7.85 m -13.2,14.6 4.05,0.8 q 0.95,7.95 4.7,14.2 -5.65,4.8 -9.3,12.1 L 1.7,49.2 Q -0.85,35.05 5.65,22.45 m 7.8,16.45 q 0.35,-0.35 0.45,-0.55 0.6,-0.8 1.95,-0.8 0.05,0 10.55,-0.15 l 1.65,0 q 3.55,10 7.05,16.9 -0.15,0.15 -0.45,0.35 -3.95,3.6 -7.2,9.15 -0.65,1.15 -0.9,1.95 -0.3,0.8 -1.1,0.85 l -13.4,1.6 Q 11.2,68.25 10.55,67.55 8.85,65.7 8.15,63.2 6.5,57.65 6.25,55.55 L 5.8,51.05 Q 5.55,50.3 6.05,49.5 l 7.4,-10.6 m 21.8,15.85 q 0.35,-0.25 0.65,-0.2 l 16.15,3.25 0.1,2.35 q 0.05,1.75 1.1,7.25 l 1.3,6.9 q 0.1,0.55 -0.3,0.9 l -7,5.8 q -0.55,0.5 -1.2,0.55 -6.85,0.8 -13.85,-0.8 -0.7,-0.1 -0.95,-0.8 L 26.75,67.2 q -0.15,-0.4 0.1,-0.7 l 1.1,-1.85 Q 31.4,58.7 34.7,55.3 l 0.55,-0.55 m -9.15,12.15 0.5,2.45 q 0.75,3.25 2.2,6.4 0.25,0.55 1.7,4.2 l 0.1,0.4 q -11.2,-3.2 -19.15,-11.8 7.05,0 14.65,-1.65 M 1.85,49.85 q 1.05,0 3.45,0.4 l 0,1.1 q -0.1,4.5 0.85,7.9 L 7.3,62.8 7.15,62.85 Q 3.4,56.9 1.85,49.85 m 78.1,3.55 -1,-3.1 2.25,-2.9 q -0.2,2.7 -1.25,6 M 54.35,75.65 Q 55,75.1 55.75,75.2 l 6.55,0.6 0.05,0.15 q -7,4.2 -14.85,5.25 L 47.8,81 q 1.6,-0.95 3.4,-2.5 0.4,-0.35 3.15,-2.85 z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:none" />
+    </g>
+    <filter
+       inkscape:collect="always"
+       id="filter23662"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.6931378"
+         id="feGaussianBlur23664" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.95603273"
+     inkscape:cx="99.928437"
+     inkscape:cy="-86.930443"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="874"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata8189">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1995.5249,-582.62965)">
+    <g
+       id="g23740">
+      <g
+         transform="matrix(0.94674476,0,0,0.94674476,106.2778,39.557694)"
+         id="g23666">
+        <path
+           inkscape:connector-curvature="0"
+           id="path23660"
+           d="m 2073.7994,736.53639 c -13.0955,-0.8959 -26.1057,-5.3361 -36.8016,-12.5598 -16.7253,-11.29598 -28.5398,-27.73258 -32.9863,-45.89128 -3.2432,-13.2445 -3.075,-28.3867 0.4607,-41.47507 2.5812,-9.55499 8.1799,-20.07981 14.9685,-28.139 2.9364,-3.48594 8.6166,-9.08224 12.0188,-11.8413 10.0745,-8.16998 22.6805,-13.80194 35.2885,-15.7658 19.2071,-2.99176 37.9235,0.42064 53.2199,9.70307 20.7454,12.58919 34.7778,33.57648 37.8514,56.6119 2.9141,21.8399 -2.7421,42.8844 -15.9802,59.4562 -10.8044,13.52528 -25.3806,23.34908 -40.6465,27.39418 -8.4342,2.2348 -18.2455,3.1327 -27.3932,2.5069 z"
+           style="fill:#4d4d4d;stroke:#4d4d4d;stroke-width:4.22500372;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter23662)" />
+        <path
+           style="fill:#ffffff;stroke:#ffffff;stroke-width:4.22500372;stroke-miterlimit:4;stroke-dasharray:none"
+           d="m 2073.7994,736.53639 c -13.0955,-0.8959 -26.1057,-5.3361 -36.8016,-12.5598 -16.7253,-11.29598 -28.5398,-27.73258 -32.9863,-45.89128 -3.2432,-13.2445 -3.075,-28.3867 0.4607,-41.47507 2.5812,-9.55499 8.1799,-20.07981 14.9685,-28.139 2.9364,-3.48594 8.6166,-9.08224 12.0188,-11.8413 10.0745,-8.16998 22.6805,-13.80194 35.2885,-15.7658 19.2071,-2.99176 37.9235,0.42064 53.2199,9.70307 20.7454,12.58919 34.7778,33.57648 37.8514,56.6119 2.9141,21.8399 -2.7421,42.8844 -15.9802,59.4562 -10.8044,13.52528 -25.3806,23.34908 -40.6465,27.39418 -8.4342,2.2348 -18.2455,3.1327 -27.3932,2.5069 z"
+           id="path23658"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         transform="matrix(0.94674476,0,0,0.94674476,104.52077,38.819916)"
+         id="g23670">
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20446">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_0_FILL"
+             id="use20448" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20450">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_1_FILL"
+             id="use20452" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20454">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_2_FILL"
+             id="use20456" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20458">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_3_FILL"
+             id="use20460" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20462">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_4_FILL"
+             id="use20464" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20466">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_5_FILL"
+             id="use20468" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20470">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_6_FILL"
+             id="use20472" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20474">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_7_FILL"
+             id="use20476" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,579.92123)"
+           id="g20478">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_8_FILL"
+             id="use20480" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20482">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_9_FILL"
+             id="use20484" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20486">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_10_FILL"
+             id="use20488" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20490">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_11_FILL"
+             id="use20492" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20494">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_12_FILL"
+             id="use20496" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20498">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_13_FILL"
+             id="use20500" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20502">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_14_FILL"
+             id="use20504" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20506">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_15_FILL"
+             id="use20508" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20510">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_16_FILL"
+             id="use20512" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20514">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_17_FILL"
+             id="use20516" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20518">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_18_FILL"
+             id="use20520" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20522">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_19_FILL"
+             id="use20524" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20526">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_20_FILL"
+             id="use20528" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20530">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_21_FILL"
+             id="use20532" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20534">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_22_FILL"
+             id="use20536" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20538">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_23_FILL"
+             id="use20540" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20542">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_24_FILL"
+             id="use20544" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20546">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_25_FILL"
+             id="use20548" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20550">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_26_FILL"
+             id="use20552" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20554">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_27_FILL"
+             id="use20556" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20558">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_28_FILL"
+             id="use20560" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20562">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_29_FILL"
+             id="use20564" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20566">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_30_FILL"
+             id="use20568" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20570">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_31_FILL"
+             id="use20572" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20574">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_32_FILL"
+             id="use20576" />
+        </g>
+        <g
+           transform="matrix(1.8953021,0,0,1.8953021,2003.5212,580.58368)"
+           id="g20578">
+          <use
+             height="1"
+             width="1"
+             y="0"
+             x="0"
+             xlink:href="#botao_alvo16_0_Layer0_0_MEMBER_0_MEMBER_1_MEMBER_33_FILL"
+             id="use20580" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
