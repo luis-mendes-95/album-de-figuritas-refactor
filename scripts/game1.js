@@ -13,7 +13,7 @@ const game1 = () => {
 
   const animals = [
     "abelha",
-    "aguia",
+    "águia",
     "aranha",
     "arara",
     "avestruz",
@@ -28,7 +28,7 @@ const game1 = () => {
     "coelho",
     "coruja",
     "dinossauro",
-    "dragao",
+    "dragão",
     "elefante",
     "esquilo",
     "foca",
@@ -38,19 +38,19 @@ const game1 = () => {
     "gato",
     "girafa",
     "gorila",
-    "hipopotamo",
-    "jacare",
+    "hipopótamo",
+    "jacaré",
     "jegue",
     "joaninha",
     "lagarto",
-    "leao",
+    "leão",
     "macaco",
     "mosquito",
-    "onca",
+    "onça",
     "ovelha",
     "papagaio",
     "pato",
-    "pavao",
+    "pavão",
     "peixe",
     "polvo",
     "porco",
@@ -66,6 +66,7 @@ const game1 = () => {
     "vaca",
     "zebra",
   ];
+  
 
   let randomAnimals = [];
 
@@ -91,11 +92,34 @@ const game1 = () => {
       console.log(randomAnimals);
 
       for (let i = 0; i < randomAnimals.length; i++) {
-        const slotAnimal = document.createElement("img");
-        slotAnimal.classList.add("slotAnimal");
-        slotAnimal.src = "../assets/book_details/slotanimals.svg";
-        divSlotAnimals.appendChild(slotAnimal);
-        slotAnimal.style.display = "inline"
+
+        //SLOT ANIMALS INÍCIO
+
+        const divSlotAnimal = document.createElement("div")
+        divSlotAnimal.classList.add("divSlotAnimal")
+
+        const numberAnimal = document.createElement("h2")
+        numberAnimal.classList.add("numberAnimal")
+        numberAnimal.innerText = i + 1
+
+        const textAnimal = document.createElement("p")
+        textAnimal.classList.add(`textAnimal`)
+        textAnimal.innerText = `${randomAnimals[i].toUpperCase()}`
+
+        //SLOT ANIMALS FIM
+  
+        //SLOT ANIMALS IMAGENS INÍCIO
+
+        const divAnimalsImages = document.createElement("div")
+        divAnimalsImages.classList.add("divAnimalsImages")
+        container.appendChild(divAnimalsImages)
+
+
+        divSlotAnimal.append(numberAnimal, textAnimal);
+        divSlotAnimals.appendChild(divSlotAnimal);
+
+        //SLOT ANIMALS IMAGENS FIM
+
       }
 
       container.appendChild(divSlotAnimals);

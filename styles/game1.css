@@ -12,14 +12,40 @@
     right: 2.5%;
     width: 45%;
     height: 77%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
 }
 
-.slotAnimal{
-    position: relative;
-    width: 23%;
-    margin: 15px 3px;
-    display: none;
+
+
+.divAnimalsImages{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.divSlotAnimal{
+    background-image: url("../assets/book_details/slotanimals.svg");
+    background-size: cover;
+    width: 20%;
+    height: 20%;
     animation: appearSlotsFromRight 2.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.numberAnimal{
+    font-family: sans-serif;
+    color: green;
+    opacity: 0.4;
+    height: 50%;
+}
+
+.textAnimal{
+    color: rgb(8, 146, 8);
+    font-weight: bold;
+    font-family: sans-serif;
 }
 
 @keyframes appearBookFromRight {
