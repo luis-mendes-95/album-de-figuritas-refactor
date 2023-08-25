@@ -6,11 +6,36 @@
     animation: appearBookFromRight 1.5s ease-in-out;
 }
 
+.divSlotAnimals{
+    position: absolute;
+    top: 14%;
+    right: 2.5%;
+    width: 45%;
+    height: 77%;
+}
+
+.slotAnimal{
+    position: relative;
+    width: 23%;
+    margin: 15px 3px;
+    display: none;
+    animation: appearSlotsFromRight 2.5s ease-in-out;
+}
+
 @keyframes appearBookFromRight {
     0% {
         right: -150%;
     }
     100% {
         right: -50%;
+    }
+  }
+
+  @keyframes appearSlotsFromRight {
+    0% {
+        right: -150%;
+    }
+    100% {
+        right: 0%;
     }
   }
