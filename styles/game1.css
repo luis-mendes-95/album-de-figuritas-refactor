@@ -3,7 +3,7 @@
     width: 100%;
     position: absolute;
     top: 0;
-    right: -50%;
+    right: -49%;
     animation: appearBookFromRight 1.5s ease-in-out;
 }
 .divSlotAnimals{
@@ -64,16 +64,23 @@
 }
 .divAnimalsImagesDroppable{
     position: absolute;
+    gap: 0;
+    margin: 0;
+    padding: 0;
     top: 14%;
     right: 4.5%;
-    opacity: 0.6;
-    width: 43%;
-    height: 70.5%;
-    background-color: black;
+    width: 43.5%;
+    height: 80.5%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+
+
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 7;
+}
+.imgAnimalDropped{
+    width: 100%;
 }
 .imgAnimal{
     width: 75%;
@@ -87,6 +94,14 @@
     cursor: pointer;
 
 }
+.divImgAnimalDropped {
+    margin: 0 0 2% 0.5%;
+    width: 21.95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 .imgPicAnimal{
     position: absolute;
     max-height: 14%;
@@ -96,7 +111,7 @@
         right: -150%;
     }
     100% {
-        right: -50%;
+        right: -49%;
     }
 }
 @keyframes appearSlotsFromRight {

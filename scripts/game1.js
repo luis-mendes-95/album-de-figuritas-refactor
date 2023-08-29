@@ -97,9 +97,7 @@ const game1 = () => {
       const divAnimalsImagesDroppable = document.createElement("div")
       divAnimalsImagesDroppable.classList.add("divAnimalsImagesDroppable")
       divAnimalsImagesDroppable.classList.add("droppable-elements")
-      container.appendChild(divAnimalsImagesDroppable)
-
-      console.log(randomAnimals);
+  
 
       for (let i = 0; i < randomAnimals.length; i++) {
 
@@ -129,15 +127,22 @@ const game1 = () => {
         imgPicAnimal.src = `../assets/animals/${randomAnimals[i]}.svg` 
 
         divImgAnimal.append(imgAnimal, imgPicAnimal)
+        let anotherImg = imgAnimal
+        imgAnimal.removeAttribute("class")
+        imgAnimal.classList.add("imgAnimalDropped")
         divSlotAnimal.append(numberAnimal, textAnimal);
         divSlotAnimals.appendChild(divSlotAnimal);
 
         divAnimalsImages.append(divImgAnimal);
+        let another = divImgAnimal
+        another.removeAttribute("class")
+        another.classList.add("divImgAnimalDropped")
+        divAnimalsImagesDroppable.append(another)
 
-    
 
       }
 
+      container.append(divAnimalsImagesDroppable)
       container.appendChild(divSlotAnimals);
 
   };
@@ -147,9 +152,6 @@ const game1 = () => {
 
     //I need to be possible click and drag these elements visually on the screen.
 };
-
-  
-  
 
   chooseRandomAnimals();
   placeAnimalInputs(randomAnimals, animalsImages);
