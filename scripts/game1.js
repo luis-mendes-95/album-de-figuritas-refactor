@@ -2,6 +2,7 @@ let body = document.querySelector("body");
 let container = document.querySelector(".container");
 
 const game1 = () => {
+
   const backgroundImage = "../assets/backgrounds/background_game1.png";
   container.style.backgroundImage = `url(${backgroundImage})`;
 
@@ -67,7 +68,6 @@ const game1 = () => {
     "zebra",
   ];
   
-
   let randomAnimals = [];
 
   let animalsImages = [];
@@ -89,6 +89,10 @@ const game1 = () => {
       const divSlotAnimals = document.createElement("div");
       divSlotAnimals.classList.add("divSlotAnimals");
 
+      const divAnimalsImages = document.createElement("div")
+      divAnimalsImages.classList.add("divAnimalsImages")
+      container.appendChild(divAnimalsImages)
+
       console.log(randomAnimals);
 
       for (let i = 0; i < randomAnimals.length; i++) {
@@ -104,21 +108,27 @@ const game1 = () => {
 
         const textAnimal = document.createElement("p")
         textAnimal.classList.add(`textAnimal`)
-        textAnimal.innerText = `${randomAnimals[i].toUpperCase()}`
+        textAnimal.innerText = `${randomAnimals[i].toUpperCase()}`    
 
-        //SLOT ANIMALS FIM
-  
-        //SLOT ANIMALS IMAGENS INÍCIO
+        const divImgAnimal = document.createElement("div")
+        divImgAnimal.classList.add("divImgAnimal")
+        divImgAnimal.classList.add("draggable")
 
-        const divAnimalsImages = document.createElement("div")
-        divAnimalsImages.classList.add("divAnimalsImages")
-        container.appendChild(divAnimalsImages)
+        const imgAnimal = document.createElement("img")
+        imgAnimal.classList.add("imgAnimal")
+        imgAnimal.src = "../assets/book_details/figanimals.svg"
 
+        const imgPicAnimal = document.createElement("img")
+        imgPicAnimal.classList.add("imgPicAnimal")
+        imgPicAnimal.src = `../assets/animals/${randomAnimals[i]}.svg` 
 
+        divImgAnimal.append(imgAnimal, imgPicAnimal)
         divSlotAnimal.append(numberAnimal, textAnimal);
         divSlotAnimals.appendChild(divSlotAnimal);
 
-        //SLOT ANIMALS IMAGENS FIM
+        divAnimalsImages.append(divImgAnimal);
+
+    
 
       }
 
@@ -126,9 +136,19 @@ const game1 = () => {
 
   };
 
-  chooseRandomAnimals();
+  const activateMouseListeners = () => {
+    const AllDivImgAnimals = document.querySelectorAll('.divImgAnimal');
 
+    //I need to be possible click and drag these elements visually on the screen.
+};
+
+  
+  
+
+  chooseRandomAnimals();
   placeAnimalInputs(randomAnimals, animalsImages);
+  activateMouseListeners();
+
 };
 
 export default game1;
