@@ -62,6 +62,19 @@
     justify-content: center;
     align-items: center;
 }
+.divAnimalsImagesDroppable{
+    position: absolute;
+    top: 14%;
+    right: 4.5%;
+    opacity: 0.6;
+    width: 43%;
+    height: 70.5%;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 .imgAnimal{
     width: 75%;
     margin: 0.5vw 0.8vw;
@@ -72,7 +85,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-color: black;
+
 }
 .imgPicAnimal{
     position: absolute;

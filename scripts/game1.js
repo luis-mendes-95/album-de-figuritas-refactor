@@ -91,7 +91,13 @@ const game1 = () => {
 
       const divAnimalsImages = document.createElement("div")
       divAnimalsImages.classList.add("divAnimalsImages")
+      divAnimalsImages.classList.add("draggable-elements")
       container.appendChild(divAnimalsImages)
+
+      const divAnimalsImagesDroppable = document.createElement("div")
+      divAnimalsImagesDroppable.classList.add("divAnimalsImagesDroppable")
+      divAnimalsImagesDroppable.classList.add("droppable-elements")
+      container.appendChild(divAnimalsImagesDroppable)
 
       console.log(randomAnimals);
 
