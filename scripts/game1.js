@@ -1,17 +1,26 @@
+
+
+//CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - INICIO//
 let body = document.querySelector("body");
 let container = document.querySelector(".container");
+//CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - FIM//
 
+
+//FUNÇÃO QUE RENDERIZA O GAME #1 - INICIO//
 const game1 = () => {
 
+
+  //RENDERIZA ELEMENTOS DO BACKGROUND - INICIO//
   const backgroundImage = "../assets/backgrounds/background_game1.png";
   container.style.backgroundImage = `url(${backgroundImage})`;
-
   const background_book = document.createElement("img");
   background_book.classList.add("background_book_game1");
   background_book.src = "../assets/backgrounds/album_animals_toys.png";
-
   container.appendChild(background_book);
+  //RENDERIZA ELEMENTOS DO BACKGROUND - FIM//
 
+
+  //BANCO DE DADOS DE ANIMAIS - INICIO//
   const animals = [
     "abelha",
     "águia",
@@ -67,12 +76,22 @@ const game1 = () => {
     "vaca",
     "zebra",
   ];
-  
+  //BANCO DE DADOS DE ANIMAIS - FIM//
+
+
+  //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER ANIMAIS ALEATÓRIOS - INICIO//
   let randomAnimals = [];
+  //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER ANIMAIS ALEATÓRIOS - FIM//
 
+
+  //CRIA UM BANCO DE DADOS VAZIO PARA AS IMAGENS DOS ANIMAIS - INICIO//
   let animalsImages = [];
+  //CRIA UM BANCO DE DADOS VAZIO PARA AS IMAGENS DOS ANIMAIS - FIM//
 
+
+  //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 ANIMAIS - INICIO//
   const chooseRandomAnimals = () => {
+
     while (randomAnimals.length < 12) {
       const randomIndex = Math.floor(Math.random() * animals.length);
       const randomAnimal = animals[randomIndex];
@@ -83,66 +102,124 @@ const game1 = () => {
       }
     }
   };
+  //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 ANIMAIS - FIM//
 
-  const placeAnimalInputs = (randomAnimals, animalsImages) => {
 
-      const divSlotAnimals = document.createElement("div");
-      divSlotAnimals.classList.add("divSlotAnimals");
+  //FUNÇÃO QUE EMBARALHA OS 12 ANIMAIS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - INICIO//
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array
+  }
+  //FUNÇÃO QUE EMBARALHA OS 12 ANIMAIS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - FIM//
 
+
+  //FUNÇÃO QUE CRIA O CONTAINER COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS - INICIO//
+  const placeAnimalInputs = () => {
+
+
+      //CRIAÇÃO DA DIV QUE CONTERÁ AS FIGURINHAS ARRASTÁVEIS - INICIO//
       const divAnimalsImages = document.createElement("div")
       divAnimalsImages.classList.add("divAnimalsImages")
-      divAnimalsImages.classList.add("draggable-elements")
-      container.appendChild(divAnimalsImages)
+      //CRIAÇÃO DA DIV QUE CONTERÁ AS FIGURINHAS ARRASTÁVEIS - FIM//
 
-      const divAnimalsImagesDroppable = document.createElement("div")
-      divAnimalsImagesDroppable.classList.add("divAnimalsImagesDroppable")
-      divAnimalsImagesDroppable.classList.add("droppable-elements")
+      
+      //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - INICIO//
+      const divSlotAnimals = document.createElement("div");
+      divSlotAnimals.classList.add("divSlotAnimals");
+      //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - FIM//
+
+        //CRIA UMA LISTA DE 12 FIGURINHAS EMBARALHADAS - INICIO//
+        let animalsRandomOrder = randomAnimals;
+        animalsRandomOrder = shuffleArray(animalsRandomOrder);
+
+        //CRIA UMA LISTA DE 12 FIGURINHAS EMBARALHADAS - FIM//
+
+
+      //LOOP PARA RENDERIZAR OS ARRASTÁVEIS - INICIO//
+      setTimeout(() => {
+        console.log(shuffleArray(animalsRandomOrder))
+        for (let i = 0; i < animalsRandomOrder.length; i++) {
+
+          //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO ANIMAL - INICIO//
+          const divImgAnimal = document.createElement("div")
+          divImgAnimal.classList.add("divImgAnimal")
+          divImgAnimal.classList.add("draggable")
+          //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO ANIMAL - FIM//
   
+  
+          //BACKGROUND DA FIGURINHA DO ANIMAL - INICIO//
+          const imgAnimal = document.createElement("img")
+          imgAnimal.classList.add("imgAnimal")
+          imgAnimal.src = "../assets/book_details/figanimals.svg"
+          //BACKGROUND DA FIGURINHA DO ANIMAL - FIM//
+  
+  
+          //IMAGEM DO ANIMAL QUE SERÁ INSERIDA NA FIGURINHA - INICIO//
+          const imgPicAnimal = document.createElement("img")
+          imgPicAnimal.classList.add("imgPicAnimal")
+          imgPicAnimal.src = `../assets/animals/${animalsRandomOrder[i]}.svg` 
+          //IMAGEM DO ANIMAL QUE SERÁ INSERIDA NA FIGURINHA - FIM//
+  
+  
+          //INSERÇÃO DO FUNDO DA FIGURINHA E IMAGEM DA FIGURINHA NA DIV ARRASTÁVEL DA FIGURINHA - INICIO//
+          divImgAnimal.append(imgAnimal, imgPicAnimal)
+          //INSERÇÃO DO FUNDO DA FIGURINHA E IMAGEM DA FIGURINHA NA DIV ARRASTÁVEL DA FIGURINHA - FIM//
+  
+  
+          //INSERÇÃO DE FIGURINHA ARRASTÁVEL NA DIV DE FIGURINHAS ARRASTÁVEIS - INICIO//
+          divAnimalsImages.append(divImgAnimal);
+          //INSERÇÃO DE FIGURINHA ARRASTÁVEL NA DIV DE FIGURINHAS ARRASTÁVEIS - FIM//
 
+        }
+      }, 3000);
+ 
+      //LOOP PARA RENDERIZAR OS ARRASTÁVEIS - FIM//
+
+
+      //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS - INICIO//
       for (let i = 0; i < randomAnimals.length; i++) {
 
-        //SLOT ANIMALS INÍCIO
 
+        //SLOT PARA SOLTAR ANIMAIS - INÍCIO
         const divSlotAnimal = document.createElement("div")
         divSlotAnimal.classList.add("divSlotAnimal")
-
+        //SLOT PARA SOLTAR ANIMAIS - FIM
+      
+      
+        //NÚMERO QUE FICA DENTRO DO SLOT CENTRALIZADO - INÍCIO
         const numberAnimal = document.createElement("h2")
         numberAnimal.classList.add("numberAnimal")
         numberAnimal.innerText = i + 1
-
+        //NÚMERO QUE FICA DENTRO DO SLOT CENTRALIZADO - FIM
+      
+      
+        //TEXTO QUE FICA ABAIXO DO SLOT - INÍCIO
         const textAnimal = document.createElement("p")
         textAnimal.classList.add(`textAnimal`)
         textAnimal.innerText = `${randomAnimals[i].toUpperCase()}`    
-
-        const divImgAnimal = document.createElement("div")
-        divImgAnimal.classList.add("divImgAnimal")
-        divImgAnimal.classList.add("draggable")
-
-        const imgAnimal = document.createElement("img")
-        imgAnimal.classList.add("imgAnimal")
-        imgAnimal.src = "../assets/book_details/figanimals.svg"
-
-        const imgPicAnimal = document.createElement("img")
-        imgPicAnimal.classList.add("imgPicAnimal")
-        imgPicAnimal.src = `../assets/animals/${randomAnimals[i]}.svg` 
-
-        divImgAnimal.append(imgAnimal, imgPicAnimal)
-        let anotherImg = imgAnimal
-        imgAnimal.removeAttribute("class")
-        imgAnimal.classList.add("imgAnimalDropped")
+        //TEXTO QUE FICA ABAIXO DO SLOT - FIM
+         
+              
+        //INSERÇÃO DO NÚMERO DO ANIMAL E DO TEXTO NO SLOT SOLTÁVEL DOS ANIMAIS - INICIO//
         divSlotAnimal.append(numberAnimal, textAnimal);
+        //INSERÇÃO DO NÚMERO DO ANIMAL E DO TEXTO NO SLOT SOLTÁVEL DOS ANIMAIS - FIM//
+      
+      
+        //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ANIMAIS - INICIO//
         divSlotAnimals.appendChild(divSlotAnimal);
-
-        divAnimalsImages.append(divImgAnimal);
-        let another = divImgAnimal
-        another.removeAttribute("class")
-        another.classList.add("divImgAnimalDropped")
-        divAnimalsImagesDroppable.append(another)
-
-
+        //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ANIMAIS - FIM//
+      
+      
+      
+      
       }
+      //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS - FIM//
 
-      container.append(divAnimalsImagesDroppable)
+      //INSERÇÃO
+      container.appendChild(divAnimalsImages);
       container.appendChild(divSlotAnimals);
 
   };
@@ -154,9 +231,14 @@ const game1 = () => {
 };
 
   chooseRandomAnimals();
-  placeAnimalInputs(randomAnimals, animalsImages);
+  placeAnimalInputs();
+
+
   activateMouseListeners();
 
 };
+//FUNÇÃO QUE RENDERIZA O GAME #1 - FIM//
 
+
+//TORNA ACESSÍVEL PARA ARQUIVOS EXTERNOS
 export default game1;
