@@ -116,7 +116,7 @@ const game1 = () => {
   //FUNÇÃO QUE EMBARALHA OS 12 ANIMAIS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - FIM//
 
 
-  //FUNÇÃO QUE CRIA O CONTAINER COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS - INICIO//
+  //FUNÇÃO QUE CRIA O CONTAINER COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS E SLOTS RECEBEDORES- INICIO//
   const placeAnimalInputs = () => {
 
 
@@ -175,8 +175,7 @@ const game1 = () => {
           //INSERÇÃO DE FIGURINHA ARRASTÁVEL NA DIV DE FIGURINHAS ARRASTÁVEIS - FIM//
 
         }
-      }, 5000);
- 
+      }, 1000);
       //LOOP PARA RENDERIZAR OS ARRASTÁVEIS - FIM//
 
 
@@ -219,7 +218,7 @@ const game1 = () => {
       
       
       }
-    }, 3000);
+      }, 500);
       //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS - FIM//
 
       //INSERÇÃO
@@ -227,6 +226,7 @@ const game1 = () => {
       container.appendChild(divSlotAnimals);
 
   };
+  //FUNÇÃO QUE CRIA O CONTAINER COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS E SLOTS RECEBEDORES - FIM//
 
   const activateMouseListeners = () => {
     const AllDivImgAnimals = document.querySelectorAll('.divImgAnimal');
