@@ -116,26 +116,38 @@ const game1 = () => {
   //FUNÇÃO QUE EMBARALHA OS 12 ANIMAIS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - FIM//
 
 
-  //FUNÇÃO QUE CRIA O CONTAINER COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS E SLOTS RECEBEDORES- INICIO//
+  //FUNÇÃO QUE CRIA OS CONTAINERS COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS E SLOTS RECEBEDORES- INICIO//
   const placeAnimalInputs = () => {
 
 
       //CRIAÇÃO DA DIV QUE CONTERÁ AS FIGURINHAS ARRASTÁVEIS - INICIO//
       const divAnimalsImages = document.createElement("div")
       divAnimalsImages.classList.add("divAnimalsImages")
+      divAnimalsImages.classList.add("containerDroppable")
+      divAnimalsImages.id = "figurinhasIniciais" //CADA "containerX" poderá receber uma figurinha. Apenas esse receberá várias.
       //CRIAÇÃO DA DIV QUE CONTERÁ AS FIGURINHAS ARRASTÁVEIS - FIM//
 
-      
+      //FUNÇÃO QUE POSSIBILITA ARRASTAR AS FIGURINHAS DE VOLTA PARA DENTRO - INICIO// 
+      divAnimalsImages.addEventListener("dragover", (e) => {
+          e.preventDefault();
+        });
+        divAnimalsImages.addEventListener("drop", (e) => {
+          e.preventDefault();
+          const draggableId = e.dataTransfer.getData("text/plain");
+          const draggedElement = document.getElementById(draggableId)
+          divAnimalsImages.appendChild(draggedElement)
+        })
+      //FUNÇÃO QUE POSSIBILITA ARRASTAR AS FIGURINHAS DE VOLTA PARA DENTRO - FIM// 
+
       //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - INICIO//
       const divSlotAnimals = document.createElement("div");
       divSlotAnimals.classList.add("divSlotAnimals");
       //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - FIM//
 
-
-        //CRIA UMA LISTA DE 12 FIGURINHAS EMBARALHADAS - INICIO//
-        let animalsRandomOrder = randomAnimals;
-        animalsRandomOrder = shuffleArray(animalsRandomOrder);
-        //CRIA UMA LISTA DE 12 FIGURINHAS EMBARALHADAS - FIM//
+      //CRIA UMA LISTA DE 12 FIGURINHAS EMBARALHADAS - INICIO//
+      let animalsRandomOrder = randomAnimals;
+      animalsRandomOrder = shuffleArray(animalsRandomOrder);
+      //CRIA UMA LISTA DE 12 FIGURINHAS EMBARALHADAS - FIM//
 
 
       //LOOP PARA RENDERIZAR OS ARRASTÁVEIS - INICIO//
@@ -148,7 +160,16 @@ const game1 = () => {
           const divImgAnimal = document.createElement("div")
           divImgAnimal.classList.add("divImgAnimal")
           divImgAnimal.classList.add("draggable")
+          divImgAnimal.draggable = true
+          divImgAnimal.id = `${animalsRandomOrder[i]}_figurinha`
           //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO ANIMAL - FIM//
+
+
+          //FUNÇÃO QUE TORNA A FIGURINHA ARRASTÁVEL - INÍCIO//
+          divImgAnimal.addEventListener("dragstart", (e) => {
+            e.dataTransfer.setData("text/plain", divImgAnimal.id)
+          })
+          //FUNÇÃO QUE TORNA A FIGURINHA ARRASTÁVEL - FIM//
   
   
           //BACKGROUND DA FIGURINHA DO ANIMAL - INICIO//
@@ -187,8 +208,32 @@ const game1 = () => {
         //SLOT PARA SOLTAR ANIMAIS - INÍCIO
         const divSlotAnimal = document.createElement("div")
         divSlotAnimal.classList.add("divSlotAnimal")
-
+        divSlotAnimal.classList.add("containerDroppable")
+        divSlotAnimal.id = `${randomAnimals[i]}_slot`
         //SLOT PARA SOLTAR ANIMAIS - FIM
+
+        //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - INICIO//
+        divSlotAnimal.addEventListener("dragover", (e) => {
+          e.preventDefault();
+        })
+
+        divSlotAnimal.addEventListener("drop", (e) => {
+          e.preventDefault();
+          const draggableId = e.dataTransfer.getData("text/plain");
+          const draggedElement = document.getElementById(draggableId);
+          const imgPicAnimal = draggedElement.querySelector(".imgPicAnimal");
+          imgPicAnimal.removeAttribute("class")
+          draggedElement.removeAttribute("class")
+          imgPicAnimal.classList.add("imgPicAnimalAfterDropped")
+          draggedElement.classList.add("divImgAnimalAfterDropped")
+          draggedElement.classList.add("draggable")
+          draggedElement.addEventListener("dragstart", (e) => {
+            e.dataTransfer.setData("text/plain", draggedElement.id)
+          })
+          divSlotAnimal.appendChild(draggedElement)
+        })
+        //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - FIM//
+
       
       
         //NÚMERO QUE FICA DENTRO DO SLOT CENTRALIZADO - INÍCIO
@@ -226,19 +271,10 @@ const game1 = () => {
       container.appendChild(divSlotAnimals);
 
   };
-  //FUNÇÃO QUE CRIA O CONTAINER COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS E SLOTS RECEBEDORES - FIM//
-
-  const activateMouseListeners = () => {
-    const AllDivImgAnimals = document.querySelectorAll('.divImgAnimal');
-
-    //I need to be possible click and drag these elements visually on the screen.
-};
+  //FUNÇÃO QUE CRIA OS CONTAINERES COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS E SLOTS RECEBEDORES - FIM//
 
   chooseRandomAnimals();
   placeAnimalInputs();
-
-
-  activateMouseListeners();
 
 };
 //FUNÇÃO QUE RENDERIZA O GAME #1 - FIM//
@@ -246,14 +282,3 @@ const game1 = () => {
 
 //TORNA ACESSÍVEL PARA ARQUIVOS EXTERNOS
 export default game1;
-
-
-        //****IMPLEMENTAR = ALTERAÇÃO DA CLASSE DA FIGURINHA DEPOIS DE ARRASTADA *- INICIO//
-        //const divImgAnimal = document.querySelector(".divImgAnimal")
-        //const imgPicAnimal = divImgAnimal.querySelector(".imgPicAnimal");
-        //imgPicAnimal.removeAttribute("class")
-        //divImgAnimal.removeAttribute("class")
-        //imgPicAnimal.classList.add("imgPicAnimalAfterDropped")
-        //divImgAnimal.classList.add("divImgAnimalAfterDropped")
-        //divSlotAnimal.append(divImgAnimal)
-        //****IMPLEMENTAR = ALTERAÇÃO DA CLASSE DA FIGURINHA DEPOIS DE ARRASTADA *- FIM//
