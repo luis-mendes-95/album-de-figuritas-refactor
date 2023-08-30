@@ -82,7 +82,24 @@
 }
 .imgPicAnimal{
     position: absolute;
-    max-height: 14%;
+    max-width: 20%;
+    max-height: 20%;
+}
+.divImgAnimalAfterDropped {
+    width: 18%;
+    display: flex;
+    margin: 0 0%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 19%;
+    position: absolute;
+    z-index: 7;
+}
+.imgPicAnimalAfterDropped{
+    position: absolute;
+    max-width: 80%;
+    max-height: 80%; 
 }
 @keyframes appearBookFromRight {
     0% {

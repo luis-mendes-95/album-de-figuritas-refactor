@@ -131,17 +131,18 @@ const game1 = () => {
       divSlotAnimals.classList.add("divSlotAnimals");
       //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - FIM//
 
+
         //CRIA UMA LISTA DE 12 FIGURINHAS EMBARALHADAS - INICIO//
         let animalsRandomOrder = randomAnimals;
         animalsRandomOrder = shuffleArray(animalsRandomOrder);
-
         //CRIA UMA LISTA DE 12 FIGURINHAS EMBARALHADAS - FIM//
 
 
       //LOOP PARA RENDERIZAR OS ARRASTÁVEIS - INICIO//
       setTimeout(() => {
-        console.log(shuffleArray(animalsRandomOrder))
+        animalsRandomOrder = shuffleArray(animalsRandomOrder);
         for (let i = 0; i < animalsRandomOrder.length; i++) {
+
 
           //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO ANIMAL - INICIO//
           const divImgAnimal = document.createElement("div")
@@ -174,18 +175,20 @@ const game1 = () => {
           //INSERÇÃO DE FIGURINHA ARRASTÁVEL NA DIV DE FIGURINHAS ARRASTÁVEIS - FIM//
 
         }
-      }, 3000);
+      }, 5000);
  
       //LOOP PARA RENDERIZAR OS ARRASTÁVEIS - FIM//
 
 
       //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS - INICIO//
+      setTimeout(() => {
       for (let i = 0; i < randomAnimals.length; i++) {
 
 
         //SLOT PARA SOLTAR ANIMAIS - INÍCIO
         const divSlotAnimal = document.createElement("div")
         divSlotAnimal.classList.add("divSlotAnimal")
+
         //SLOT PARA SOLTAR ANIMAIS - FIM
       
       
@@ -216,6 +219,7 @@ const game1 = () => {
       
       
       }
+    }, 3000);
       //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS - FIM//
 
       //INSERÇÃO
@@ -242,3 +246,14 @@ const game1 = () => {
 
 //TORNA ACESSÍVEL PARA ARQUIVOS EXTERNOS
 export default game1;
+
+
+        //****IMPLEMENTAR = ALTERAÇÃO DA CLASSE DA FIGURINHA DEPOIS DE ARRASTADA *- INICIO//
+        //const divImgAnimal = document.querySelector(".divImgAnimal")
+        //const imgPicAnimal = divImgAnimal.querySelector(".imgPicAnimal");
+        //imgPicAnimal.removeAttribute("class")
+        //divImgAnimal.removeAttribute("class")
+        //imgPicAnimal.classList.add("imgPicAnimalAfterDropped")
+        //divImgAnimal.classList.add("divImgAnimalAfterDropped")
+        //divSlotAnimal.append(divImgAnimal)
+        //****IMPLEMENTAR = ALTERAÇÃO DA CLASSE DA FIGURINHA DEPOIS DE ARRASTADA *- FIM//
