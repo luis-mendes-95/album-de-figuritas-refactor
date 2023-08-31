@@ -135,6 +135,12 @@ const game1 = () => {
           e.preventDefault();
           const draggableId = e.dataTransfer.getData("text/plain");
           const draggedElement = document.getElementById(draggableId)
+          const imgPicAnimal = draggedElement.querySelector(".imgPicAnimalAfterDropped");
+          imgPicAnimal.removeAttribute("class")
+          draggedElement.classList.remove("divImgAnimalAfterDropped")
+          imgPicAnimal.classList.remove("imgPicAnimalAfterDropped")
+          draggedElement.classList.add("divImgAnimal")
+          imgPicAnimal.classList.add("imgPicAnimal")
           divAnimalsImages.appendChild(draggedElement)
         })
       //FUNÇÃO QUE POSSIBILITA ARRASTAR AS FIGURINHAS DE VOLTA PARA DENTRO - FIM// 
