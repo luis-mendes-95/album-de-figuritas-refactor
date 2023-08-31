@@ -104,6 +104,40 @@ const game1 = () => {
   };
   //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 ANIMAIS - FIM//
 
+  //FUNÇÃO QUE VERIFICA SE OS ANIMAIS ENCAIXADOS ESTÃO CORRETOS - INICIO//
+  const checkRightAnimalsSlots = (element) => {
+
+    let total_inserted = 0
+    let total_correct = 0
+
+    element.childNodes.forEach((slot) => {
+
+      const animal_slot_name = slot.id.split("_slot")[0]
+
+      console.log(animal_slot_name)
+
+      const animal_inserted = slot.querySelector(".divImgAnimal")
+
+      if (animal_inserted) {
+        const animal_inserted_name = animal_inserted.id.split("_figurinha")[0]
+        console.log(animal_inserted_name)
+        total_inserted += 1
+
+        if (animal_slot_name === animal_inserted_name) {
+          total_correct += 1
+        }
+      }
+
+
+
+    })
+
+    console.log("Animais inseridos: " + total_inserted)
+    console.log("Animais corretos: " + total_correct)
+  };
+  
+  
+  //FUNÇÃO QUE VERIFICA SE OS ANIMAIS ENCAIXADOS ESTÃO CORRETOS - FIM//
 
   //FUNÇÃO QUE EMBARALHA OS 12 ANIMAIS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - INICIO//
   const shuffleArray = (array) => {
@@ -237,6 +271,7 @@ const game1 = () => {
             e.dataTransfer.setData("text/plain", draggedElement.id)
           })
           divSlotAnimal.appendChild(draggedElement)
+          checkRightAnimalsSlots(divSlotAnimals)
         })
         //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - FIM//
 
@@ -279,8 +314,14 @@ const game1 = () => {
   };
   //FUNÇÃO QUE CRIA OS CONTAINERES COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS E SLOTS RECEBEDORES - FIM//
 
+
+
+
+
   chooseRandomAnimals();
   placeAnimalInputs();
+
+
 
 };
 //FUNÇÃO QUE RENDERIZA O GAME #1 - FIM//
