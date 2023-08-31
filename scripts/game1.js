@@ -104,6 +104,29 @@ const game1 = () => {
   };
   //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 ANIMAIS - FIM//
 
+
+  //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - INICIO //
+  const renderVerifyButton = (total_inserted, total_correct) => {
+    if (total_inserted === 12) {
+      const verifyButton = document.createElement("img")
+      verifyButton.classList.add("verifyButton")
+      verifyButton.src = "../assets/botoes/bt_verifica.png"
+  
+      const divAnimalsImages = document.querySelector(".divAnimalsImages")
+      divAnimalsImages.appendChild(verifyButton)
+    } else if (total_inserted < 12){
+      const divAnimalsImages = document.querySelector(".divAnimalsImages")
+      const verifyButton = divAnimalsImages.querySelector(".verifyButton")
+      if(verifyButton){
+        divAnimalsImages.removeChild(verifyButton)
+      }
+
+    }
+
+  }
+  //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - FIM //
+
+
   //FUNÇÃO QUE VERIFICA SE OS ANIMAIS ENCAIXADOS ESTÃO CORRETOS - INICIO//
   const checkRightAnimalsSlots = (element) => {
 
@@ -129,15 +152,16 @@ const game1 = () => {
       }
 
 
-
     })
 
     console.log("Animais inseridos: " + total_inserted)
     console.log("Animais corretos: " + total_correct)
+
+    renderVerifyButton(total_inserted, total_correct)
+
   };
-  
-  
   //FUNÇÃO QUE VERIFICA SE OS ANIMAIS ENCAIXADOS ESTÃO CORRETOS - FIM//
+
 
   //FUNÇÃO QUE EMBARALHA OS 12 ANIMAIS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - INICIO//
   const shuffleArray = (array) => {
@@ -161,6 +185,7 @@ const game1 = () => {
       divAnimalsImages.id = "figurinhasIniciais" //CADA "containerX" poderá receber uma figurinha. Apenas esse receberá várias.
       //CRIAÇÃO DA DIV QUE CONTERÁ AS FIGURINHAS ARRASTÁVEIS - FIM//
 
+
       //FUNÇÃO QUE POSSIBILITA ARRASTAR AS FIGURINHAS DE VOLTA PARA DENTRO - INICIO// 
       divAnimalsImages.addEventListener("dragover", (e) => {
           e.preventDefault();
@@ -176,13 +201,16 @@ const game1 = () => {
           draggedElement.classList.add("divImgAnimal")
           imgPicAnimal.classList.add("imgPicAnimal")
           divAnimalsImages.appendChild(draggedElement)
+          checkRightAnimalsSlots(divSlotAnimals)
         })
       //FUNÇÃO QUE POSSIBILITA ARRASTAR AS FIGURINHAS DE VOLTA PARA DENTRO - FIM// 
+
 
       //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - INICIO//
       const divSlotAnimals = document.createElement("div");
       divSlotAnimals.classList.add("divSlotAnimals");
       //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - FIM//
+
 
       //CRIA UMA LISTA DE 12 FIGURINHAS EMBARALHADAS - INICIO//
       let animalsRandomOrder = randomAnimals;
@@ -252,6 +280,7 @@ const game1 = () => {
         divSlotAnimal.id = `${randomAnimals[i]}_slot`
         //SLOT PARA SOLTAR ANIMAIS - FIM
 
+
         //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - INICIO//
         divSlotAnimal.addEventListener("dragover", (e) => {
           e.preventDefault();
@@ -274,7 +303,6 @@ const game1 = () => {
           checkRightAnimalsSlots(divSlotAnimals)
         })
         //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - FIM//
-
       
       
         //NÚMERO QUE FICA DENTRO DO SLOT CENTRALIZADO - INÍCIO
