@@ -228,8 +228,8 @@ const game1 = () => {
           const draggableId = e.dataTransfer.getData("text/plain");
           const draggedElement = document.getElementById(draggableId);
           const imgPicAnimal = draggedElement.querySelector(".imgPicAnimal");
-          imgPicAnimal.removeAttribute("class")
-          draggedElement.removeAttribute("class")
+          //imgPicAnimal.removeAttribute("class")
+          //draggedElement.removeAttribute("class")
           imgPicAnimal.classList.add("imgPicAnimalAfterDropped")
           draggedElement.classList.add("divImgAnimalAfterDropped")
           draggedElement.classList.add("draggable")
