@@ -114,12 +114,68 @@
     transform: scale(1.1);
     transition: 0.3s;
 }
+.lorenzo_correct{
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    animation: appearLorenzoFromLeft 1.5s ease-in;
+}
+.lorenzo_incorrect{
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    animation: appearAndDisappear 5s ease-in;
+}
+.continue_button{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    animation: appearButtonFromLeft 2s ease-in;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.continue_button:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+@keyframes appearAndDisappear {
+    0% {
+        left: -150%;
+    }
+    20% {
+        left: 3%;
+    }
+    50% {
+        left: 3%;
+    }
+    100% {
+        left: -200%;
+    }
+}
 @keyframes appearBookFromRight {
     0% {
         right: -150%;
     }
     100% {
         right: -49%;
+    }
+}
+@keyframes appearLorenzoFromLeft {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 3%;
+    }
+}
+@keyframes appearButtonFromLeft {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 50%;
     }
 }
 @keyframes appearSlotsFromRight {

@@ -1,4 +1,4 @@
-
+import game2 from "./game2.js"
 
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - INICIO//
 let body = document.querySelector("body");
@@ -105,12 +105,94 @@ const game1 = () => {
   //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 ANIMAIS - FIM//
 
 
+  //FUNÇÃO QUE RESETA O JOGO APENAS COM OS ANIMAIS INCORRETOS - INICIO//
+  const resetGameWrongAnimals = () => {
+
+    const divAnimalsImages = document.querySelector(".divAnimalsImages")
+    const divSlotAnimals = document.querySelector(".divSlotAnimals")
+
+    divSlotAnimals.childNodes.forEach((slot) => {
+
+      if(slot.id.split("_slot")[0] === slot.lastChild.id.split("_figurinha")[0]) {
+        console.log("CORRETO FILHÃO!")
+      } else {        
+        const imgPicAnimal = slot.lastChild.querySelector(".imgPicAnimalAfterDropped");
+        if(imgPicAnimal){
+          imgPicAnimal.removeAttribute("class")
+          imgPicAnimal.classList.remove("imgPicAnimalAfterDropped")
+          imgPicAnimal.classList.add("imgPicAnimal")
+        }
+        slot.lastChild.classList.remove("divImgAnimalAfterDropped")
+        slot.lastChild.classList.add("divImgAnimal")
+        divAnimalsImages.appendChild(slot.lastChild)
+      }
+      
+
+
+    })
+  }
+  //FUNÇÃO QUE RESETA O JOGO APENAS COM OS ANIMAIS INCORRETOS - FIM//
+
+
+  //FUNÇÃO QUE VERIFICA SE OS ANIMAIS INSERIDOS ESTÃO CORRETOS - INICIO //
+  const renderResult = (total_correct) => {
+
+    const divAnimalsImages = document.querySelector(".divAnimalsImages")
+
+    if(total_correct === 12) {
+
+      const lorenzo_correct = document.createElement("img")
+      lorenzo_correct.classList.add("lorenzo_correct")
+      lorenzo_correct.src = "../assets/lorenzo/lorenzo_ok1.png"
+
+      const continue_button = document.createElement("img")
+      continue_button.classList.add("continue_button")
+      continue_button.src = "../assets/botoes/bt_continua.png"
+
+      const verifyButton = divAnimalsImages.querySelector(".verifyButton")
+      if(verifyButton){
+        divAnimalsImages.removeChild(verifyButton)
+      }
+
+      continue_button.addEventListener("click", () => {
+        game2();
+      })
+
+      divAnimalsImages.append(lorenzo_correct, continue_button)
+
+    } else if (total_correct < 12) {
+
+      const lorenzo_incorrect = document.createElement("img")
+      lorenzo_incorrect.classList.add("lorenzo_incorrect")
+      lorenzo_incorrect.src = "../assets/lorenzo/lorenzo_ops.png"
+
+      const verifyButton = divAnimalsImages.querySelector(".verifyButton")
+      if(verifyButton){
+        divAnimalsImages.removeChild(verifyButton)
+      }
+
+      divAnimalsImages.appendChild(lorenzo_incorrect)
+
+      setTimeout(() => {
+        divAnimalsImages.removeChild(lorenzo_incorrect)
+        resetGameWrongAnimals();
+      }, 4000);     
+
+    }
+  }
+  //FUNÇÃO QUE VERIFICA SE OS ANIMAIS INSERIDOS ESTÃO CORRETOS - INICIO //
+
+
   //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - INICIO //
   const renderVerifyButton = (total_inserted, total_correct) => {
     if (total_inserted === 12) {
       const verifyButton = document.createElement("img")
       verifyButton.classList.add("verifyButton")
       verifyButton.src = "../assets/botoes/bt_verifica.png"
+
+      verifyButton.addEventListener("click", () => {
+        renderResult(total_correct)
+      })
   
       const divAnimalsImages = document.querySelector(".divAnimalsImages")
       divAnimalsImages.appendChild(verifyButton)
@@ -137,13 +219,10 @@ const game1 = () => {
 
       const animal_slot_name = slot.id.split("_slot")[0]
 
-      console.log(animal_slot_name)
-
       const animal_inserted = slot.querySelector(".divImgAnimal")
 
       if (animal_inserted) {
         const animal_inserted_name = animal_inserted.id.split("_figurinha")[0]
-        console.log(animal_inserted_name)
         total_inserted += 1
 
         if (animal_slot_name === animal_inserted_name) {
@@ -195,11 +274,16 @@ const game1 = () => {
           const draggableId = e.dataTransfer.getData("text/plain");
           const draggedElement = document.getElementById(draggableId)
           const imgPicAnimal = draggedElement.querySelector(".imgPicAnimalAfterDropped");
-          imgPicAnimal.removeAttribute("class")
+          if(imgPicAnimal){
+            imgPicAnimal.removeAttribute("class")
+            imgPicAnimal.classList.remove("imgPicAnimalAfterDropped")
+            imgPicAnimal.classList.add("imgPicAnimal")
+          }
+
           draggedElement.classList.remove("divImgAnimalAfterDropped")
-          imgPicAnimal.classList.remove("imgPicAnimalAfterDropped")
+
           draggedElement.classList.add("divImgAnimal")
-          imgPicAnimal.classList.add("imgPicAnimal")
+
           divAnimalsImages.appendChild(draggedElement)
           checkRightAnimalsSlots(divSlotAnimals)
         })
@@ -288,6 +372,10 @@ const game1 = () => {
 
         divSlotAnimal.addEventListener("drop", (e) => {
           e.preventDefault();
+          const existingDivImgAnimal = divSlotAnimal.querySelector(".divImgAnimal");
+          if(existingDivImgAnimal){
+            return;
+          }
           const draggableId = e.dataTransfer.getData("text/plain");
           const draggedElement = document.getElementById(draggableId);
           const imgPicAnimal = draggedElement.querySelector(".imgPicAnimal");
