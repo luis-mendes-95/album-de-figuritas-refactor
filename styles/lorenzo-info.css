@@ -1,0 +1,40 @@
+.lorenzo_img {
+  position: absolute;
+  top: 5%;
+  left: 13%;
+  width: 75%;
+  animation: dropImage 1s ease-in-out;
+}
+
+.continuar {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 20%;
+  animation: appearButton 2s ease-in-out;
+  transition: 0.3s;
+}
+
+.continuar:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.3);
+}
+
+@keyframes dropImage {
+  0% {
+    left: -130%;
+  }
+  100% {
+    left: 13%;
+  }
+}
+
+@keyframes appearButton {
+    0% {
+        right: -50%;
+    }
+    100% {
+        right: 5%;
+    }
+  }
