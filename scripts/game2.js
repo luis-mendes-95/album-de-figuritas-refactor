@@ -1,4 +1,4 @@
-//import game3 from "./game3.js"
+import game3 from "./game3.js";
 
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - INICIO//
 let body = document.querySelector("body");
@@ -129,7 +129,7 @@ const game2 = () => {
       }
 
       continue_button.addEventListener("click", () => {
-        game2();
+        game3();
       })
 
       divToysImages.append(lorenzo_correct, continue_button)
