@@ -246,42 +246,38 @@ const game4 = () => {
       });
             
       divFigureNames.addEventListener("drop", (e) => {
+
         e.preventDefault();
+
         const draggableId = e.dataTransfer.getData("text/plain");
         const draggedElement = document.getElementById(draggableId)
         const textFigureName = draggedElement.querySelector(".textFigureNameAfterDropped");
+
         if(textFigureName){
-                textFigureName.removeAttribute("class")
-                textFigureName.classList.remove("textFigureNameAfterDropped")
-                textFigureName.classList.add("textFigureName")
-                }
+          textFigureName.removeAttribute("class")
+          textFigureName.classList.remove("textFigureNameAfterDropped")
+          textFigureName.classList.add("textFigureName")
+        }
 
-                draggedElement.classList.remove("divTextFigureNameAfterDropped")
+        draggedElement.classList.remove("divTextFigureNameAfterDropped")
 
-                draggedElement.classList.add("divTextFigureName")
+        draggedElement.classList.add("divTextFigureName")
 
-                divFigureNames.appendChild(draggedElement)
-                checkRightTransportsSlots(divSlotTransports)
-            })
-            //FUNÇÃO QUE POSSIBILITA ARRASTAR AS FIGURINHAS DE VOLTA PARA DENTRO - FIM// 
+        divFigureNames.appendChild(draggedElement)
+        
+      })
+      //FUNÇÃO QUE POSSIBILITA ARRASTAR AS FIGURINHAS DE VOLTA PARA DENTRO - FIM// 
 
 
             //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - INICIO//
-            const divSlotTransports = document.createElement("div");
-            divSlotTransports.classList.add("divSlotTransports");
+            const divSlotFigureNames = document.createElement("div");
+            divSlotFigureNames.classList.add("divSlotFigureNames");
             //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - FIM//
-
-
-            //CRIA UMA LISTA DE 12 FIGURINHAS EMBARALHADAS - INICIO//
-            let transportsRandomOrder = randomTransports;
-            transportsRandomOrder = shuffleArray(transportsRandomOrder);
-            //CRIA UMA LISTA DE 12 FIGURINHAS EMBARALHADAS - FIM//
 
 
             //LOOP PARA RENDERIZAR OS ARRASTÁVEIS - INICIO//
             setTimeout(() => {
-            transportsRandomOrder = shuffleArray(transportsRandomOrder);
-            for (let i = 0; i < transportsRandomOrder.length; i++) {
+            for (let i = 0; i < randomShuffledItems.length; i++) {
 
 
                 //DIV ARRASTÁVEL QUE CONTERÁ FIGURINHA COM NOME DO ANIMAL/TRANSPORTE/BRINQUEDO - INICIO//
@@ -289,7 +285,7 @@ const game4 = () => {
                 divTextFigureName.classList.add("divTextFigureName")
                 divTextFigureName.classList.add("draggable")
                 divTextFigureName.draggable = true
-                divTextFigureName.id = `${transportsRandomOrder[i]}_figurinha`
+                divTextFigureName.id = `${randomShuffledItems[i]}_figurinha`
                 //DIV ARRASTÁVEL QUE CONTERÁ FIGURINHA COM NOME DO ANIMAL/TRANSPORTE/BRINQUEDO - FIM//
 
 
@@ -300,22 +296,22 @@ const game4 = () => {
                 //FUNÇÃO QUE TORNA A FIGURINHA ARRASTÁVEL - FIM//
 
 
-                //BACKGROUND DA FIGURINHA DO ANIMAL - INICIO//
-                const imgTransport = document.createElement("img")
-                imgTransport.classList.add("imgTransport")
-                imgTransport.src = "../assets/book_details/figanimals.svg"
-                //BACKGROUND DA FIGURINHA DO ANIMAL - FIM//
+                //BACKGROUND DA FIGURINHA DO ITEM - INICIO//
+                const imgBackgroundItem = document.createElement("img")
+                imgBackgroundItem.classList.add("imgBackgroundItem")
+                imgBackgroundItem.src = "../assets/book_details/dragword.svg"
+                //BACKGROUND DA FIGURINHA DO ITEM - FIM//
 
 
-                //IMAGEM DO ANIMAL QUE SERÁ INSERIDA NA FIGURINHA - INICIO//
-                const textFigureName = document.createElement("img")
+                //NOME DO ITEM QUE SERÁ INSERIDO NA FIGURINHA - INICIO//
+                const textFigureName = document.createElement("p")
                 textFigureName.classList.add("textFigureName")
-                textFigureName.src = `../assets/veiculos/${transportsRandomOrder[i]}.svg` 
-                //IMAGEM DO ANIMAL QUE SERÁ INSERIDA NA FIGURINHA - FIM//
+                textFigureName.innerText = `${randomShuffledItems[i]}` 
+                //NOME DO ITEM QUE SERÁ INSERIDO NA FIGURINHA - FIM//
 
 
                 //INSERÇÃO DO FUNDO DA FIGURINHA E IMAGEM DA FIGURINHA NA DIV ARRASTÁVEL DA FIGURINHA - INICIO//
-                divTextFigureName.append(imgTransport, textFigureName)
+                divTextFigureName.append(imgBackgroundItem, textFigureName)
                 //INSERÇÃO DO FUNDO DA FIGURINHA E IMAGEM DA FIGURINHA NA DIV ARRASTÁVEL DA FIGURINHA - FIM//
 
 
@@ -333,23 +329,23 @@ const game4 = () => {
             for (let i = 0; i < randomTransports.length; i++) {
 
 
-            //SLOT PARA SOLTAR ANIMAIS - INÍCIO
-            const divSlotTransport = document.createElement("div")
-            divSlotTransport.classList.add("divSlotTransport")
-            divSlotTransport.classList.add("containerDroppable")
-            divSlotTransport.id = `${randomTransports[i]}_slot`
-            //SLOT PARA SOLTAR ANIMAIS - FIM
+            //SLOT PARA SOLTAR ITENS - INÍCIO
+            const divSlotFigureName = document.createElement("div")
+            divSlotFigureName.classList.add("divSlotFigureName")
+            divSlotFigureName.classList.add("containerDroppable")
+            divSlotFigureName.id = `${randomTransports[i]}_slot`
+            //SLOT PARA SOLTAR ITENS - FIM
 
 
             //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - INICIO//
-            divSlotTransport.addEventListener("dragover", (e) => {
+            divSlotFigureName.addEventListener("dragover", (e) => {
                 e.preventDefault();
             })
 
-            divSlotTransport.addEventListener("drop", (e) => {
+            divSlotFigureName.addEventListener("drop", (e) => {
                 e.preventDefault();
-                const existingDivImgTransport = divSlotTransport.querySelector(".divTextFigureName");
-                if(existingDivImgTransport){
+                const existingDivFigureName = divSlotFigureName.querySelector(".divTextFigureName");
+                if(existingDivFigureName){
                 return;
                 }
                 const draggableId = e.dataTransfer.getData("text/plain");
@@ -363,46 +359,29 @@ const game4 = () => {
                 draggedElement.addEventListener("dragstart", (e) => {
                 e.dataTransfer.setData("text/plain", draggedElement.id)
                 })
-                divSlotTransport.appendChild(draggedElement)
-                checkRightTransportsSlots(divSlotTransports)
+                divSlotFigureName.appendChild(draggedElement)
+
             })
             //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - FIM//
-            
-            
-            //NÚMERO QUE FICA DENTRO DO SLOT CENTRALIZADO - INÍCIO
-            const numberTransport = document.createElement("h2")
-            numberTransport.classList.add("numberTransport")
-            numberTransport.innerText = i + 1
-            //NÚMERO QUE FICA DENTRO DO SLOT CENTRALIZADO - FIM
-            
-            
-            //TEXTO QUE FICA ABAIXO DO SLOT - INÍCIO
-            const textTransport = document.createElement("p")
-            textTransport.classList.add(`textTransport`)
-            textTransport.innerText = `${randomTransports[i].toUpperCase()}`    
-            //TEXTO QUE FICA ABAIXO DO SLOT - FIM
-            
-                    
-            //INSERÇÃO DO NÚMERO DO ANIMAL E DO TEXTO NO SLOT SOLTÁVEL DOS ANIMAIS - INICIO//
-            divSlotTransport.append(numberTransport, textTransport);
-            //INSERÇÃO DO NÚMERO DO ANIMAL E DO TEXTO NO SLOT SOLTÁVEL DOS ANIMAIS - FIM//
-            
-            
-            //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ANIMAIS - INICIO//
-            divSlotTransports.appendChild(divSlotTransport);
-            //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ANIMAIS - FIM//
-            
-            
+
+
+
+            //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ITENS - INICIO//
+            divSlotFigureNames.appendChild(divSlotFigureName);
+            //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ITENS - FIM//
             
             
             }
             }, 500);
             //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS - FIM//
 
+
+
+
             //INSERÇÃO
             container.appendChild(divFigureNames);
             setTimeout(() => {
-                container.appendChild(divSlotTransports);
+                container.appendChild(divSlotFigureNames);
             }, 1500);
 
 
@@ -410,7 +389,6 @@ const game4 = () => {
   //FUNÇÃO QUE CRIA OS CONTAINERES COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS E SLOTS RECEBEDORES - FIM//
 
 
-        chooseRandomTransports();
         placeFigureNamesInputs();
 
 

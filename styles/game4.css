@@ -33,7 +33,7 @@
     transform: scale(1.1);
     transition: 0.3s;
 }
-.divSlotTransports{
+.divSlotFigureNames{
     position: absolute;
     top: 14%;
     left: 2.5%;
@@ -51,8 +51,11 @@
     position: absolute;
     width: 45%;
     height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
 }
-.divSlotTransport{
+.divSlotFigureName{
     border: 5pt dotted rgb(216, 123, 47);
     width: 20%;
     height: 21%;
@@ -97,7 +100,7 @@
     align-items: center;
     cursor: pointer; 
 }
-.imgTransport{
+.imgBackgroundItem{
     width: 100%;
 }
 .divImgTransportDropped {
@@ -110,11 +113,8 @@
 }
 .textFigureName{
     position: absolute;
-    max-width: 20%;
-    max-height: 20%;
 }
 .divTextFigureNameAfterDropped {
-    width: 18%;
     display: flex;
     margin: 0 0%;
     justify-content: center;
