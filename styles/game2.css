@@ -1,0 +1,197 @@
+
+.background_book_game2{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: -49.5%;
+    animation: appearBookFromLeft 1.5s ease-in-out;
+}
+.divSlotToys{
+    position: absolute;
+    top: 14%;
+    left: 2.5%;
+    width: 45%;
+    height: 77%;
+    display: flex;
+    flex-wrap: wrap;
+    animation: appearBookFromRight 1.5s ease-in-out;
+    gap: 5%;
+}
+.divToysImages{
+    position: absolute;
+    top: 5%;
+    right: 2.5%;
+    position: absolute;
+    width: 45%;
+    height: 90%;
+}
+.divSlotToy{
+    border: 5pt dotted rgb(55, 55, 204);
+    width: 20%;
+    height: 21%;
+    display: flex;
+    flex-direction: column;
+}
+.numberToy{
+    font-family: sans-serif;
+    color: blue;
+    opacity: 0.4;
+    height: 50%;
+    font-size: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.4vw 0 0 0;
+}
+.textToy{
+    margin-top: 3vw;
+    color: rgb(55, 55, 204);
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 1.5vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.divToysImages{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 2%;
+}
+.divImgToy{
+    width: 26%;
+    display: flex;
+    margin: 0 3%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; 
+}
+.imgToy{
+    width: 100%;
+}
+.divImgToyDropped {
+    margin: 0 0 2% 0.5%;
+    width: 21.95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.imgPicToy{
+    position: absolute;
+    max-width: 20%;
+    max-height: 20%;
+}
+.divImgToyAfterDropped {
+    width: 18%;
+    display: flex;
+    margin: 0 0%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 19%;
+    position: absolute;
+    z-index: 7;
+}
+.imgPicToyAfterDropped{
+    position: absolute;
+    max-width: 80%;
+    max-height: 80%; 
+}
+.verifyButton{
+    position: absolute;
+    bottom: 5%;
+    left: 25%;
+    animation: appearButtonFromBottom 1s ease-in;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.verifyButton:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+.lorenzo_correct{
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    right: 3%;
+    animation: appearLorenzoFromRight 1.5s ease-in;
+}
+.lorenzo_incorrect{
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    right: 3%;
+    animation: appearAndDisappear 5s ease-in;
+}
+.continue_button{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    animation: appearButtonFromLeft 2s ease-in;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.continue_button:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+@keyframes appearAndDisappear {
+    0% {
+        right: -150%;
+    }
+    20% {
+        right: 3%;
+    }
+    50% {
+        right: 3%;
+    }
+    100% {
+        right: -200%;
+    }
+}
+@keyframes appearBookFromLeft {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: -49%;
+    }
+}
+@keyframes appearLorenzoFromRight {
+    0% {
+        right: -150%;
+    }
+    100% {
+        right: 3%;
+    }
+}
+@keyframes appearButtonFromLeft {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 50%;
+    }
+}
+@keyframes appearSlotsFromRight {
+    0% {
+        display: none;
+    }
+    100% {
+        display: flex;
+    }
+}
+@keyframes appearButtonFromBottom {
+    0% {
+        bottom: -150%;
+    }
+    100% {
+        bottom: 5%;
+    }
+}
+

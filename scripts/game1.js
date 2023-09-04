@@ -9,6 +9,18 @@ let container = document.querySelector(".container");
 //FUNÇÃO QUE RENDERIZA O GAME #1 - INICIO//
 const game1 = () => {
 
+  //APENAS PARA PULAR PARA O JOGO 2//
+  const botao_pula = document.createElement("button")
+  botao_pula.style.position = "absolute"
+  botao_pula.style.top = "0"
+  botao_pula.style.left = "30%"
+  botao_pula.innerText = "Jogo 2"
+  botao_pula.addEventListener("click", () =>{
+    game2();
+  })
+  container.appendChild(botao_pula)
+  //APENAS PARA PULAR PARA O JOGO 2//
+
 
   //RENDERIZA ELEMENTOS DO BACKGROUND - INICIO//
   const backgroundImage = "../assets/backgrounds/background_game1.png";
@@ -105,6 +117,11 @@ const game1 = () => {
   //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 ANIMAIS - FIM//
 
 
+
+
+
+
+
   //FUNÇÃO QUE RESETA O JOGO APENAS COM OS ANIMAIS INCORRETOS - INICIO//
   const resetGameWrongAnimals = () => {
 
@@ -114,7 +131,7 @@ const game1 = () => {
     divSlotAnimals.childNodes.forEach((slot) => {
 
       if(slot.id.split("_slot")[0] === slot.lastChild.id.split("_figurinha")[0]) {
-        console.log("CORRETO FILHÃO!")
+        console.log("CORRETO!")
       } else {        
         const imgPicAnimal = slot.lastChild.querySelector(".imgPicAnimalAfterDropped");
         if(imgPicAnimal){
@@ -132,6 +149,15 @@ const game1 = () => {
     })
   }
   //FUNÇÃO QUE RESETA O JOGO APENAS COM OS ANIMAIS INCORRETOS - FIM//
+
+
+
+
+
+
+
+
+
 
 
   //FUNÇÃO QUE VERIFICA SE OS ANIMAIS INSERIDOS ESTÃO CORRETOS - INICIO //
@@ -183,6 +209,12 @@ const game1 = () => {
   //FUNÇÃO QUE VERIFICA SE OS ANIMAIS INSERIDOS ESTÃO CORRETOS - INICIO //
 
 
+
+
+
+
+
+
   //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - INICIO //
   const renderVerifyButton = (total_inserted, total_correct) => {
     if (total_inserted === 12) {
@@ -207,6 +239,10 @@ const game1 = () => {
 
   }
   //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - FIM //
+
+
+
+
 
 
   //FUNÇÃO QUE VERIFICA SE OS ANIMAIS ENCAIXADOS ESTÃO CORRETOS - INICIO//
@@ -242,6 +278,13 @@ const game1 = () => {
   //FUNÇÃO QUE VERIFICA SE OS ANIMAIS ENCAIXADOS ESTÃO CORRETOS - FIM//
 
 
+
+
+
+
+
+
+
   //FUNÇÃO QUE EMBARALHA OS 12 ANIMAIS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - INICIO//
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -252,6 +295,15 @@ const game1 = () => {
   }
   //FUNÇÃO QUE EMBARALHA OS 12 ANIMAIS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - FIM//
 
+
+
+
+
+
+
+
+
+  
 
   //FUNÇÃO QUE CRIA OS CONTAINERS COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS E SLOTS RECEBEDORES- INICIO//
   const placeAnimalInputs = () => {
