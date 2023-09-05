@@ -315,7 +315,7 @@ const game2 = () => {
                 //BACKGROUND DA FIGURINHA DO ANIMAL - INICIO//
                 const imgToy = document.createElement("img")
                 imgToy.classList.add("imgToy")
-                imgToy.src = "../assets/book_details/figanimals.svg"
+                imgToy.src = "../assets/book_details/figtoys.svg"
                 //BACKGROUND DA FIGURINHA DO ANIMAL - FIM//
 
 

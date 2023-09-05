@@ -6,10 +6,10 @@
     right: -49%;
     animation: appearBookFromRight 1.5s ease-in-out;
 }
-.divSlotTransports{
+.divSlotAnimals{
     position: absolute;
     top: 14%;
-    left: 2.5%;
+    right: 2.5%;
     width: 45%;
     height: 77%;
     display: flex;
@@ -17,24 +17,24 @@
     animation: appearBookFromRight 1.5s ease-in-out;
     gap: 5%;
 }
-.divTransportsImages{
+.divAnimalsImages{
     position: absolute;
     top: 5%;
-    right: 2.5%;
+    left: 2.5%;
     position: absolute;
     width: 45%;
     height: 90%;
 }
-.divSlotTransport{
-    border: 5pt dotted rgb(216, 123, 47);
+.divSlotAnimal{
+    border: 5pt dotted green;
     width: 20%;
     height: 21%;
     display: flex;
     flex-direction: column;
 }
-.numberTransport{
+.numberAnimal{
     font-family: sans-serif;
-    color: rgb(216, 123, 47);
+    color: green;
     opacity: 0.4;
     height: 50%;
     font-size: 5vw;
@@ -43,9 +43,9 @@
     align-items: center;
     margin: 2.4vw 0 0 0;
 }
-.textTransport{
+.textAnimal{
     margin-top: 3vw;
-    color: rgb(216, 123, 47);
+    color: rgb(8, 146, 8);
     font-weight: bold;
     font-family: sans-serif;
     font-size: 1.5vw;
@@ -54,7 +54,7 @@
     justify-content: center;
     align-content: center;
 }
-.divTransportsImages{
+.divAnimalsImages{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -62,7 +62,7 @@
     align-content: flex-start;
     gap: 2%;
 }
-.divImgTransport{
+.divImgAnimal{
     width: 26%;
     display: flex;
     margin: 0 3%;
@@ -70,10 +70,10 @@
     align-items: center;
     cursor: pointer; 
 }
-.imgTransport{
+.imgAnimal{
     width: 100%;
 }
-.divImgTransportDropped {
+.divImgAnimalDropped {
     margin: 0 0 2% 0.5%;
     width: 21.95%;
     display: flex;
@@ -81,12 +81,12 @@
     align-items: center;
     cursor: pointer;
 }
-.imgPicTransport{
+.imgPicAnimal{
     position: absolute;
     max-width: 20%;
     max-height: 20%;
 }
-.divImgTransportAfterDropped {
+.divImgAnimalAfterDropped {
     width: 18%;
     display: flex;
     margin: 0 0%;
@@ -97,7 +97,7 @@
     position: absolute;
     z-index: 7;
 }
-.imgPicTransportAfterDropped{
+.imgPicAnimalAfterDropped{
     position: absolute;
     max-width: 80%;
     max-height: 80%; 
@@ -118,21 +118,21 @@
     width: 100%;
     position: absolute;
     top: 10%;
-    right: 3%;
-    animation: appearLorenzoFromRight 1.5s ease-in;
+    left: 3%;
+    animation: appearLorenzoFromLeft 1.5s ease-in;
 }
 .lorenzo_incorrect{
     width: 100%;
     position: absolute;
     top: 10%;
-    right: 3%;
+    left: 3%;
     animation: appearAndDisappear 5s ease-in;
 }
 .continue_button{
     position: absolute;
     top: 55%;
     left: 50%;
-    animation: appearButtonFromRight 2s ease-in;
+    animation: appearButtonFromLeft 2s ease-in;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -142,16 +142,16 @@
 }
 @keyframes appearAndDisappear {
     0% {
-        right: -150%;
+        left: -150%;
     }
     20% {
-        right: 3%;
+        left: 3%;
     }
     50% {
-        right: 3%;
+        left: 3%;
     }
     100% {
-        right: -200%;
+        left: -200%;
     }
 }
 @keyframes appearBookFromRight {
@@ -162,20 +162,20 @@
         right: -49%;
     }
 }
-@keyframes appearLorenzoFromRight {
+@keyframes appearLorenzoFromLeft {
     0% {
-        right: -150%;
+        left: -150%;
     }
     100% {
-        right: 3%;
+        left: 3%;
     }
 }
-@keyframes appearButtonFromRight {
+@keyframes appearButtonFromLeft {
     0% {
-        right: -150%;
+        left: -150%;
     }
     100% {
-        right: 50%;
+        left: 50%;
     }
 }
 @keyframes appearSlotsFromRight {
