@@ -216,6 +216,42 @@
     transform: scale(1.1);
     transition: 0.3s;
 }
+
+.divSlotFigureNamesAnimals > .divSlotFigureName{
+    border: 2pt dashed green;
+}
+
+.divSlotFigureNamesTransports > .divSlotFigureName{
+    border: 2pt dashed orangered;
+}
+
+.divSlotFigureNamesToys > .divSlotFigureName{
+    border: 2pt dashed rgb(55, 55, 204);
+}
+
+.animals_title {
+    position: absolute;
+    top: 25%;
+    left: 1%;
+    width: 14%;
+    z-index: 8;
+}
+
+.toys_title {
+    position: absolute;
+    top: 25%;
+    width: 14%;
+    left: 17%;
+    z-index: 8;
+}
+
+.transports_title {
+    position: absolute;
+    top: 25.3%;
+    width: 14%;
+    left: 32%;
+    z-index: 8;
+}
 @keyframes appearAndDisappear {
     0% {
         right: -150%;

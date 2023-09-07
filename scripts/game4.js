@@ -270,6 +270,9 @@ const game4 = () => {
 
 
             //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS DE ANIMAIS ONDE SERÃO SOLTAS - INICIO//
+            const animals_title = document.createElement("img");
+            animals_title.classList.add("animals_title")
+            animals_title.src = "../assets/book_details/tit_animais.png"
             const divSlotFigureNamesAnimals = document.createElement("div");
             divSlotFigureNamesAnimals.classList.add("divSlotFigureNamesAnimals");
             //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS DE ANIMAIS ONDE SERÃO SOLTAS - FIM//
@@ -277,12 +280,18 @@ const game4 = () => {
 
             //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS DE TRANSPORTES ONDE SERÃO SOLTAS - INICIO//
             const divSlotFigureNamesTransports = document.createElement("div");
+            const transports_title = document.createElement("img");
+            transports_title.classList.add("transports_title")
+            transports_title.src = "../assets/book_details/tit_transportes.png"
             divSlotFigureNamesTransports.classList.add("divSlotFigureNamesTransports");
             //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS DE TRANSPORTES ONDE SERÃO SOLTAS - FIM//
 
 
             //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS DE BRINQUEDOS ONDE SERÃO SOLTAS - INICIO//
             const divSlotFigureNamesToys = document.createElement("div");
+            const toys_title = document.createElement("img");
+            toys_title.classList.add("toys_title")
+            toys_title.src = "../assets/book_details/tit_brinquedos.png"
             divSlotFigureNamesToys.classList.add("divSlotFigureNamesToys");
             //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS DE BRINQUEDOS ONDE SERÃO SOLTAS - FIM//
 
@@ -520,7 +529,7 @@ const game4 = () => {
             //INSERÇÃO
             container.appendChild(divFigureNames);
             setTimeout(() => {
-                container.append(divSlotFigureNamesAnimals, divSlotFigureNamesToys, divSlotFigureNamesTransports);
+                container.append(divSlotFigureNamesAnimals, divSlotFigureNamesToys, divSlotFigureNamesTransports, animals_title, toys_title, transports_title);
             }, 1500);
 
 
