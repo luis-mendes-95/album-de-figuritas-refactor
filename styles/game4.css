@@ -44,7 +44,6 @@
     align-content: flex-end;
     animation: appearBookFromRight 1.5s ease-in-out;
     gap: 5%;
-    background-color: black;
 }
 .divSlotFigureNamesTransports{
     position: absolute;
@@ -57,8 +56,16 @@
     align-content: flex-end;
     animation: appearBookFromRight 1.5s ease-in-out;
     gap: 5%;
-    background-color: red;
 }
+
+.divTextFigureNameAfterDropped > .imgBackgroundItem {
+
+}
+
+.divTextFigureNameAfterDropped > .imgBackgroundItem {
+
+}
+
 .divSlotFigureNamesToys{
     position: absolute;
     bottom: 12%;
@@ -70,7 +77,6 @@
     align-content: flex-end;
     animation: appearBookFromRight 1.5s ease-in-out;
     gap: 5%;
-    background-color: orangered;
 }
 .divFigureNames{
     padding: 1% 0 0 0;
@@ -163,8 +169,8 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    height: 19%;
-    position: absolute;
+    height: 100%;
+    width: 100%;
     z-index: 7;
 }
 .textFigureNameAfterDropped{
