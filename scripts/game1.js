@@ -11,17 +11,17 @@ let container = document.querySelector(".container");
 //FUNÇÃO QUE RENDERIZA O GAME #1 - INICIO//
 const game1 = () => {
 
-  //APENAS PARA PULAR PARA O JOGO 3//
+  //APENAS PARA PULAR PARA O JOGO 2//
   const botao_pula = document.createElement("button")
   botao_pula.style.position = "absolute"
   botao_pula.style.top = "0"
   botao_pula.style.left = "30%"
-  botao_pula.innerText = "Jogo 3"
+  botao_pula.innerText = "Jogo 2"
   botao_pula.addEventListener("click", () =>{
-    game3();
+    game2();
   })
   container.appendChild(botao_pula)
-  //APENAS PARA PULAR PARA O JOGO 4//
+  //APENAS PARA PULAR PARA O JOGO 2//
 
 
   //RENDERIZA ELEMENTOS DO BACKGROUND - INICIO//

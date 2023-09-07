@@ -6,7 +6,7 @@
     right: -49%;
     animation: appearBookFromRight 1.5s ease-in-out;
 }
-.divSlotAnimals{
+.divSlotTransports{
     position: absolute;
     top: 14%;
     right: 2.5%;
@@ -17,7 +17,7 @@
     animation: appearBookFromRight 1.5s ease-in-out;
     gap: 5%;
 }
-.divAnimalsImages{
+.divTransportsImages{
     position: absolute;
     top: 5%;
     left: 2.5%;
@@ -25,16 +25,16 @@
     width: 45%;
     height: 90%;
 }
-.divSlotAnimal{
-    border: 5pt dotted green;
+.divSlotTransport{
+    border: 5pt dotted orangered;
     width: 20%;
     height: 21%;
     display: flex;
     flex-direction: column;
 }
-.numberAnimal{
+.numberTransport{
     font-family: sans-serif;
-    color: green;
+    color: orangered;
     opacity: 0.4;
     height: 50%;
     font-size: 5vw;
@@ -43,9 +43,9 @@
     align-items: center;
     margin: 2.4vw 0 0 0;
 }
-.textAnimal{
+.textTransport{
     margin-top: 3vw;
-    color: rgb(8, 146, 8);
+    color: orangered;
     font-weight: bold;
     font-family: sans-serif;
     font-size: 1.5vw;
@@ -54,7 +54,7 @@
     justify-content: center;
     align-content: center;
 }
-.divAnimalsImages{
+.divTransportsImages{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -62,7 +62,7 @@
     align-content: flex-start;
     gap: 2%;
 }
-.divImgAnimal{
+.divImgTransport{
     width: 26%;
     display: flex;
     margin: 0 3%;
@@ -70,10 +70,10 @@
     align-items: center;
     cursor: pointer; 
 }
-.imgAnimal{
+.imgTransport{
     width: 100%;
 }
-.divImgAnimalDropped {
+.divImgTransportDropped {
     margin: 0 0 2% 0.5%;
     width: 21.95%;
     display: flex;
@@ -81,12 +81,12 @@
     align-items: center;
     cursor: pointer;
 }
-.imgPicAnimal{
+.imgPicTransport{
     position: absolute;
     max-width: 20%;
     max-height: 20%;
 }
-.divImgAnimalAfterDropped {
+.divImgTransportAfterDropped {
     width: 18%;
     display: flex;
     margin: 0 0%;
@@ -97,7 +97,7 @@
     position: absolute;
     z-index: 7;
 }
-.imgPicAnimalAfterDropped{
+.imgPicTransportAfterDropped{
     position: absolute;
     max-width: 80%;
     max-height: 80%; 

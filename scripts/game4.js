@@ -58,8 +58,8 @@ const game4 = () => {
 
 
 
-    //BANCO DE DADOS DE TRANSPORTES - INICIO//
-    const transports = [
+    //BANCO DE DADOS DE ItemES - INICIO//
+    const Items = [
         "avião",
         "bicicleta",
         "caminhão",
@@ -75,7 +75,7 @@ const game4 = () => {
         "trem",
         "veleiro"
     ];
-    //BANCO DE DADOS DE TRANSPORTES - FIM//
+    //BANCO DE DADOS DE ItemES - FIM//
 
 
 
@@ -164,10 +164,10 @@ const game4 = () => {
 
 
 
-    //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER FIGURINHAS COM NOMES DE ANIMAIS/BRINQUEDOS/TRANSPORTES ALEATÓRIOS - INICIO//
+    //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER FIGURINHAS COM NOMES DE ANIMAIS/BRINQUEDOS/ItemES ALEATÓRIOS - INICIO//
     let randomItems = [];
     let randomShuffledItems = [];
-    //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER FIGURINHAS COM NOMES DE ANIMAIS/BRINQUEDOS/TRANSPORTES ALEATÓRIOS - FIM//
+    //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER FIGURINHAS COM NOMES DE ANIMAIS/BRINQUEDOS/ItemES ALEATÓRIOS - FIM//
 
 
 
@@ -220,7 +220,7 @@ const game4 = () => {
 
 
     //PREENCHIMENTO DO ARRAY DE ITENS ALEATÓRIOS - INICIO//
-    chooseRandomItems(transports);
+    chooseRandomItems(Items);
     chooseRandomItems(toys);
     chooseRandomItems(animals);
     shuffleItems(randomItems)
@@ -228,7 +228,7 @@ const game4 = () => {
 
 
 
-  //FUNÇÃO QUE CRIA OS CONTAINERS COM FIGURINHAS COM NOME DE ANIMAIS, BRINQUEDOS E TRANSPORTES ARRASTÁVEIS E SLOTS RECEBEDORES- INICIO//
+  //FUNÇÃO QUE CRIA OS CONTAINERS COM FIGURINHAS COM NOME DE ANIMAIS, BRINQUEDOS E ItemES ARRASTÁVEIS E SLOTS RECEBEDORES- INICIO//
     const placeFigureNamesInputs = () => {
 
 
@@ -269,24 +269,55 @@ const game4 = () => {
       //FUNÇÃO QUE POSSIBILITA ARRASTAR AS FIGURINHAS DE VOLTA PARA DENTRO - FIM// 
 
 
-            //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - INICIO//
-            const divSlotFigureNames = document.createElement("div");
-            divSlotFigureNames.classList.add("divSlotFigureNames");
-            //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - FIM//
+            //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS DE ANIMAIS ONDE SERÃO SOLTAS - INICIO//
+            const divSlotFigureNamesAnimals = document.createElement("div");
+            divSlotFigureNamesAnimals.classList.add("divSlotFigureNamesAnimals");
+            //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS DE ANIMAIS ONDE SERÃO SOLTAS - FIM//
 
 
-            //LOOP PARA RENDERIZAR OS ARRASTÁVEIS - INICIO//
+            //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS DE TRANSPORTES ONDE SERÃO SOLTAS - INICIO//
+            const divSlotFigureNamesTransports = document.createElement("div");
+            divSlotFigureNamesTransports.classList.add("divSlotFigureNamesTransports");
+            //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS DE TRANSPORTES ONDE SERÃO SOLTAS - FIM//
+
+
+            //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS DE BRINQUEDOS ONDE SERÃO SOLTAS - INICIO//
+            const divSlotFigureNamesToys = document.createElement("div");
+            divSlotFigureNamesToys.classList.add("divSlotFigureNamesToys");
+            //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS DE BRINQUEDOS ONDE SERÃO SOLTAS - FIM//
+
+
+            //CRIAÇÃO DA DIV QUE TERÁ OS SLOTS DO TIPO ANIMAIS - INICIO //
+            const divSlotsTypeAnimal = document.createElement("div")
+            divSlotsTypeAnimal.classList.add("divSlotsTypeAnimal")
+            //CRIAÇÃO DA DIV QUE TERÁ OS SLOTS DO TIPO ANIMAIS - FIM //
+
+
+            //CRIAÇÃO DA DIV QUE TERÁ OS SLOTS DO TIPO BRINQUEDOS - INICIO //
+            const divSlotsTypeToys = document.createElement("div")
+            divSlotsTypeToys.classList.add("divSlotsTypeToys")
+            //CRIAÇÃO DA DIV QUE TERÁ OS SLOTS DO TIPO BRINQUEDOS - FIM //
+
+
+            //CRIAÇÃO DA DIV QUE TERÁ OS SLOTS DO TIPO TRANSPORTES - INICIO //
+            const divSlotsTypeTransports = document.createElement("div")
+            divSlotsTypeTransports.classList.add("divSlotsTypeTransports")
+            //CRIAÇÃO DA DIV QUE TERÁ OS SLOTS DO TIPO TRANSPORTES - FIM //
+
+
+
+            //LOOP PARA RENDERIZAR OS ITENS ARRASTÁVEIS- INICIO//
             setTimeout(() => {
             for (let i = 0; i < randomShuffledItems.length; i++) {
 
 
-                //DIV ARRASTÁVEL QUE CONTERÁ FIGURINHA COM NOME DO ANIMAL/TRANSPORTE/BRINQUEDO - INICIO//
+                //DIV ARRASTÁVEL QUE CONTERÁ FIGURINHA COM NOME DO ANIMAL/ItemE/BRINQUEDO - INICIO//
                 const divTextFigureName = document.createElement("div")
                 divTextFigureName.classList.add("divTextFigureName")
                 divTextFigureName.classList.add("draggable")
                 divTextFigureName.draggable = true
                 divTextFigureName.id = `${randomShuffledItems[i]}_figurinha`
-                //DIV ARRASTÁVEL QUE CONTERÁ FIGURINHA COM NOME DO ANIMAL/TRANSPORTE/BRINQUEDO - FIM//
+                //DIV ARRASTÁVEL QUE CONTERÁ FIGURINHA COM NOME DO ANIMAL/ItemE/BRINQUEDO - FIM//
 
 
                 //FUNÇÃO QUE TORNA A FIGURINHA ARRASTÁVEL - INÍCIO//
@@ -306,7 +337,7 @@ const game4 = () => {
                 //NOME DO ITEM QUE SERÁ INSERIDO NA FIGURINHA - INICIO//
                 const textFigureName = document.createElement("p")
                 textFigureName.classList.add("textFigureName")
-                textFigureName.innerText = `${randomShuffledItems[i]}` 
+                textFigureName.innerText = `${randomShuffledItems[i].toUpperCase()}` 
                 //NOME DO ITEM QUE SERÁ INSERIDO NA FIGURINHA - FIM//
 
 
@@ -321,19 +352,75 @@ const game4 = () => {
 
             }
             }, 1000);
-            //LOOP PARA RENDERIZAR OS ARRASTÁVEIS - FIM//
+            //LOOP PARA RENDERIZAR OS ITENS ARRASTÁVEIS - FIM//
 
 
-            //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS - INICIO//
+
+            //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS ANIMAIS - INICIO//
             setTimeout(() => {
-            for (let i = 0; i < randomTransports.length; i++) {
+              for (let i = 0; i < 5; i++) {
+  
+  
+              //SLOT PARA SOLTAR ITENS - INÍCIO
+              const divSlotFigureName = document.createElement("div")
+              divSlotFigureName.classList.add("divSlotFigureName")
+              divSlotFigureName.classList.add("containerDroppable")
+              divSlotFigureName.id = `${randomItems[i]}_slot`
+              //SLOT PARA SOLTAR ITENS - FIM
+  
+  
+              //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - INICIO//
+              divSlotFigureName.addEventListener("dragover", (e) => {
+                  e.preventDefault();
+              })
+  
+              divSlotFigureName.addEventListener("drop", (e) => {
+                  e.preventDefault();
+                  const existingDivFigureName = divSlotFigureName.querySelector(".divTextFigureName");
+                  if(existingDivFigureName){
+                  return;
+                  }
+                  const draggableId = e.dataTransfer.getData("text/plain");
+                  const draggedElement = document.getElementById(draggableId);
+                  const textFigureName = draggedElement.querySelector(".textFigureName");
+                  //textFigureName.removeAttribute("class")
+                  //draggedElement.removeAttribute("class")
+                  textFigureName.classList.add("textFigureNameAfterDropped")
+                  draggedElement.classList.add("divTextFigureNameAfterDropped")
+                  draggedElement.classList.add("draggable")
+                  draggedElement.addEventListener("dragstart", (e) => {
+                  e.dataTransfer.setData("text/plain", draggedElement.id)
+                  })
+                  divSlotFigureName.appendChild(draggedElement)
+  
+              })
+              //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - FIM//
+  
+  
+  
+              //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ITENS - INICIO//
+              divSlotFigureNamesAnimals.appendChild(divSlotFigureName);
+              //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ITENS - FIM//
+              
+              
+              }
+              }, 500);
+              //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS ANIMAIS - FIM//
+
+
+
+
+
+            //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS TRANSPORTES - INICIO//
+            setTimeout(() => {
+            for (let i = 0; i < 5; i++) {
 
 
             //SLOT PARA SOLTAR ITENS - INÍCIO
             const divSlotFigureName = document.createElement("div")
             divSlotFigureName.classList.add("divSlotFigureName")
             divSlotFigureName.classList.add("containerDroppable")
-            divSlotFigureName.id = `${randomTransports[i]}_slot`
+            divSlotFigureName.id = `${randomItems[i]}_slot`
             //SLOT PARA SOLTAR ITENS - FIM
 
 
@@ -367,21 +454,73 @@ const game4 = () => {
 
 
             //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ITENS - INICIO//
-            divSlotFigureNames.appendChild(divSlotFigureName);
+            divSlotFigureNamesTransports.appendChild(divSlotFigureName);
             //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ITENS - FIM//
             
             
             }
             }, 500);
-            //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS - FIM//
+            //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS TRANSPORTES - FIM//
 
 
 
+
+            //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS BRINQUEDOS - INICIO//
+            setTimeout(() => {
+              for (let i = 0; i < 5; i++) {
+  
+  
+              //SLOT PARA SOLTAR ITENS - INÍCIO
+              const divSlotFigureName = document.createElement("div")
+              divSlotFigureName.classList.add("divSlotFigureName")
+              divSlotFigureName.classList.add("containerDroppable")
+              divSlotFigureName.id = `${randomItems[i]}_slot`
+              //SLOT PARA SOLTAR ITENS - FIM
+  
+  
+              //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - INICIO//
+              divSlotFigureName.addEventListener("dragover", (e) => {
+                  e.preventDefault();
+              })
+  
+              divSlotFigureName.addEventListener("drop", (e) => {
+                  e.preventDefault();
+                  const existingDivFigureName = divSlotFigureName.querySelector(".divTextFigureName");
+                  if(existingDivFigureName){
+                  return;
+                  }
+                  const draggableId = e.dataTransfer.getData("text/plain");
+                  const draggedElement = document.getElementById(draggableId);
+                  const textFigureName = draggedElement.querySelector(".textFigureName");
+                  //textFigureName.removeAttribute("class")
+                  //draggedElement.removeAttribute("class")
+                  textFigureName.classList.add("textFigureNameAfterDropped")
+                  draggedElement.classList.add("divTextFigureNameAfterDropped")
+                  draggedElement.classList.add("draggable")
+                  draggedElement.addEventListener("dragstart", (e) => {
+                  e.dataTransfer.setData("text/plain", draggedElement.id)
+                  })
+                  divSlotFigureName.appendChild(draggedElement)
+  
+              })
+              //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - FIM//
+  
+  
+  
+              //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ITENS - INICIO//
+              divSlotFigureNamesToys.appendChild(divSlotFigureName);
+              //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ITENS - FIM//
+              
+              
+              }
+            }, 500);
+            //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS BRINQUEDOS - FIM//
+  
 
             //INSERÇÃO
             container.appendChild(divFigureNames);
             setTimeout(() => {
-                container.appendChild(divSlotFigureNames);
+                container.append(divSlotFigureNamesAnimals, divSlotFigureNamesToys, divSlotFigureNamesTransports);
             }, 1500);
 
 

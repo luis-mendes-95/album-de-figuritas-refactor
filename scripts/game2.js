@@ -15,6 +15,8 @@ const game2 = () => {
     }
     //LIMPA OS ELEMENTOS DO JOGOA ANTERIOR - FIM//
 
+
+
     //RENDERIZA ELEMENTOS DO BACKGROUND - INICIO//
     const backgroundImage = "../assets/backgrounds/background_game1.png";
     container.style.backgroundImage = `url(${backgroundImage})`;
@@ -23,6 +25,18 @@ const game2 = () => {
     background_book.src = "../assets/backgrounds/album_animals_toys.png";
     container.appendChild(background_book);
     //RENDERIZA ELEMENTOS DO BACKGROUND - FIM//
+
+          //APENAS PARA PULAR PARA O JOGO 3//
+          const botao_pula = document.createElement("button")
+          botao_pula.style.position = "absolute"
+          botao_pula.style.top = "0"
+          botao_pula.style.left = "30%"
+          botao_pula.innerText = "Jogo 3"
+          botao_pula.addEventListener("click", () =>{
+            game3();
+          })
+          container.appendChild(botao_pula)
+          //APENAS PARA PULAR PARA O JOGO 3//
 
     //BANCO DE DADOS DE BRINQUEDOS - INICIO//
     const toys = [

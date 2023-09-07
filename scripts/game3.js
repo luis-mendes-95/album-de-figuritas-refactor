@@ -1,4 +1,3 @@
-import game2 from "./game2.js"
 import game3 from "./game3.js";
 import game4 from "./game4.js";
 
@@ -17,17 +16,17 @@ const game1 = () => {
     }
     //LIMPA OS ELEMENTOS DO JOGOA ANTERIOR - FIM//
 
-  //APENAS PARA PULAR PARA O JOGO 3//
-  const botao_pula = document.createElement("button")
-  botao_pula.style.position = "absolute"
-  botao_pula.style.top = "0"
-  botao_pula.style.left = "30%"
-  botao_pula.innerText = "Jogo 3"
-  botao_pula.addEventListener("click", () =>{
-    game3();
-  })
-  container.appendChild(botao_pula)
-  //APENAS PARA PULAR PARA O JOGO 4//
+      //APENAS PARA PULAR PARA O JOGO 4//
+      const botao_pula = document.createElement("button")
+      botao_pula.style.position = "absolute"
+      botao_pula.style.top = "0"
+      botao_pula.style.left = "30%"
+      botao_pula.innerText = "Jogo 4"
+      botao_pula.addEventListener("click", () =>{
+        game4();
+      })
+      container.appendChild(botao_pula)
+      //APENAS PARA PULAR PARA O JOGO 4//
 
 
   //RENDERIZA ELEMENTOS DO BACKGROUND - INICIO//
@@ -41,7 +40,7 @@ const game1 = () => {
 
 
 //BANCO DE DADOS DE TRANSPORTES - INICIO//
-const animals = [
+const Transports = [
   "avião",
   "bicicleta",
   "caminhão",
@@ -60,30 +59,30 @@ const animals = [
   //BANCO DE DADOS DE TRANSPORTES - FIM//
 
 
-  //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER ANIMAIS ALEATÓRIOS - INICIO//
-  let randomAnimals = [];
-  //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER ANIMAIS ALEATÓRIOS - FIM//
+  //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER TRANSPORTES ALEATÓRIOS - INICIO//
+  let randomTransports = [];
+  //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER TRANSPORTES ALEATÓRIOS - FIM//
 
 
-  //CRIA UM BANCO DE DADOS VAZIO PARA AS IMAGENS DOS ANIMAIS - INICIO//
-  let animalsImages = [];
-  //CRIA UM BANCO DE DADOS VAZIO PARA AS IMAGENS DOS ANIMAIS - FIM//
+  //CRIA UM BANCO DE DADOS VAZIO PARA AS IMAGENS DOS TRANSPORTES - INICIO//
+  let TransportsImages = [];
+  //CRIA UM BANCO DE DADOS VAZIO PARA AS IMAGENS DOS TRANSPORTES - FIM//
 
 
-  //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 ANIMAIS - INICIO//
-  const chooseRandomAnimals = () => {
+  //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 TRANSPORTES - INICIO//
+  const chooseRandomTransports = () => {
 
-    while (randomAnimals.length < 12) {
-      const randomIndex = Math.floor(Math.random() * animals.length);
-      const randomAnimal = animals[randomIndex];
+    while (randomTransports.length < 12) {
+      const randomIndex = Math.floor(Math.random() * Transports.length);
+      const randomTransport = Transports[randomIndex];
 
-      if (!randomAnimals.includes(randomAnimal)) {
-        randomAnimals.push(randomAnimal);
-        animalsImages.push(`../veiculos/${randomAnimal}.svg`);
+      if (!randomTransports.includes(randomTransport)) {
+        randomTransports.push(randomTransport);
+        TransportsImages.push(`../veiculos/${randomTransport}.svg`);
       }
     }
   };
-  //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 ANIMAIS - FIM//
+  //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 TRANSPORTES - FIM//
 
 
 
@@ -91,33 +90,33 @@ const animals = [
 
 
 
-  //FUNÇÃO QUE RESETA O JOGO APENAS COM OS ANIMAIS INCORRETOS - INICIO//
-  const resetGameWrongAnimals = () => {
+  //FUNÇÃO QUE RESETA O JOGO APENAS COM OS TRANSPORTES INCORRETOS - INICIO//
+  const resetGameWrongTransports = () => {
 
-    const divAnimalsImages = document.querySelector(".divAnimalsImages")
-    const divSlotAnimals = document.querySelector(".divSlotAnimals")
+    const divTransportsImages = document.querySelector(".divTransportsImages")
+    const divSlotTransports = document.querySelector(".divSlotTransports")
 
-    divSlotAnimals.childNodes.forEach((slot) => {
+    divSlotTransports.childNodes.forEach((slot) => {
 
       if(slot.id.split("_slot")[0] === slot.lastChild.id.split("_figurinha")[0]) {
         console.log("CORRETO!")
       } else {        
-        const imgPicAnimal = slot.lastChild.querySelector(".imgPicAnimalAfterDropped");
-        if(imgPicAnimal){
-          imgPicAnimal.removeAttribute("class")
-          imgPicAnimal.classList.remove("imgPicAnimalAfterDropped")
-          imgPicAnimal.classList.add("imgPicAnimal")
+        const imgPicTransport = slot.lastChild.querySelector(".imgPicTransportAfterDropped");
+        if(imgPicTransport){
+          imgPicTransport.removeAttribute("class")
+          imgPicTransport.classList.remove("imgPicTransportAfterDropped")
+          imgPicTransport.classList.add("imgPicTransport")
         }
-        slot.lastChild.classList.remove("divImgAnimalAfterDropped")
-        slot.lastChild.classList.add("divImgAnimal")
-        divAnimalsImages.appendChild(slot.lastChild)
+        slot.lastChild.classList.remove("divImgTransportAfterDropped")
+        slot.lastChild.classList.add("divImgTransport")
+        divTransportsImages.appendChild(slot.lastChild)
       }
       
 
 
     })
   }
-  //FUNÇÃO QUE RESETA O JOGO APENAS COM OS ANIMAIS INCORRETOS - FIM//
+  //FUNÇÃO QUE RESETA O JOGO APENAS COM OS TRANSPORTES INCORRETOS - FIM//
 
 
 
@@ -129,10 +128,10 @@ const animals = [
 
 
 
-  //FUNÇÃO QUE VERIFICA SE OS ANIMAIS INSERIDOS ESTÃO CORRETOS - INICIO //
+  //FUNÇÃO QUE VERIFICA SE OS TRANSPORTES INSERIDOS ESTÃO CORRETOS - INICIO //
   const renderResult = (total_correct) => {
 
-    const divAnimalsImages = document.querySelector(".divAnimalsImages")
+    const divTransportsImages = document.querySelector(".divTransportsImages")
 
     if(total_correct === 12) {
 
@@ -144,16 +143,16 @@ const animals = [
       continue_button.classList.add("continue_button")
       continue_button.src = "../assets/botoes/bt_continua.png"
 
-      const verifyButton = divAnimalsImages.querySelector(".verifyButton")
+      const verifyButton = divTransportsImages.querySelector(".verifyButton")
       if(verifyButton){
-        divAnimalsImages.removeChild(verifyButton)
+        divTransportsImages.removeChild(verifyButton)
       }
 
       continue_button.addEventListener("click", () => {
         game4();
       })
 
-      divAnimalsImages.append(lorenzo_correct, continue_button)
+      divTransportsImages.append(lorenzo_correct, continue_button)
 
     } else if (total_correct < 12) {
 
@@ -161,21 +160,21 @@ const animals = [
       lorenzo_incorrect.classList.add("lorenzo_incorrect")
       lorenzo_incorrect.src = "../assets/lorenzo/lorenzo_ops.png"
 
-      const verifyButton = divAnimalsImages.querySelector(".verifyButton")
+      const verifyButton = divTransportsImages.querySelector(".verifyButton")
       if(verifyButton){
-        divAnimalsImages.removeChild(verifyButton)
+        divTransportsImages.removeChild(verifyButton)
       }
 
-      divAnimalsImages.appendChild(lorenzo_incorrect)
+      divTransportsImages.appendChild(lorenzo_incorrect)
 
       setTimeout(() => {
-        divAnimalsImages.removeChild(lorenzo_incorrect)
-        resetGameWrongAnimals();
+        divTransportsImages.removeChild(lorenzo_incorrect)
+        resetGameWrongTransports();
       }, 4000);     
 
     }
   }
-  //FUNÇÃO QUE VERIFICA SE OS ANIMAIS INSERIDOS ESTÃO CORRETOS - INICIO //
+  //FUNÇÃO QUE VERIFICA SE OS TRANSPORTES INSERIDOS ESTÃO CORRETOS - INICIO //
 
 
 
@@ -195,13 +194,13 @@ const animals = [
         renderResult(total_correct)
       })
   
-      const divAnimalsImages = document.querySelector(".divAnimalsImages")
-      divAnimalsImages.appendChild(verifyButton)
+      const divTransportsImages = document.querySelector(".divTransportsImages")
+      divTransportsImages.appendChild(verifyButton)
     } else if (total_inserted < 12){
-      const divAnimalsImages = document.querySelector(".divAnimalsImages")
-      const verifyButton = divAnimalsImages.querySelector(".verifyButton")
+      const divTransportsImages = document.querySelector(".divTransportsImages")
+      const verifyButton = divTransportsImages.querySelector(".verifyButton")
       if(verifyButton){
-        divAnimalsImages.removeChild(verifyButton)
+        divTransportsImages.removeChild(verifyButton)
       }
 
     }
@@ -214,23 +213,23 @@ const animals = [
 
 
 
-  //FUNÇÃO QUE VERIFICA SE OS ANIMAIS ENCAIXADOS ESTÃO CORRETOS - INICIO//
-  const checkRightAnimalsSlots = (element) => {
+  //FUNÇÃO QUE VERIFICA SE OS TRANSPORTES ENCAIXADOS ESTÃO CORRETOS - INICIO//
+  const checkRightTransportsSlots = (element) => {
 
     let total_inserted = 0
     let total_correct = 0
 
     element.childNodes.forEach((slot) => {
 
-      const animal_slot_name = slot.id.split("_slot")[0]
+      const Transport_slot_name = slot.id.split("_slot")[0]
 
-      const animal_inserted = slot.querySelector(".divImgAnimal")
+      const Transport_inserted = slot.querySelector(".divImgTransport")
 
-      if (animal_inserted) {
-        const animal_inserted_name = animal_inserted.id.split("_figurinha")[0]
+      if (Transport_inserted) {
+        const Transport_inserted_name = Transport_inserted.id.split("_figurinha")[0]
         total_inserted += 1
 
-        if (animal_slot_name === animal_inserted_name) {
+        if (Transport_slot_name === Transport_inserted_name) {
           total_correct += 1
         }
       }
@@ -238,13 +237,13 @@ const animals = [
 
     })
 
-    console.log("Animais inseridos: " + total_inserted)
-    console.log("Animais corretos: " + total_correct)
+    console.log("TRANSPORTES inseridos: " + total_inserted)
+    console.log("TRANSPORTES corretos: " + total_correct)
 
     renderVerifyButton(total_inserted, total_correct)
 
   };
-  //FUNÇÃO QUE VERIFICA SE OS ANIMAIS ENCAIXADOS ESTÃO CORRETOS - FIM//
+  //FUNÇÃO QUE VERIFICA SE OS TRANSPORTES ENCAIXADOS ESTÃO CORRETOS - FIM//
 
 
 
@@ -254,7 +253,7 @@ const animals = [
 
 
 
-  //FUNÇÃO QUE EMBARALHA OS 12 ANIMAIS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - INICIO//
+  //FUNÇÃO QUE EMBARALHA OS 12 TRANSPORTES ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - INICIO//
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -262,7 +261,7 @@ const animals = [
     }
     return array
   }
-  //FUNÇÃO QUE EMBARALHA OS 12 ANIMAIS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - FIM//
+  //FUNÇÃO QUE EMBARALHA OS 12 TRANSPORTES ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - FIM//
 
 
 
@@ -274,98 +273,98 @@ const animals = [
 
   
 
-  //FUNÇÃO QUE CRIA OS CONTAINERS COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS E SLOTS RECEBEDORES- INICIO//
-  const placeAnimalInputs = () => {
+  //FUNÇÃO QUE CRIA OS CONTAINERS COM FIGURINHAS DE TRANSPORTES ARRASTÁVEIS E SLOTS RECEBEDORES- INICIO//
+  const placeTransportInputs = () => {
 
 
       //CRIAÇÃO DA DIV QUE CONTERÁ AS FIGURINHAS ARRASTÁVEIS - INICIO//
-      const divAnimalsImages = document.createElement("div")
-      divAnimalsImages.classList.add("divAnimalsImages")
-      divAnimalsImages.classList.add("containerDroppable")
-      divAnimalsImages.id = "figurinhasIniciais" //CADA "containerX" poderá receber uma figurinha. Apenas esse receberá várias.
+      const divTransportsImages = document.createElement("div")
+      divTransportsImages.classList.add("divTransportsImages")
+      divTransportsImages.classList.add("containerDroppable")
+      divTransportsImages.id = "figurinhasIniciais" //CADA "containerX" poderá receber uma figurinha. Apenas esse receberá várias.
       //CRIAÇÃO DA DIV QUE CONTERÁ AS FIGURINHAS ARRASTÁVEIS - FIM//
 
 
       //FUNÇÃO QUE POSSIBILITA ARRASTAR AS FIGURINHAS DE VOLTA PARA DENTRO - INICIO// 
-      divAnimalsImages.addEventListener("dragover", (e) => {
+      divTransportsImages.addEventListener("dragover", (e) => {
           e.preventDefault();
         });
-        divAnimalsImages.addEventListener("drop", (e) => {
+        divTransportsImages.addEventListener("drop", (e) => {
           e.preventDefault();
           const draggableId = e.dataTransfer.getData("text/plain");
           const draggedElement = document.getElementById(draggableId)
-          const imgPicAnimal = draggedElement.querySelector(".imgPicAnimalAfterDropped");
-          if(imgPicAnimal){
-            imgPicAnimal.removeAttribute("class")
-            imgPicAnimal.classList.remove("imgPicAnimalAfterDropped")
-            imgPicAnimal.classList.add("imgPicAnimal")
+          const imgPicTransport = draggedElement.querySelector(".imgPicTransportAfterDropped");
+          if(imgPicTransport){
+            imgPicTransport.removeAttribute("class")
+            imgPicTransport.classList.remove("imgPicTransportAfterDropped")
+            imgPicTransport.classList.add("imgPicTransport")
           }
 
-          draggedElement.classList.remove("divImgAnimalAfterDropped")
+          draggedElement.classList.remove("divImgTransportAfterDropped")
 
-          draggedElement.classList.add("divImgAnimal")
+          draggedElement.classList.add("divImgTransport")
 
-          divAnimalsImages.appendChild(draggedElement)
-          checkRightAnimalsSlots(divSlotAnimals)
+          divTransportsImages.appendChild(draggedElement)
+          checkRightTransportsSlots(divSlotTransports)
         })
       //FUNÇÃO QUE POSSIBILITA ARRASTAR AS FIGURINHAS DE VOLTA PARA DENTRO - FIM// 
 
 
       //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - INICIO//
-      const divSlotAnimals = document.createElement("div");
-      divSlotAnimals.classList.add("divSlotAnimals");
+      const divSlotTransports = document.createElement("div");
+      divSlotTransports.classList.add("divSlotTransports");
       //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - FIM//
 
 
       //CRIA UMA LISTA DE 12 FIGURINHAS EMBARALHADAS - INICIO//
-      let animalsRandomOrder = randomAnimals;
-      animalsRandomOrder = shuffleArray(animalsRandomOrder);
+      let TransportsRandomOrder = randomTransports;
+      TransportsRandomOrder = shuffleArray(TransportsRandomOrder);
       //CRIA UMA LISTA DE 12 FIGURINHAS EMBARALHADAS - FIM//
 
 
       //LOOP PARA RENDERIZAR OS ARRASTÁVEIS - INICIO//
       setTimeout(() => {
-        animalsRandomOrder = shuffleArray(animalsRandomOrder);
-        for (let i = 0; i < animalsRandomOrder.length; i++) {
+        TransportsRandomOrder = shuffleArray(TransportsRandomOrder);
+        for (let i = 0; i < TransportsRandomOrder.length; i++) {
 
 
-          //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO ANIMAL - INICIO//
-          const divImgAnimal = document.createElement("div")
-          divImgAnimal.classList.add("divImgAnimal")
-          divImgAnimal.classList.add("draggable")
-          divImgAnimal.draggable = true
-          divImgAnimal.id = `${animalsRandomOrder[i]}_figurinha`
-          //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO ANIMAL - FIM//
+          //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO Transport - INICIO//
+          const divImgTransport = document.createElement("div")
+          divImgTransport.classList.add("divImgTransport")
+          divImgTransport.classList.add("draggable")
+          divImgTransport.draggable = true
+          divImgTransport.id = `${TransportsRandomOrder[i]}_figurinha`
+          //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO Transport - FIM//
 
 
           //FUNÇÃO QUE TORNA A FIGURINHA ARRASTÁVEL - INÍCIO//
-          divImgAnimal.addEventListener("dragstart", (e) => {
-            e.dataTransfer.setData("text/plain", divImgAnimal.id)
+          divImgTransport.addEventListener("dragstart", (e) => {
+            e.dataTransfer.setData("text/plain", divImgTransport.id)
           })
           //FUNÇÃO QUE TORNA A FIGURINHA ARRASTÁVEL - FIM//
   
   
-          //BACKGROUND DA FIGURINHA DO ANIMAL - INICIO//
-          const imgAnimal = document.createElement("img")
-          imgAnimal.classList.add("imgAnimal")
-          imgAnimal.src = "../assets/book_details/figtransports.svg"
-          //BACKGROUND DA FIGURINHA DO ANIMAL - FIM//
+          //BACKGROUND DA FIGURINHA DO Transport - INICIO//
+          const imgTransport = document.createElement("img")
+          imgTransport.classList.add("imgTransport")
+          imgTransport.src = "../assets/book_details/figtransports.svg"
+          //BACKGROUND DA FIGURINHA DO Transport - FIM//
   
   
-          //IMAGEM DO ANIMAL QUE SERÁ INSERIDA NA FIGURINHA - INICIO//
-          const imgPicAnimal = document.createElement("img")
-          imgPicAnimal.classList.add("imgPicAnimal")
-          imgPicAnimal.src = `../assets/veiculos/${animalsRandomOrder[i]}.svg` 
-          //IMAGEM DO ANIMAL QUE SERÁ INSERIDA NA FIGURINHA - FIM//
+          //IMAGEM DO Transport QUE SERÁ INSERIDA NA FIGURINHA - INICIO//
+          const imgPicTransport = document.createElement("img")
+          imgPicTransport.classList.add("imgPicTransport")
+          imgPicTransport.src = `../assets/veiculos/${TransportsRandomOrder[i]}.svg` 
+          //IMAGEM DO Transport QUE SERÁ INSERIDA NA FIGURINHA - FIM//
   
   
           //INSERÇÃO DO FUNDO DA FIGURINHA E IMAGEM DA FIGURINHA NA DIV ARRASTÁVEL DA FIGURINHA - INICIO//
-          divImgAnimal.append(imgAnimal, imgPicAnimal)
+          divImgTransport.append(imgTransport, imgPicTransport)
           //INSERÇÃO DO FUNDO DA FIGURINHA E IMAGEM DA FIGURINHA NA DIV ARRASTÁVEL DA FIGURINHA - FIM//
   
   
           //INSERÇÃO DE FIGURINHA ARRASTÁVEL NA DIV DE FIGURINHAS ARRASTÁVEIS - INICIO//
-          divAnimalsImages.append(divImgAnimal);
+          divTransportsImages.append(divImgTransport);
           //INSERÇÃO DE FIGURINHA ARRASTÁVEL NA DIV DE FIGURINHAS ARRASTÁVEIS - FIM//
 
         }
@@ -375,67 +374,67 @@ const animals = [
 
       //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS - INICIO//
       setTimeout(() => {
-      for (let i = 0; i < randomAnimals.length; i++) {
+      for (let i = 0; i < randomTransports.length; i++) {
 
 
-        //SLOT PARA SOLTAR ANIMAIS - INÍCIO
-        const divSlotAnimal = document.createElement("div")
-        divSlotAnimal.classList.add("divSlotAnimal")
-        divSlotAnimal.classList.add("containerDroppable")
-        divSlotAnimal.id = `${randomAnimals[i]}_slot`
-        //SLOT PARA SOLTAR ANIMAIS - FIM
+        //SLOT PARA SOLTAR TRANSPORTES - INÍCIO
+        const divSlotTransport = document.createElement("div")
+        divSlotTransport.classList.add("divSlotTransport")
+        divSlotTransport.classList.add("containerDroppable")
+        divSlotTransport.id = `${randomTransports[i]}_slot`
+        //SLOT PARA SOLTAR TRANSPORTES - FIM
 
 
         //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - INICIO//
-        divSlotAnimal.addEventListener("dragover", (e) => {
+        divSlotTransport.addEventListener("dragover", (e) => {
           e.preventDefault();
         })
 
-        divSlotAnimal.addEventListener("drop", (e) => {
+        divSlotTransport.addEventListener("drop", (e) => {
           e.preventDefault();
-          const existingDivImgAnimal = divSlotAnimal.querySelector(".divImgAnimal");
-          if(existingDivImgAnimal){
+          const existingDivImgTransport = divSlotTransport.querySelector(".divImgTransport");
+          if(existingDivImgTransport){
             return;
           }
           const draggableId = e.dataTransfer.getData("text/plain");
           const draggedElement = document.getElementById(draggableId);
-          const imgPicAnimal = draggedElement.querySelector(".imgPicAnimal");
-          //imgPicAnimal.removeAttribute("class")
+          const imgPicTransport = draggedElement.querySelector(".imgPicTransport");
+          //imgPicTransport.removeAttribute("class")
           //draggedElement.removeAttribute("class")
-          imgPicAnimal.classList.add("imgPicAnimalAfterDropped")
-          draggedElement.classList.add("divImgAnimalAfterDropped")
+          imgPicTransport.classList.add("imgPicTransportAfterDropped")
+          draggedElement.classList.add("divImgTransportAfterDropped")
           draggedElement.classList.add("draggable")
           draggedElement.addEventListener("dragstart", (e) => {
             e.dataTransfer.setData("text/plain", draggedElement.id)
           })
-          divSlotAnimal.appendChild(draggedElement)
-          checkRightAnimalsSlots(divSlotAnimals)
+          divSlotTransport.appendChild(draggedElement)
+          checkRightTransportsSlots(divSlotTransports)
         })
         //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - FIM//
       
       
         //NÚMERO QUE FICA DENTRO DO SLOT CENTRALIZADO - INÍCIO
-        const numberAnimal = document.createElement("h2")
-        numberAnimal.classList.add("numberAnimal")
-        numberAnimal.innerText = i + 1
+        const numberTransport = document.createElement("h2")
+        numberTransport.classList.add("numberTransport")
+        numberTransport.innerText = i + 1
         //NÚMERO QUE FICA DENTRO DO SLOT CENTRALIZADO - FIM
       
       
         //TEXTO QUE FICA ABAIXO DO SLOT - INÍCIO
-        const textAnimal = document.createElement("p")
-        textAnimal.classList.add(`textAnimal`)
-        textAnimal.innerText = `${randomAnimals[i].toUpperCase()}`    
+        const textTransport = document.createElement("p")
+        textTransport.classList.add(`textTransport`)
+        textTransport.innerText = `${randomTransports[i].toUpperCase()}`    
         //TEXTO QUE FICA ABAIXO DO SLOT - FIM
          
               
-        //INSERÇÃO DO NÚMERO DO ANIMAL E DO TEXTO NO SLOT SOLTÁVEL DOS ANIMAIS - INICIO//
-        divSlotAnimal.append(numberAnimal, textAnimal);
-        //INSERÇÃO DO NÚMERO DO ANIMAL E DO TEXTO NO SLOT SOLTÁVEL DOS ANIMAIS - FIM//
+        //INSERÇÃO DO NÚMERO DO Transport E DO TEXTO NO SLOT SOLTÁVEL DOS TRANSPORTES - INICIO//
+        divSlotTransport.append(numberTransport, textTransport);
+        //INSERÇÃO DO NÚMERO DO Transport E DO TEXTO NO SLOT SOLTÁVEL DOS TRANSPORTES - FIM//
       
       
-        //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ANIMAIS - INICIO//
-        divSlotAnimals.appendChild(divSlotAnimal);
-        //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ANIMAIS - FIM//
+        //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE TRANSPORTES - INICIO//
+        divSlotTransports.appendChild(divSlotTransport);
+        //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE TRANSPORTES - FIM//
       
       
       
@@ -445,18 +444,18 @@ const animals = [
       //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS - FIM//
 
       //INSERÇÃO
-      container.appendChild(divAnimalsImages);
-      container.appendChild(divSlotAnimals);
+      container.appendChild(divTransportsImages);
+      container.appendChild(divSlotTransports);
 
   };
-  //FUNÇÃO QUE CRIA OS CONTAINERES COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS E SLOTS RECEBEDORES - FIM//
+  //FUNÇÃO QUE CRIA OS CONTAINERES COM FIGURINHAS DE TRANSPORTES ARRASTÁVEIS E SLOTS RECEBEDORES - FIM//
 
 
 
 
 
-  chooseRandomAnimals();
-  placeAnimalInputs();
+  chooseRandomTransports();
+  placeTransportInputs();
 
 
 
