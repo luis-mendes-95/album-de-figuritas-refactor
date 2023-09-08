@@ -227,14 +227,63 @@ const game4 = () => {
     //PREENCHIMENTO DO ARRAY DE ITENS ALEATÓRIOS - FIM//
 
 
+    //FUNÇÃO QUE RESETA O JOGO APENAS COM OS ITENS INCORRETOS - INICIO//
+    const resetGameWrongItems = () => {
+
+      const divFigureNames = document.querySelector(".divFigureNames")
+
+      const divSlotFigureNamesTransports = document.querySelector(".divSlotFigureNamesTransports")
+      const divSlotFigureNamesToys = document.querySelector(".divSlotFigureNamesToys")
+      const divSlotFigureNamesAnimals = document.querySelector(".divSlotFigureNamesAnimals")
+
+
+      console.log("TRANSPORTES A CORRIGIR*************************")
+      divSlotFigureNamesTransports.childNodes.forEach((transportSlot) => {
+        console.log("A figurinha encaixada é", transportSlot.firstChild.id.split("_figurinha")[0])
+        if (transports.includes(transportSlot.firstChild.id.split("_figurinha")[0])){
+          console.log("E ela está correta!")
+        } else {
+          console.log("E ela está errada!")
+          transportSlot.firstChild.classList.remove("divTextFigureNameAfterDropped")
+          divFigureNames.appendChild(transportSlot.firstChild)
+        }
+      })
+
+      console.log("BRINQUEDOS A CORRIGIR*************************")
+      divSlotFigureNamesToys.childNodes.forEach((toySlot) => {
+        console.log("A figurinha encaixada é", toySlot.firstChild.id.split("_figurinha")[0])
+        if (toys.includes(toySlot.firstChild.id.split("_figurinha")[0])){
+          console.log("E ela está correta!")
+        } else {
+          console.log("E ela está errada!")
+          toySlot.firstChild.classList.remove("divTextFigureNameAfterDropped")
+          divFigureNames.appendChild(toySlot.firstChild)
+        }
+      })
+
+      console.log("ANIMAIS A CORRIGIR*************************")
+      divSlotFigureNamesAnimals.childNodes.forEach((animalSlot) => {
+        console.log("A figurinha encaixada é", animalSlot.firstChild.id.split("_figurinha")[0])
+        if (animals.includes(animalSlot.firstChild.id.split("_figurinha")[0])){
+          console.log("E ela está correta!")
+        } else {
+          console.log("E ela está errada!")
+          animalSlot.firstChild.classList.remove("divTextFigureNameAfterDropped")
+          divFigureNames.appendChild(animalSlot.firstChild)
+        }
+      })
+  }
+  //FUNÇÃO QUE RESETA O JOGO APENAS COM OS ITENS INCORRETOS - FIM//
 
 
     //FUNÇÃO QUE VERIFICA SE OS ITENS INSERIDOS ESTÃO CORRETOS - INICIO //
-    const renderResult = (total_correct) => {
+    const renderResult = (total_animal_correct, total_toys_correct, total_transports_correct) => {
 
-      const divToysImages = document.querySelector(".divToysImages")
+      const divFigureNames = document.querySelector(".divFigureNames")
 
-      if(total_correct === 12) {
+      const total_geral = total_animal_correct + total_toys_correct + total_transports_correct
+
+      if(total_geral === 15) {
 
         const lorenzo_correct = document.createElement("img")
         lorenzo_correct.classList.add("lorenzo_correct")
@@ -244,33 +293,33 @@ const game4 = () => {
         continue_button.classList.add("continue_button")
         continue_button.src = "../assets/botoes/bt_continua.png"
 
-        const verifyButton = divToysImages.querySelector(".verifyButton")
+        const verifyButton = divFigureNames.querySelector(".verifyButton")
         if(verifyButton){
-          divToysImages.removeChild(verifyButton)
+          divFigureNames.removeChild(verifyButton)
         }
 
         continue_button.addEventListener("click", () => {
-          game3();
+          game4();
         })
 
-        divToysImages.append(lorenzo_correct, continue_button)
+        divFigureNames.append(lorenzo_correct, continue_button)
 
-      } else if (total_correct < 12) {
+      } else if (total_geral < 15) {
 
         const lorenzo_incorrect = document.createElement("img")
         lorenzo_incorrect.classList.add("lorenzo_incorrect")
         lorenzo_incorrect.src = "../assets/lorenzo/lorenzo_ops.png"
 
-        const verifyButton = divToysImages.querySelector(".verifyButton")
+        const verifyButton = divFigureNames.querySelector(".verifyButton")
         if(verifyButton){
-          divToysImages.removeChild(verifyButton)
+          divFigureNames.removeChild(verifyButton)
         }
 
-        divToysImages.appendChild(lorenzo_incorrect)
+        divFigureNames.appendChild(lorenzo_incorrect)
 
         setTimeout(() => {
-          divToysImages.removeChild(lorenzo_incorrect)
-          resetGameWrongToys();
+          divFigureNames.removeChild(lorenzo_incorrect)
+          resetGameWrongItems();
         }, 4000);     
 
       }
@@ -281,8 +330,6 @@ const game4 = () => {
     //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - INICIO //
     const renderVerifyButton = (total_animal_inserted, total_transports_inserted, total_toys_inserted, total_animal_correct, total_toys_correct, total_transports_correct) => {
       
-      console.log(total_toys_correct, total_transports_correct, total_animal_correct)
-
       if (total_animal_inserted + total_transports_inserted + total_toys_inserted === 15)  {
 
         const verifyButton = document.createElement("img")
