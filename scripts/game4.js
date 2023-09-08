@@ -59,7 +59,7 @@ const game4 = () => {
 
 
     //BANCO DE DADOS DE ItemES - INICIO//
-    const Items = [
+    const transports = [
         "avião",
         "bicicleta",
         "caminhão",
@@ -220,12 +220,171 @@ const game4 = () => {
 
 
     //PREENCHIMENTO DO ARRAY DE ITENS ALEATÓRIOS - INICIO//
-    chooseRandomItems(Items);
+    chooseRandomItems(transports);
     chooseRandomItems(toys);
     chooseRandomItems(animals);
     shuffleItems(randomItems)
     //PREENCHIMENTO DO ARRAY DE ITENS ALEATÓRIOS - FIM//
 
+
+
+
+    //FUNÇÃO QUE VERIFICA SE OS ITENS INSERIDOS ESTÃO CORRETOS - INICIO //
+    const renderResult = (total_correct) => {
+
+      const divToysImages = document.querySelector(".divToysImages")
+
+      if(total_correct === 12) {
+
+        const lorenzo_correct = document.createElement("img")
+        lorenzo_correct.classList.add("lorenzo_correct")
+        lorenzo_correct.src = "../assets/lorenzo/lorenzo_ok1.png"
+
+        const continue_button = document.createElement("img")
+        continue_button.classList.add("continue_button")
+        continue_button.src = "../assets/botoes/bt_continua.png"
+
+        const verifyButton = divToysImages.querySelector(".verifyButton")
+        if(verifyButton){
+          divToysImages.removeChild(verifyButton)
+        }
+
+        continue_button.addEventListener("click", () => {
+          game3();
+        })
+
+        divToysImages.append(lorenzo_correct, continue_button)
+
+      } else if (total_correct < 12) {
+
+        const lorenzo_incorrect = document.createElement("img")
+        lorenzo_incorrect.classList.add("lorenzo_incorrect")
+        lorenzo_incorrect.src = "../assets/lorenzo/lorenzo_ops.png"
+
+        const verifyButton = divToysImages.querySelector(".verifyButton")
+        if(verifyButton){
+          divToysImages.removeChild(verifyButton)
+        }
+
+        divToysImages.appendChild(lorenzo_incorrect)
+
+        setTimeout(() => {
+          divToysImages.removeChild(lorenzo_incorrect)
+          resetGameWrongToys();
+        }, 4000);     
+
+      }
+    }
+    //FUNÇÃO QUE VERIFICA SE OS ITENS INSERIDOS ESTÃO CORRETOS - FIM //
+
+
+    //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - INICIO //
+    const renderVerifyButton = (total_animal_inserted, total_transports_inserted, total_toys_inserted, total_animal_correct, total_toys_correct, total_transports_correct) => {
+      
+      console.log(total_toys_correct, total_transports_correct, total_animal_correct)
+
+      if (total_animal_inserted + total_transports_inserted + total_toys_inserted === 15)  {
+
+        const verifyButton = document.createElement("img")
+        verifyButton.classList.add("verifyButton")
+        verifyButton.src = "../assets/botoes/bt_verifica.png"
+  
+        verifyButton.addEventListener("click", () => {
+          renderResult(total_animal_correct, total_toys_correct, total_transports_correct)
+        })
+
+    
+        const divFigureNames = document.querySelector(".divFigureNames")
+        divFigureNames.appendChild(verifyButton)
+      } else if (total_animal_inserted < 5 || total_transports_inserted < 5 || total_toys_inserted < 5) {
+        const divFigureNames = document.querySelector(".divFigureNames")
+        const verifyButton = divFigureNames.querySelector(".verifyButton")
+        console.log("not complete")
+        if(verifyButton){
+          divFigureNames.removeChild(verifyButton)
+        }
+  
+      }
+  
+    }
+    //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - FIM //
+
+
+    //FUNÇÃO QUE VERIFICA SE OS ITENS ENCAIXADOS ESTÃO CORRETOS - INICIO//
+    const checkRightItemsSlots = () => {
+
+      let total_animal_inserted = 0
+      let total_animal_correct = 0
+
+      let total_toys_inserted = 0
+      let total_toys_correct = 0
+
+      let total_transports_inserted = 0
+      let total_transports_correct = 0
+
+      let divSlotFigureNamesAnimals = document.querySelector(".divSlotFigureNamesAnimals")
+      let divSlotFigureNamesTransports = document.querySelector(".divSlotFigureNamesTransports")
+      let divSlotFigureNamesToys = document.querySelector(".divSlotFigureNamesToys")
+
+
+      divSlotFigureNamesAnimals.childNodes.forEach((animalSlot) => {
+
+        const item_inserted = animalSlot.querySelector(".divTextFigureName")
+
+        console.log(item_inserted)
+
+        if (item_inserted) {
+          const item_inserted_name = item_inserted.id.split("_figurinha")[0]
+          const isAnimal = animals.includes(item_inserted_name)
+ 
+          total_animal_inserted += 1
+
+          if (isAnimal) {
+            total_animal_correct += 1
+          }
+        }
+
+
+      })
+
+      divSlotFigureNamesTransports.childNodes.forEach((transportSlot) => {
+
+        const item_inserted = transportSlot.querySelector(".divTextFigureName")
+
+        if (item_inserted) {
+          const item_inserted_name = item_inserted.id.split("_figurinha")[0]
+          const isTransport = transports.includes(item_inserted_name)
+          total_transports_inserted += 1
+
+          if (isTransport) {
+            total_transports_correct += 1
+          }
+        }
+
+
+      })
+
+      divSlotFigureNamesToys.childNodes.forEach((toySlot) => {
+
+        const item_inserted = toySlot.querySelector(".divTextFigureName")
+
+        if (item_inserted) {
+          const item_inserted_name = item_inserted.id.split("_figurinha")[0]
+          const isToy = toys.includes(item_inserted_name)
+          total_toys_inserted += 1
+
+          if (isToy) {
+            total_toys_correct += 1
+          }
+        }
+
+
+      })
+
+      renderVerifyButton(total_animal_inserted, total_transports_inserted, total_toys_inserted, total_animal_correct, total_toys_correct, total_transports_correct)
+
+    };
+    //FUNÇÃO QUE VERIFICA SE OS ITENS ENCAIXADOS ESTÃO CORRETOS - FIM//
 
 
   //FUNÇÃO QUE CRIA OS CONTAINERS COM FIGURINHAS COM NOME DE ANIMAIS, BRINQUEDOS E ItemES ARRASTÁVEIS E SLOTS RECEBEDORES- INICIO//
@@ -266,6 +425,7 @@ const game4 = () => {
         divFigureNames.appendChild(draggedElement)
         
       })
+      
       //FUNÇÃO QUE POSSIBILITA ARRASTAR AS FIGURINHAS DE VOLTA PARA DENTRO - FIM// 
 
 
@@ -365,6 +525,13 @@ const game4 = () => {
 
 
 
+
+
+
+
+
+
+
             //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS ANIMAIS - INICIO//
             setTimeout(() => {
               for (let i = 0; i < 5; i++) {
@@ -374,7 +541,7 @@ const game4 = () => {
               const divSlotFigureName = document.createElement("div")
               divSlotFigureName.classList.add("divSlotFigureName")
               divSlotFigureName.classList.add("containerDroppable")
-              divSlotFigureName.id = `${randomItems[i]}_slot`
+              divSlotFigureName.id = `animal_slot`
               //SLOT PARA SOLTAR ITENS - FIM
   
   
@@ -401,7 +568,7 @@ const game4 = () => {
                   e.dataTransfer.setData("text/plain", draggedElement.id)
                   })
                   divSlotFigureName.appendChild(draggedElement)
-  
+                  checkRightItemsSlots()
               })
               //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - FIM//
   
@@ -429,7 +596,7 @@ const game4 = () => {
             const divSlotFigureName = document.createElement("div")
             divSlotFigureName.classList.add("divSlotFigureName")
             divSlotFigureName.classList.add("containerDroppable")
-            divSlotFigureName.id = `${randomItems[i]}_slot`
+            divSlotFigureName.id = `transport_slot`
             //SLOT PARA SOLTAR ITENS - FIM
 
 
@@ -456,7 +623,7 @@ const game4 = () => {
                 e.dataTransfer.setData("text/plain", draggedElement.id)
                 })
                 divSlotFigureName.appendChild(draggedElement)
-
+                checkRightItemsSlots()
             })
             //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - FIM//
 
@@ -483,7 +650,7 @@ const game4 = () => {
               const divSlotFigureName = document.createElement("div")
               divSlotFigureName.classList.add("divSlotFigureName")
               divSlotFigureName.classList.add("containerDroppable")
-              divSlotFigureName.id = `${randomItems[i]}_slot`
+              divSlotFigureName.id = `toy_slot`
               //SLOT PARA SOLTAR ITENS - FIM
   
   
@@ -510,7 +677,7 @@ const game4 = () => {
                   e.dataTransfer.setData("text/plain", draggedElement.id)
                   })
                   divSlotFigureName.appendChild(draggedElement)
-  
+                  checkRightItemsSlots()
               })
               //FUNÇÃO QUE PERMITIRÁ ARRASTAR AS FIGURINHAS PARA DENTRO DO SLOT - FIM//
   
