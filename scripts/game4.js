@@ -1,4 +1,4 @@
-//import game5 from "./game5.js";
+import game5 from "./game5.js";
 
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - INICIO//
 let body = document.querySelector("body");
@@ -23,6 +23,21 @@ const game4 = () => {
 
 
 
+    //APENAS PARA PULAR PARA O JOGO 5//
+    const botao_pula = document.createElement("button");
+    botao_pula.style.position = "absolute";
+    botao_pula.style.top = "0";
+    botao_pula.style.left = "30%";
+    botao_pula.innerText = "Jogo 5";
+    botao_pula.style.zIndex = "999"
+    botao_pula.addEventListener("click", () => {
+      game5();
+    });
+    container.appendChild(botao_pula);
+    //APENAS PARA PULAR PARA O JOGO 5//
+
+    console.log(botao_pula)
+    console.log(container)
 
 
 
@@ -299,7 +314,7 @@ const game4 = () => {
         }
 
         continue_button.addEventListener("click", () => {
-          game4();
+          game5();
         })
 
         divFigureNames.append(lorenzo_correct, continue_button)
