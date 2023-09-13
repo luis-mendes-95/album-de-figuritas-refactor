@@ -1,4 +1,4 @@
-import game6 from "./game6.js";
+import game2 from "./game2.js";
 
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - INICIO//
 let container = document.querySelector(".container");
@@ -167,25 +167,27 @@ const game5 = () => {
 
   //FUNÇÃO QUE RESETA O JOGO APENAS COM OS ANIMAIS INCORRETOS - INICIO//
   const resetGameWrongAnimals = () => {
-
+    const divAnimalsImages = document.querySelector(".divAnimalsImages");
     const divSlotAnimals = document.querySelector(".divSlotAnimals");
 
     divSlotAnimals.childNodes.forEach((slot) => {
-
-      let inputAnimal = slot.querySelector(".inputAnimal")
-
-      if(inputAnimal){
-        console.log("neste input:" + inputAnimal.value)
-        console.log("slot do " + slot.id.split("_slot")[0].toUpperCase()) 
-        
-        if (inputAnimal.value === slot.id.split("_slot")[0].toUpperCase()){
-          console.log("correto")
-        } else {
-          console.log("incorreto")
-          inputAnimal.value = ""
+      if (
+        slot.id.split("_slot")[0] === slot.lastChild.id.split("_figurinha")[0]
+      ) {
+        console.log("CORRETO!");
+      } else {
+        const imgPicAnimal = slot.lastChild.querySelector(
+          ".imgPicAnimalAfterDropped"
+        );
+        if (imgPicAnimal) {
+          imgPicAnimal.removeAttribute("class");
+          imgPicAnimal.classList.remove("imgPicAnimalAfterDropped");
+          imgPicAnimal.classList.add("imgPicAnimal");
         }
+        slot.lastChild.classList.remove("divImgAnimalAfterDropped");
+        slot.lastChild.classList.add("divImgAnimal");
+        divAnimalsImages.appendChild(slot.lastChild);
       }
-
     });
   };
   //FUNÇÃO QUE RESETA O JOGO APENAS COM OS ANIMAIS INCORRETOS - FIM//
@@ -220,7 +222,7 @@ const game5 = () => {
       });
 
       divAnimalsImages.append(lorenzo_correct, continue_button);
-    } else if (total_correct < 5) {
+    } else if (total_correct < 12) {
       const lorenzo_incorrect = document.createElement("img");
       lorenzo_incorrect.classList.add("lorenzo_incorrect");
       lorenzo_incorrect.src = "../assets/lorenzo/lorenzo_ops.png";
