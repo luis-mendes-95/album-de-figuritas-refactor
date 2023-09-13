@@ -399,8 +399,8 @@ setTimeout(() => {
         //BACKGROUND DA FIGURINHA DO ANIMAL - INICIO//
         const imgAnimal = document.createElement("img");
         imgAnimal.classList.add("imgAnimal");
-        imgAnimal.style.maxWidth = "80%";
-        imgAnimal.style.maxHeight = "80%"
+        //imgAnimal.style.width = "80%";
+        imgAnimal.style.heigth = "80%"
         imgAnimal.classList.add("imgAnimalAfterDropped");
         imgAnimal.src = "../assets/book_details/figanimals.svg";
         //BACKGROUND DA FIGURINHA DO ANIMAL - FIM//
@@ -408,6 +408,7 @@ setTimeout(() => {
         //IMAGEM DO ANIMAL QUE SERÁ INSERIDA NA FIGURINHA - INICIO//
         const imgPicAnimal = document.createElement("img");
         imgPicAnimal.classList.add("imgPicAnimal");
+        imgPicAnimal.classList.add("imgPicAnimalGame5");
         imgPicAnimal.src = `../assets/animals/${randomAnimals[i]}.svg`;
         //IMAGEM DO ANIMAL QUE SERÁ INSERIDA NA FIGURINHA - FIM//
 
