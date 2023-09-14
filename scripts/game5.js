@@ -42,7 +42,7 @@ const game5 = () => {
   botao_pula.innerText = "Jogo 6";
   botao_pula.style.zIndex = "38"
   botao_pula.addEventListener("click", () => {
-    game5();
+    game6();
   });
   container.appendChild(botao_pula);
   //APENAS PARA PULAR PARA O JOGO 6//

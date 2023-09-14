@@ -187,7 +187,7 @@ body {
   left: 125%;
   width: 10%;
   transform: rotate(-30deg);
-  animation: moverAviao 3s linear;
+  animation: moverAviao 4s linear;
 }
 
 .comecar {
