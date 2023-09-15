@@ -1,9 +1,10 @@
 
+
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - INICIO//
 let container = document.querySelector(".container");
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - FIM//
 
-//FUNÇÃO QUE RENDERIZA O GAME #1 - INICIO//
+//FUNÇÃO QUE RENDERIZA O GAME #6 - INICIO//
 const game7 = () => {
 
   //LIMPA OS ELEMENTOS DO JOGO ANTERIOR - INICIO//
@@ -17,19 +18,19 @@ const game7 = () => {
   const lorenzo_background = document.createElement("div")
   lorenzo_background.classList.add("lorenzo_background")
   const lorenzo_cola = document.createElement("img")
-  lorenzo_cola.classList.add("lorenzo_cola")
+  lorenzo_cola.classList.add("lorenzo_cola_game7")
   lorenzo_cola.src = "../assets/lorenzo/lorenzocola.png"
-  container.append(lorenzo_cola, lorenzo_background)
+  container.append(lorenzo_background, lorenzo_cola)
 
-  const button_continue = document.createElement("img")
-  button_continue.classList.add("button_continue_game5")
-  button_continue.src = "../assets/botoes/bt_continua.png"
-  button_continue.addEventListener("click", (e) => {
+  const button_continue_game7 = document.createElement("img")
+  button_continue_game7.classList.add("button_continue_game7")
+  button_continue_game7.src = "../assets/botoes/bt_continua.png"
+  button_continue_game7.addEventListener("click", (e) => {
     container.removeChild(lorenzo_cola)
     container.removeChild(e.target)
     container.removeChild(lorenzo_background)
   })
-  container.appendChild(button_continue)
+  container.appendChild(button_continue_game7)
   //RENDERIZA O LORENZO INICIAL - FIM//
 
 
@@ -41,7 +42,7 @@ const game7 = () => {
   botao_pula.innerText = "Jogo 7";
   botao_pula.style.zIndex = "38"
   botao_pula.addEventListener("click", () => {
-    //game7();
+    game7();
   });
   container.appendChild(botao_pula);
   //APENAS PARA PULAR PARA O JOGO 7//
@@ -53,89 +54,40 @@ const game7 = () => {
   const backgroundImage = "../assets/backgrounds/background_game1.png";
   container.style.backgroundImage = `url(${backgroundImage})`;
   const background_book = document.createElement("img");
-  background_book.classList.add("background_book_game6");
-  background_book.src = "../assets/backgrounds/album_animals_toys.png";
+  background_book.classList.add("background_book_game7");
+  background_book.src = "../assets/backgrounds/album_transports.png";
   container.appendChild(background_book);
   //RENDERIZA ELEMENTOS DO BACKGROUND - FIM//
 
 
 
 
-  //BANCO DE DADOS DE ANIMAIS - INICIO//
-  const animals = [
-    "abelha",
-    "águia",
-    "aranha",
-    "arara",
-    "avestruz",
-    "baleia",
-    "barata",
-    "besouro",
-    "bode",
-    "cachorro",
-    "camelo",
-    "cavalo",
-    "cobra",
-    "coelho",
-    "coruja",
-    "dinossauro",
-    "dragão",
-    "elefante",
-    "esquilo",
-    "foca",
-    "formiga",
-    "galinha",
-    "galo",
-    "gato",
-    "girafa",
-    "gorila",
-    "hipopótamo",
-    "jacaré",
-    "jegue",
-    "joaninha",
-    "lagarto",
-    "leão",
-    "macaco",
-    "mosquito",
-    "onça",
-    "ovelha",
-    "papagaio",
-    "pato",
-    "pavão",
-    "peixe",
-    "polvo",
-    "porco",
-    "raposa",
-    "rato",
-    "sagui",
-    "sapo",
-    "tartaruga",
-    "tatu",
-    "tucano",
-    "urso",
-    "urubu",
-    "vaca",
-    "zebra",
+//BANCO DE DADOS DE TRANSPORTES - INICIO//
+const toys = [
+  "avião",
+  "bicicleta",
+  "caminhão",
+  "canoa",
+  "carro",
+  "carroça",
+  "foguete",
+  "helicóptero",
+  "metrô",
+  "moto",
+  "navio",
+  "ônibus",
+  "trem",
+  "veleiro"
   ];
-  //BANCO DE DADOS DE ANIMAIS - FIM//
+  //BANCO DE DADOS DE TRANSPORTES - FIM//
 
 
 
 
 
-  //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER ANIMAIS ALEATÓRIOS - INICIO//
-  let randomAnimals = [];
-  //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER ANIMAIS ALEATÓRIOS - FIM//
-
-
-
-
-
-
-
-  //CRIA UM BANCO DE DADOS VAZIO PARA AS IMAGENS DOS ANIMAIS - INICIO//
-  let animalsImages = [];
-  //CRIA UM BANCO DE DADOS VAZIO PARA AS IMAGENS DOS ANIMAIS - FIM//
+  //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER BRINQUEDOS ALEATÓRIOS - INICIO//
+  let randomtoys = [];
+  //CRIA UM BANCO DE DADOS VAZIO PARA RECEBER BRINQUEDOS ALEATÓRIOS - FIM//
 
 
 
@@ -143,19 +95,29 @@ const game7 = () => {
 
 
 
-  //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 ANIMAIS - INICIO//
-  const chooseRandomAnimals = () => {
-    while (randomAnimals.length < 12) {
-      const randomIndex = Math.floor(Math.random() * animals.length);
-      const randomAnimal = animals[randomIndex];
+  //CRIA UM BANCO DE DADOS VAZIO PARA AS IMAGENS DOS BRINQUEDOS - INICIO//
+  let toysImages = [];
+  //CRIA UM BANCO DE DADOS VAZIO PARA AS IMAGENS DOS BRINQUEDOS - FIM//
 
-      if (!randomAnimals.includes(randomAnimal)) {
-        randomAnimals.push(randomAnimal);
-        animalsImages.push(`../animals/${randomAnimal}.svg`);
+
+
+
+
+
+
+  //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 BRINQUEDOS - INICIO//
+  const chooseRandomtoys = () => {
+    while (randomtoys.length < 12) {
+      const randomIndex = Math.floor(Math.random() * toys.length);
+      const randomToy = toys[randomIndex];
+
+      if (!randomtoys.includes(randomToy)) {
+        randomtoys.push(randomToy);
+        toysImages.push(`../toys/${randomToy}.svg`);
       }
     }
   };
-  //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 ANIMAIS - FIM//
+  //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 BRINQUEDOS - FIM//
 
 
 
@@ -165,28 +127,26 @@ const game7 = () => {
 
 
   //FUNÇÃO QUE RESETA O JOGO APENAS COM OS ANIMAIS INCORRETOS - INICIO//
-  const resetGameWrongAnimals = () => {
-    const divAnimalsImages = document.querySelector(".divAnimalsImages");
-    const divSlotToysGame6 = document.querySelector(".divSlotToysGame6");
+  const resetGameWrongtoys = () => {
 
-    divSlotToysGame6.childNodes.forEach((slot) => {
-      if (
-        slot.id.split("_slot")[0] === slot.lastChild.id.split("_figurinha")[0]
-      ) {
-        console.log("CORRETO!");
-      } else {
-        const imgPicAnimal = slot.lastChild.querySelector(
-          ".imgPicAnimalAfterDropped"
-        );
-        if (imgPicAnimal) {
-          imgPicAnimal.removeAttribute("class");
-          imgPicAnimal.classList.remove("imgPicAnimalAfterDropped");
-          imgPicAnimal.classList.add("imgPicAnimal");
+    const divSlotTransportsGame7 = document.querySelector(".divSlotTransportsGame7");
+
+    divSlotTransportsGame7.childNodes.forEach((slot) => {
+
+      let inputToy = slot.querySelector(".inputToy")
+
+      if(inputToy){
+        console.log("neste input:" + inputToy.value)
+        console.log("slot do " + slot.id.split("_slot")[0].toUpperCase()) 
+        
+        if (inputToy.value === slot.id.split("_slot")[0].toUpperCase()){
+          console.log("correto")
+        } else {
+          console.log("incorreto")
+          inputToy.value = ""
         }
-        slot.lastChild.classList.remove("divImgAnimalAfterDropped");
-        slot.lastChild.classList.add("divImgAnimal");
-        divAnimalsImages.appendChild(slot.lastChild);
       }
+
     });
   };
   //FUNÇÃO QUE RESETA O JOGO APENAS COM OS ANIMAIS INCORRETOS - FIM//
@@ -197,49 +157,49 @@ const game7 = () => {
 
 
 
-  //FUNÇÃO QUE VERIFICA SE OS ANIMAIS INSERIDOS ESTÃO CORRETOS - INICIO //
+  //FUNÇÃO QUE VERIFICA SE OS BRINQUEDOS INSERIDOS ESTÃO CORRETOS - INICIO //
   const renderResult = (total_correct) => {
 
-    const divAnimalsImages = document.querySelector(".divAnimalsImages");
+    const divtoysImagesGame7 = document.querySelector(".divtoysImagesGame7");
 
     if (total_correct === 5) {
-      const lorenzo_correct = document.createElement("img");
-      lorenzo_correct.classList.add("lorenzo_correct");
-      lorenzo_correct.src = "../assets/lorenzo/lorenzo_ok1.png";
+      const lorenzo_correct_game7 = document.createElement("img");
+      lorenzo_correct_game7.classList.add("lorenzo_correct_game7");
+      lorenzo_correct_game7.src = "../assets/lorenzo/lorenzo_ok1.png";
 
       const continue_button = document.createElement("img");
-      continue_button.classList.add("continue_button");
+      continue_button.classList.add("button_continue_game7");
       continue_button.src = "../assets/botoes/bt_continua.png";
 
-      const verifyButton = divAnimalsImages.querySelector(".verifyButton");
-      if (verifyButton) {
-        divAnimalsImages.removeChild(verifyButton);
+      const verifyButtonGame7 = container.querySelector(".verifyButtonGame7");
+      if (verifyButtonGame7) {
+        container.removeChild(verifyButtonGame7);
       }
 
       continue_button.addEventListener("click", () => {
-        game6();
+        game7();
       });
 
-      divAnimalsImages.append(lorenzo_correct, continue_button);
+      container.append(lorenzo_correct_game7, continue_button);
     } else if (total_correct < 12) {
-      const lorenzo_incorrect = document.createElement("img");
-      lorenzo_incorrect.classList.add("lorenzo_incorrect");
-      lorenzo_incorrect.src = "../assets/lorenzo/lorenzo_ops.png";
+      const lorenzo_incorrect_game7 = document.createElement("img");
+      lorenzo_incorrect_game7.classList.add("lorenzo_incorrect_game7");
+      lorenzo_incorrect_game7.src = "../assets/lorenzo/lorenzo_ops.png";
 
-      const verifyButton = divAnimalsImages.querySelector(".verifyButton");
-      if (verifyButton) {
-        divAnimalsImages.removeChild(verifyButton);
+      const verifyButtonGame7 = container.querySelector(".verifyButtonGame7");
+      if (verifyButtonGame7) {
+        container.removeChild(verifyButtonGame7);
       }
 
-      divAnimalsImages.appendChild(lorenzo_incorrect);
+      container.appendChild(lorenzo_incorrect_game7);
 
       setTimeout(() => {
-        divAnimalsImages.removeChild(lorenzo_incorrect);
-        resetGameWrongAnimals();
+        container.removeChild(lorenzo_incorrect_game7);
+        resetGameWrongtoys();
       }, 4000);
     }
   };
-  //FUNÇÃO QUE VERIFICA SE OS ANIMAIS INSERIDOS ESTÃO CORRETOS - INICIO //
+  //FUNÇÃO QUE VERIFICA SE OS BRINQUEDOS INSERIDOS ESTÃO CORRETOS - INICIO //
 
 
 
@@ -250,27 +210,26 @@ const game7 = () => {
 
   //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - INICIO //
   const renderVerifyButton = (total_inserted, total_correct) => {
-    const existingButton = document.querySelector(".verifyButton");
+    const existingButton = document.querySelector(".verifyButtonGame7");
     if (existingButton){
-      let divAnimalsImages = document.querySelector(".divAnimalsImages")
-      divAnimalsImages.removeChild(existingButton)
+      let divtoysImagesGame7 = document.querySelector(".divtoysImagesGame7")
+      container.removeChild(existingButton)
     }
     if (total_inserted === 5) {
-      const verifyButton = document.createElement("img");
-      verifyButton.classList.add("verifyButton");
-      verifyButton.src = "../assets/botoes/bt_verifica.png";
+      const verifyButtonGame7 = document.createElement("img");
+      verifyButtonGame7.classList.add("verifyButtonGame7");
+      verifyButtonGame7.src = "../assets/botoes/bt_verifica.png";
 
-      verifyButton.addEventListener("click", () => {
+      verifyButtonGame7.addEventListener("click", () => {
         renderResult(total_correct);
       });
 
-      const divAnimalsImages = document.querySelector(".divAnimalsImages");
-      divAnimalsImages.appendChild(verifyButton);
+      container.appendChild(verifyButtonGame7);
     } else if (total_inserted < 5) {
-      const divAnimalsImages = document.querySelector(".divAnimalsImages");
-      const verifyButton = divAnimalsImages.querySelector(".verifyButton");
-      if (verifyButton) {
-        divAnimalsImages.removeChild(verifyButton);
+      const divtoysImagesGame7 = document.querySelector(".divtoysImagesGame7");
+      const verifyButtonGame7 = divtoysImagesGame7.querySelector(".verifyButtonGame7");
+      if (verifyButtonGame7) {
+        container.removeChild(verifyButtonGame7);
       }
     }
   };
@@ -281,8 +240,8 @@ const game7 = () => {
 
 
 
-  //FUNÇÃO QUE VERIFICA SE OS ANIMAIS ENCAIXADOS ESTÃO CORRETOS - INICIO//
-  const checkRightAnimalsSlots = (element) => {
+  //FUNÇÃO QUE VERIFICA SE OS BRINQUEDOS ENCAIXADOS ESTÃO CORRETOS - INICIO//
+  const checkRighttoysSlots = (element) => {
 
     console.log("checando inserções")
 
@@ -291,32 +250,32 @@ const game7 = () => {
 
     element?.childNodes?.forEach((slot) => {
 
-      const animal_slot_name = slot.id.split("_slot")[0];
+      const toy_slot_name = slot.id.split("_slot")[0];
 
-      const input_animal = slot.querySelector(".inputAnimal")
+      const input_toy = slot.querySelector(".inputToy")
 
-      if(input_animal){
-        if (input_animal.value !== ""){
+      if(input_toy){
+        if (input_toy.value !== ""){
           total_inserted += 1
         }
-        if (input_animal.value === animal_slot_name.toUpperCase()){
+        if (input_toy.value === toy_slot_name.toUpperCase()){
           total_correct += 1
         }
       }
 
-      //const animal_input_name = input_animal.value.toUpperCase()
+      //const animal_input_name = input_toy.value.toUpperCase()
 
-      console.log("slot do " + animal_slot_name.toUpperCase())
+      console.log("slot do " + toy_slot_name.toUpperCase())
   
 
     });
 
-    console.log("Animais corretos: " + total_correct);
-    console.log("Animais inseridos: " + total_inserted);
+    console.log("BRINQUEDOS corretos: " + total_correct);
+    console.log("BRINQUEDOS inseridos: " + total_inserted);
 
     renderVerifyButton(total_inserted, total_correct);
   };
-  //FUNÇÃO QUE VERIFICA SE OS ANIMAIS ENCAIXADOS ESTÃO CORRETOS - FIM//
+  //FUNÇÃO QUE VERIFICA SE OS BRINQUEDOS ENCAIXADOS ESTÃO CORRETOS - FIM//
 
 
 
@@ -325,7 +284,7 @@ const game7 = () => {
 
   
 
-  //FUNÇÃO QUE EMBARALHA OS 12 ANIMAIS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - INICIO//
+  //FUNÇÃO QUE EMBARALHA OS 12 BRINQUEDOS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - INICIO//
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -333,10 +292,10 @@ const game7 = () => {
     }
     return array;
   };
-  //FUNÇÃO QUE EMBARALHA OS 12 ANIMAIS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - FIM//
+  //FUNÇÃO QUE EMBARALHA OS 12 BRINQUEDOS ALEATÓRIOS ESCOLHIDOS - APENAS PARA EMBARALHAR AS FIGURINHAS - FIM//
 
-  //FUNÇÃO QUE CRIA OS CONTAINERS COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS E SLOTS RECEBEDORES- INICIO//
-  const placeAnimalInputs = () => {
+  //FUNÇÃO QUE CRIA OS CONTAINERS COM FIGURINHAS DE BRINQUEDOS ARRASTÁVEIS E SLOTS RECEBEDORES- INICIO//
+  const placeToyInputs = () => {
 
 
 
@@ -344,10 +303,10 @@ const game7 = () => {
 
 
     //CRIAÇÃO DA DIV QUE CONTERÁ AS FIGURINHAS ARRASTÁVEIS - INICIO//
-    const divAnimalsImages = document.createElement("div");
-    divAnimalsImages.classList.add("divAnimalsImages");
-    divAnimalsImages.classList.add("containerDroppable");
-    divAnimalsImages.id = "figurinhasIniciais"; //CADA "containerX" poderá receber uma figurinha. Apenas esse receberá várias.
+    const divtoysImagesGame7 = document.createElement("div");
+    divtoysImagesGame7.classList.add("divtoysImagesGame7");
+    divtoysImagesGame7.classList.add("containerDroppable");
+    divtoysImagesGame7.id = "figurinhasIniciais"; //CADA "containerX" poderá receber uma figurinha. Apenas esse receberá várias.
     //CRIAÇÃO DA DIV QUE CONTERÁ AS FIGURINHAS ARRASTÁVEIS - FIM//
 
 
@@ -370,8 +329,8 @@ const game7 = () => {
 
 
     //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - INICIO//
-    const divSlotToysGame6 = document.createElement("div");
-    divSlotToysGame6.classList.add("divSlotToysGame6");
+    const divSlotTransportsGame7 = document.createElement("div");
+    divSlotTransportsGame7.classList.add("divSlotTransportsGame7");
     //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - FIM//
 
 
@@ -385,13 +344,13 @@ const game7 = () => {
 
 //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS - INICIO//
 setTimeout(() => {
-    for (let i = 0; i < randomAnimals.length; i++) {
-        //SLOT PARA SOLTAR ANIMAIS - INÍCIO
+    for (let i = 0; i < randomtoys.length; i++) {
+        //SLOT PARA SOLTAR BRINQUEDOS - INÍCIO
         const divSlotAnimal = document.createElement("div");
-        divSlotAnimal.classList.add("divSlotAnimal");
+        divSlotAnimal.classList.add("divSlotTransport");
         divSlotAnimal.classList.add("containerDroppable");
-        divSlotAnimal.id = `${randomAnimals[i]}_slot`;
-        //SLOT PARA SOLTAR ANIMAIS - FIM
+        divSlotAnimal.id = `${randomtoys[i]}_slot`;
+        //SLOT PARA SOLTAR BRINQUEDOS - FIM
 
         
 
@@ -406,27 +365,27 @@ setTimeout(() => {
         if (i === 0 || i === 2 || i === 5 || i === 7 || i === 10) {
           textAnimal = document.createElement("input");
           textAnimal.type = "text"
-          textAnimal.classList.add(`textAnimal`);
-          textAnimal.id = randomAnimals[i]
-          textAnimal.classList.add(`inputAnimal`);
+          textAnimal.classList.add(`textToy`);
+          textAnimal.id = randomtoys[i]
+          textAnimal.classList.add(`inputToy`);
           textAnimal.addEventListener("input", function() {
             this.value = this.value.toUpperCase();
-            checkRightAnimalsSlots(divSlotToysGame6)
+            checkRighttoysSlots(divSlotTransportsGame7)
           });
         } else {
           textAnimal = document.createElement("p");
-          textAnimal.classList.add(`textAnimal`);
-          textAnimal.innerText = `${randomAnimals[i].toUpperCase()}`;
+          textAnimal.classList.add(`textToy`);
+          textAnimal.innerText = `${randomtoys[i].toUpperCase()}`;
         }
         //TEXTO QUE FICA ABAIXO DO SLOT - FIM
 
-        //INSERÇÃO DO NÚMERO DO ANIMAL E DO TEXTO NO SLOT SOLTÁVEL DOS ANIMAIS - INICIO//
+        //INSERÇÃO DO NÚMERO DO ANIMAL E DO TEXTO NO SLOT SOLTÁVEL DOS BRINQUEDOS - INICIO//
         divSlotAnimal.append(numberAnimal, textAnimal);
-        //INSERÇÃO DO NÚMERO DO ANIMAL E DO TEXTO NO SLOT SOLTÁVEL DOS ANIMAIS - FIM//
+        //INSERÇÃO DO NÚMERO DO ANIMAL E DO TEXTO NO SLOT SOLTÁVEL DOS BRINQUEDOS - FIM//
 
-        //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ANIMAIS - INICIO//
-        divSlotToysGame6.appendChild(divSlotAnimal);
-        //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE ANIMAIS - FIM//
+        //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE BRINQUEDOS - INICIO//
+        divSlotTransportsGame7.appendChild(divSlotAnimal);
+        //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE BRINQUEDOS - FIM//
 
         //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO ANIMAL - INICIO//
         const divImgAnimal = document.createElement("div");
@@ -434,7 +393,7 @@ setTimeout(() => {
         divImgAnimal.classList.add("divImgAnimalAfterDropped");
         divImgAnimal.classList.add("draggable");
         divImgAnimal.draggable = true;
-        divImgAnimal.id = `${randomAnimals[i]}_figurinha`;
+        divImgAnimal.id = `${randomtoys[i]}_figurinha`;
         //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO ANIMAL - FIM//
 
         //FUNÇÃO QUE TORNA A FIGURINHA ARRASTÁVEL - INÍCIO//
@@ -449,7 +408,7 @@ setTimeout(() => {
         //imgAnimal.style.maxWidth = "80%";
         //imgAnimal.style.maxHeigth = "80%"
         imgAnimal.classList.add("imgAnimalAfterDropped");
-        imgAnimal.src = "../assets/book_details/figanimals.svg";
+        imgAnimal.src = "../assets/book_details/figtransports.svg";
         //BACKGROUND DA FIGURINHA DO ANIMAL - FIM//
 
 
@@ -460,7 +419,7 @@ setTimeout(() => {
           const imgPicAnimal = document.createElement("img");
           imgPicAnimal.classList.add("imgPicAnimal");
           imgPicAnimal.classList.add("imgPicAnimalGame5");
-          imgPicAnimal.src = `../assets/animals/${randomAnimals[i]}.svg`;
+          imgPicAnimal.src = `../assets/veiculos/${randomtoys[i]}.svg`;
           const imgRipped = document.createElement("img")
           imgRipped.classList.add("imgRipped")
           if (i === 0 || i === 7) {
@@ -481,7 +440,7 @@ setTimeout(() => {
         const imgPicAnimal = document.createElement("img");
         imgPicAnimal.classList.add("imgPicAnimal");
         imgPicAnimal.classList.add("imgPicAnimalGame5");
-        imgPicAnimal.src = `../assets/animals/${randomAnimals[i]}.svg`;
+        imgPicAnimal.src = `../assets/veiculos/${randomtoys[i]}.svg`;
 
                 //INSERÇÃO DO FUNDO DA FIGURINHA E IMAGEM DA FIGURINHA NA DIV ARRASTÁVEL DA FIGURINHA - INICIO//
                 divImgAnimal.append(imgAnimal, imgPicAnimal);
@@ -503,19 +462,19 @@ setTimeout(() => {
 
 
     //INSERÇÃO
-    container.appendChild(divAnimalsImages);
-    container.appendChild(divSlotToysGame6);
+    container.appendChild(divtoysImagesGame7);
+    container.appendChild(divSlotTransportsGame7);
 
 
         
   };
-  //FUNÇÃO QUE CRIA OS CONTAINERES COM FIGURINHAS DE ANIMAIS ARRASTÁVEIS E SLOTS RECEBEDORES - FIM//
+  //FUNÇÃO QUE CRIA OS CONTAINERES COM FIGURINHAS DE BRINQUEDOS ARRASTÁVEIS E SLOTS RECEBEDORES - FIM//
 
 
-  chooseRandomAnimals();
-  placeAnimalInputs();
+  chooseRandomtoys();
+  placeToyInputs();
 };
-//FUNÇÃO QUE RENDERIZA O GAME #1 - FIM//
+//FUNÇÃO QUE RENDERIZA O GAME #6 - FIM//
 
 //TORNA ACESSÍVEL PARA ARQUIVOS EXTERNOS
 export default game7;
