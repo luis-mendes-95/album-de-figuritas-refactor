@@ -85,15 +85,16 @@
   z-index: 20;
 }
 
-.verifyButtonGame7 {
+.verifyButtonGame8 {
   position: absolute;
   bottom: 5%;
-  left: 15%;
+  right: 15%;
   animation: appearButtonFromBottom 1s ease-in;
   transition: 0.3s;
   cursor: pointer;
+  z-index: 99;
 }
-.verifyButtonGame7:hover {
+.verifyButtonGame8:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }

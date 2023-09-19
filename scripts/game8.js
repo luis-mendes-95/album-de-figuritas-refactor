@@ -241,11 +241,10 @@ const game8 = () => {
 
 
   //FUNÇÃO QUE VERIFICA SE OS BRINQUEDOS INSERIDOS ESTÃO CORRETOS - INICIO //
-  const renderResult = (total_correct) => {
+  const renderResult = (input1, input2, input3) => {
 
-    const divtoysImagesGame7 = document.querySelector(".divtoysImagesGame7");
 
-    if (total_correct === 5) {
+    if (input1 === 3 && input2 === 4 && input3 === 7) {
       const lorenzo_correct_game7 = document.createElement("img");
       lorenzo_correct_game7.classList.add("lorenzo_correct_game7");
       lorenzo_correct_game7.src = "../assets/lorenzo/lorenzo_ok1.png";
@@ -254,9 +253,9 @@ const game8 = () => {
       continue_button.classList.add("button_continue_game7");
       continue_button.src = "../assets/botoes/bt_continua.png";
 
-      const verifyButtonGame7 = container.querySelector(".verifyButtonGame7");
-      if (verifyButtonGame7) {
-        container.removeChild(verifyButtonGame7);
+      const verifyButtonGame8 = container.querySelector(".verifyButtonGame8");
+      if (verifyButtonGame8) {
+        container.removeChild(verifyButtonGame8);
       }
 
       continue_button.addEventListener("click", () => {
@@ -264,14 +263,14 @@ const game8 = () => {
       });
 
       container.append(lorenzo_correct_game7, continue_button);
-    } else if (total_correct < 12) {
+    } else {
       const lorenzo_incorrect_game7 = document.createElement("img");
       lorenzo_incorrect_game7.classList.add("lorenzo_incorrect_game7");
       lorenzo_incorrect_game7.src = "../assets/lorenzo/lorenzo_ops.png";
 
-      const verifyButtonGame7 = container.querySelector(".verifyButtonGame7");
-      if (verifyButtonGame7) {
-        container.removeChild(verifyButtonGame7);
+      const verifyButtonGame8 = container.querySelector(".verifyButtonGame8");
+      if (verifyButtonGame8) {
+        container.removeChild(verifyButtonGame8);
       }
 
       container.appendChild(lorenzo_incorrect_game7);
@@ -292,29 +291,39 @@ const game8 = () => {
 
 
   //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - INICIO //
-  const renderVerifyButton = (total_inserted, total_correct) => {
-    const existingButton = document.querySelector(".verifyButtonGame7");
+  const renderVerifyButton = (input1, input2, input3) => {
+
+    const existingButton = document.querySelector(".verifyButtonGame8");
+
     if (existingButton){
-      let divtoysImagesGame7 = document.querySelector(".divtoysImagesGame7")
       container.removeChild(existingButton)
     }
-    if (total_inserted === 5) {
-      const verifyButtonGame7 = document.createElement("img");
-      verifyButtonGame7.classList.add("verifyButtonGame7");
-      verifyButtonGame7.src = "../assets/botoes/bt_verifica.png";
 
-      verifyButtonGame7.addEventListener("click", () => {
-        renderResult(total_correct);
+    if (input1 === "") {
+      return;
+    }
+
+    if (input2 === "") {
+      return;
+    }
+
+    if (input3 === "") {
+      return;
+    }
+
+
+
+    
+      const verifyButtonGame8 = document.createElement("img");
+      verifyButtonGame8.classList.add("verifyButtonGame8");
+      verifyButtonGame8.src = "../assets/botoes/bt_verifica.png";
+
+      verifyButtonGame8.addEventListener("click", () => {
+        renderResult(input1, input2, input3);
       });
 
-      container.appendChild(verifyButtonGame7);
-    } else if (total_inserted < 5) {
-      const divtoysImagesGame7 = document.querySelector(".divtoysImagesGame7");
-      const verifyButtonGame7 = divtoysImagesGame7.querySelector(".verifyButtonGame7");
-      if (verifyButtonGame7) {
-        container.removeChild(verifyButtonGame7);
-      }
-    }
+      container.appendChild(verifyButtonGame8);
+
   };
   //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - FIM //
 
@@ -331,9 +340,8 @@ const game8 = () => {
     const input_question_2 = document.querySelector(".input_question_2");
     const input_question_3 = document.querySelector(".input_question_3");
 
-    console.log(input_question_1.value)
-    console.log(input_question_2.value)
-    console.log(input_question_3.value)
+    renderVerifyButton(input_question_1.value, input_question_2.value, input_question_3.value);
+
 
   };
   //FUNÇÃO QUE VERIFICA SE OS BRINQUEDOS ENCAIXADOS ESTÃO CORRETOS - FIM//
