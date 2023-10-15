@@ -8,6 +8,23 @@ let container = document.querySelector(".container");
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - FIM//
 
 
+let isRed = false;
+let intervalId;
+let currentFigureId;
+
+let mouseX = 0;
+let mouseY = 0;
+
+function updateMousePosition(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    console.log(mouseX, mouseY)
+}
+
+document.addEventListener("mousemove", updateMousePosition);
+
+
+
 //FUNÇÃO QUE RENDERIZA O GAME #1 - INICIO//
 const game1 = () => {
 
@@ -326,7 +343,9 @@ const game1 = () => {
         divAnimalsImages.addEventListener("drop", (e) => {
           e.preventDefault();
           const draggableId = e.dataTransfer.getData("text/plain");
-          const draggedElement = document.getElementById(draggableId)
+          const draggedElement = document.getElementById(draggableId);
+          draggedElement.style.border = ""
+          clearInterval(intervalId);
           const imgPicAnimal = draggedElement.querySelector(".imgPicAnimalAfterDropped");
           if(imgPicAnimal){
             imgPicAnimal.removeAttribute("class")
@@ -362,21 +381,37 @@ const game1 = () => {
         for (let i = 0; i < animalsRandomOrder.length; i++) {
 
 
-          //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO ANIMAL - INICIO//
-          const divImgAnimal = document.createElement("div")
-          divImgAnimal.classList.add("divImgAnimal")
-          divImgAnimal.classList.add("draggable")
-          divImgAnimal.draggable = true
-          divImgAnimal.id = `${animalsRandomOrder[i]}_figurinha`
-          //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO ANIMAL - FIM//
+    //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO ANIMAL - INICIO//
+    const divImgAnimal = document.createElement("div")
+    divImgAnimal.classList.add("divImgAnimal")
+    divImgAnimal.classList.add("draggable")
+    divImgAnimal.draggable = true
+    divImgAnimal.id = `${animalsRandomOrder[i]}_figurinha`
+    //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO ANIMAL - FIM//
 
 
-          //FUNÇÃO QUE TORNA A FIGURINHA ARRASTÁVEL - INÍCIO//
-          divImgAnimal.addEventListener("dragstart", (e) => {
-            e.dataTransfer.setData("text/plain", divImgAnimal.id)
-          })
-          //FUNÇÃO QUE TORNA A FIGURINHA ARRASTÁVEL - FIM//
-  
+
+    document.addEventListener("mouseup", ()=> {
+      let currentFigure = document.getElementById(currentFigureId)
+      currentFigure.style.border = "";
+      clearInterval(intervalId);
+    })
+
+    //FUNÇÃO QUE TORNA A FIGURINHA ARRASTÁVEL - INÍCIO//
+    divImgAnimal.addEventListener("dragstart", (e) => {
+        e.dataTransfer.setData("text/plain", divImgAnimal.id)
+        currentFigureId = divImgAnimal.id
+        clearInterval(intervalId);
+        intervalId = setInterval(() => {
+          isRed = !isRed;
+          divImgAnimal.style.border = isRed ? "3px solid red" : "";
+          console.log(`Posição do mouse: ${e.clientX}, ${e.clientY}`);
+        }, 500);
+
+    })
+    //FUNÇÃO QUE TORNA A FIGURINHA ARRASTÁVEL - FIM//
+
+
   
           //BACKGROUND DA FIGURINHA DO ANIMAL - INICIO//
           const imgAnimal = document.createElement("img")
@@ -426,12 +461,15 @@ const game1 = () => {
 
         divSlotAnimal.addEventListener("drop", (e) => {
           e.preventDefault();
+
           const existingDivImgAnimal = divSlotAnimal.querySelector(".divImgAnimal");
           if(existingDivImgAnimal){
             return;
           }
           const draggableId = e.dataTransfer.getData("text/plain");
           const draggedElement = document.getElementById(draggableId);
+          draggedElement.style.border = ""
+          clearInterval(intervalId);
           const imgPicAnimal = draggedElement.querySelector(".imgPicAnimal");
           //imgPicAnimal.removeAttribute("class")
           //draggedElement.removeAttribute("class")
