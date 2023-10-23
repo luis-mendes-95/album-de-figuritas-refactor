@@ -16,16 +16,16 @@
   max-height: 100%;
 }
 
-.lorenzo_duvidas {
+.lorenzo_duvidas_game_9 {
   position: absolute;
   width: 45%;
   top: 10%;
-  left: 5;
+  right: 5%;
   z-index: 20;
-  animation: appearLorenzoFromLeft 1.5s ease-in-out;
+  animation: appearLorenzoFromRight 1.5s ease-in-out;
 }
 
-.button_continue_game8_game5 {
+.button_continue_game7_game5 {
   position: absolute;
   bottom: 25%;
   left: 25%;
@@ -34,7 +34,7 @@
   transition: 0.3s;
 }
 
-.button_continue_game8_game5:hover {
+.button_continue_game7_game5:hover {
   transition: 0.3s;
   transform: scale(1.1);
 }
@@ -58,27 +58,27 @@
   z-index: 19;
 }
 
-.divSlotTransportsgame8 {
+.divSlotTransportsGame9 {
   position: absolute;
   top: 14%;
-  right: 2.5%;
+  left: 2.5%;
   width: 45%;
   height: 77%;
   display: flex;
   flex-wrap: wrap;
-  animation: appearBookFromRight 1.5s ease-in-out;
+  animation: appearBookFromLeft 1.5s ease-in-out;
   gap: 5%;
 }
 
-.background_book_game8 {
+.background_book_game9 {
   width: 100%;
   position: absolute;
   top: 0;
-  right: -49%;
-  animation: appearBookFromRight 1.5s ease-in-out;
+  left: -49%;
+  animation: appearBookFromLeft 1.5s ease-in-out;
 }
 
-.lorenzo_cola_game8 {
+.lorenzo_cola_game7 {
   position: absolute;
   width: 50%;
   top: 20%;
@@ -86,31 +86,31 @@
   z-index: 20;
 }
 
-.verifyButtonGame8 {
+.verifyButtonGame9 {
   position: absolute;
   bottom: 5%;
-  right: 15%;
+  left: 15%;
   animation: appearButtonFromBottom 1s ease-in;
   transition: 0.3s;
   cursor: pointer;
   z-index: 99;
 }
-.verifyButtonGame8:hover {
+.verifyButtonGame9:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
 
-.divSlotTransportGame8 {
-  border: 5pt dotted green;
+.divSlotTransportGame9 {
+  border: 5pt dotted blue;
   width: 20%;
   height: 21%;
   display: flex;
   flex-direction: column;
 }
 
-.textToyGame8{
+.textToyGame9{
   margin-top: 3vw;
-  color: green;
+  color: blue;
   font-weight: bold;
   font-family: sans-serif;
   font-size: 1.5vw;
@@ -120,24 +120,24 @@
   align-content: center;
 }
 
-.lorenzo_correct_game8, .lorenzo_incorrect_game8{
+.lorenzo_correct_game9{
   width: 40%;
   position: absolute;
   top: 15%;
-  left: 5%;
+  right: 5%;
   animation: appearLorenzoFromRight 0.5s ease-in;
 }
 
-.button_continue_game8{
+.button_continue_game9{
   position: absolute;
   bottom: 30%;
-  left: 20%;
+  right: 10%;
   z-index: 50;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.divtoysImagesgame8{
+.divtoysImagesGame7{
   position: absolute;
   top: 5%;
   right: 2.5%;
@@ -146,12 +146,12 @@
   height: 90%;
 }
 
-.game8_background_inputs{
+.game9_background_inputs{
   position: absolute;
   top: 25%;
   width: 40%;
   height: 70%;
-  left: 5%;
+  right: 5%;
   background-color: white;
   opacity: 0.9;
   z-index: 15;
@@ -162,30 +162,34 @@
   justify-content: flex-end;
   gap: 10%;
   padding: 3%;
-  color: green;
+  color: blue;
   font-weight: bold;
   font-size: 17pt;
-  animation: appearLorenzoFromLeft 4s ease-in-out;
+  animation: appearLorenzoFromRight 4s ease-in-out;
 }
 
-.div_question_1_game_8, .div_question_2_game_8, .div_question_3_game_8{
+.div_question_1_game_9, .div_question_2_game_9, .div_question_3_game_9{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
 }
 
-.div_question_1_game_8 > input, .div_question_2_game_8 > input, .div_question_3_game_8 > input{
+.div_question_1_game_9 > input, .div_question_2_game_9 > input, .div_question_3_game_9 > input{
   width: 5vw;
   height: 4vw;
-  border: 2pt dashed green;
+  border: 2pt dashed blue;
   font-size: 20pt;
-  color: green;
+  color: blue;
   padding: 1vw;
 }
 
-.p_question_1_game_8{
-
+.lorenzo_incorrect_game9{
+  width: 40%;
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  animation: appearLorenzoFromRight 0.5s ease-in;
 }
 
 
@@ -204,6 +208,15 @@
   }
   100% {
     left: 5%;
+  }
+}
+
+@keyframes appearLorenzoFromRight {
+  0% {
+    right: -150%;
+  }
+  100% {
+    right: 5%;
   }
 }
 

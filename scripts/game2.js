@@ -27,33 +27,33 @@ const game2 = () => {
     //RENDERIZA ELEMENTOS DO BACKGROUND - FIM//
 
           //APENAS PARA PULAR PARA O JOGO 3//
-          const botao_pula = document.createElement("button")
-          botao_pula.style.position = "absolute"
-          botao_pula.style.top = "0"
-          botao_pula.style.left = "30%"
-          botao_pula.innerText = "Jogo 3"
-          botao_pula.addEventListener("click", () =>{
-            game3();
-          })
-          container.appendChild(botao_pula)
+          //const botao_pula = document.createElement("button")
+          //botao_pula.style.position = "absolute"
+          //botao_pula.style.top = "0"
+          //botao_pula.style.left = "30%"
+          //botao_pula.innerText = "Jogo 3"
+          //botao_pula.addEventListener("click", () =>{
+          //  game3();
+          //})
+          //container.appendChild(botao_pula)
           //APENAS PARA PULAR PARA O JOGO 3//
 
     //BANCO DE DADOS DE BRINQUEDOS - INICIO//
     const toys = [
-        "bola",
-        "boneca",
-        "cavalo de pau",
-        "corda",
+        "pelota",
+        "muñeca",
+        "caballo_de_palo",
+        "cuerda",
         "dado",
         "dominó",
-        "estilingue",
-        "ioiô",
+        "tirachinas",
+        "yoyó",
         "patinete",
-        "patins",
-        "peteca",
-        "pião",
-        "pipa",
-        "skate"
+        "patines",
+        "volante",
+        "trompo",
+        "cometa",
+        "monopatín"
     ];
     //BANCO DE DADOS DE BRINQUEDOS - FIM//
 
@@ -102,7 +102,6 @@ const game2 = () => {
         divSlotToys.childNodes.forEach((slot) => {
 
         if(slot.id.split("_slot")[0] === slot.lastChild.id.split("_figurinha")[0]) {
-            console.log("CORRETO!")
         } else {        
             const imgPicToy = slot.lastChild.querySelector(".imgPicToyAfterDropped");
             if(imgPicToy){
@@ -228,8 +227,6 @@ const game2 = () => {
 
     })
 
-    console.log("Brinquedos inseridos: " + total_inserted)
-    console.log("Brinquedos corretos: " + total_correct)
 
     renderVerifyButton(total_inserted, total_correct)
 

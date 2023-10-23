@@ -1,4 +1,6 @@
-import game8 from "./game8.js";
+//import game11 from "./game11.js";
+
+import game11 from "./game11.js";
 
 
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - INICIO//
@@ -6,7 +8,7 @@ let container = document.querySelector(".container");
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - FIM//
 
 //FUNÇÃO QUE RENDERIZA O GAME #6 - INICIO//
-const game7 = () => {
+const game10 = () => {
 
   //LIMPA OS ELEMENTOS DO JOGO ANTERIOR - INICIO//
   while (container.firstChild) {
@@ -14,39 +16,80 @@ const game7 = () => {
   }
   //LIMPA OS ELEMENTOS DO JOGOA ANTERIOR - FIM//
 
-
-  //RENDERIZA O LORENZO INICIAL - INICIO//
-  const lorenzo_background = document.createElement("div")
-  lorenzo_background.classList.add("lorenzo_background")
-  const lorenzo_cola = document.createElement("img")
-  lorenzo_cola.classList.add("lorenzo_cola_game7")
-  lorenzo_cola.src = "../assets/lorenzo/lorenzocola.png"
-  container.append(lorenzo_background, lorenzo_cola)
-
-  const button_continue_game7 = document.createElement("img")
-  button_continue_game7.classList.add("button_continue_game7")
-  button_continue_game7.src = "../assets/botoes/bt_continua.png"
-  button_continue_game7.addEventListener("click", (e) => {
-    container.removeChild(lorenzo_cola)
-    container.removeChild(e.target)
-    container.removeChild(lorenzo_background)
-  })
-  container.appendChild(button_continue_game7)
-  //RENDERIZA O LORENZO INICIAL - FIM//
-
-
-  //APENAS PARA PULAR PARA O JOGO 8//
+  //APENAS PARA PULAR PARA O JOGO 11//
   //const botao_pula = document.createElement("button");
   //botao_pula.style.position = "absolute";
   //botao_pula.style.top = "0";
   //botao_pula.style.left = "30%";
-  //botao_pula.innerText = "Jogo 8";
+  //botao_pula.innerText = "Jogo 11";
   //botao_pula.style.zIndex = "38"
   //botao_pula.addEventListener("click", () => {
-  //  game8();
+  //  game11();
   //});
   //container.appendChild(botao_pula);
-  //APENAS PARA PULAR PARA O JOGO 8//
+  //APENAS PARA PULAR PARA O JOGO 11//
+
+    //RENDERIZA O LORENZO INICIAL - INICIO//
+    const lorenzo_duvidas = document.createElement("img")
+    lorenzo_duvidas.classList.add("lorenzo_duvidas")
+    lorenzo_duvidas.src = "../assets/lorenzo/lorenzo_duvidas.png"
+
+    container.append(lorenzo_duvidas)
+
+    //RENDERIZA O BACKGROUND DE INPUTS - INICIO//
+    const game10_background_inputs = document.createElement("div");
+    game10_background_inputs.classList.add("game10_background_inputs");
+    container.appendChild(game10_background_inputs);  
+    //RENDERIZA O BACKGROUND DE INPUTS - FIM//
+
+    const div_question_1_game_10 = document.createElement("div")
+    div_question_1_game_10.classList.add("div_question_1_game_10")
+    const p_question_1 = document.createElement("p");
+    p_question_1.classList.add("p_question_1");
+    p_question_1.innerText = "1 - ¿Cuántas figuritas quedan para completar esta página?"
+    const input_question_1 = document.createElement("input");
+    input_question_1.classList.add("input_question_1");
+    div_question_1_game_10.append(p_question_1, input_question_1);
+    game10_background_inputs.appendChild(div_question_1_game_10); 
+
+    input_question_1.addEventListener("input", function() {
+      this.value = this.value.toUpperCase();
+      checkRightAnswers()
+    });
+
+
+    const div_question_2_game_10 = document.createElement("div")
+    div_question_2_game_10.classList.add("div_question_2_game_10")
+    const p_question_2 = document.createElement("p");
+    p_question_2.classList.add("p_question_2");
+    p_question_2.innerText = "2 - ¿Cuántas figuritas ya se han pegado en la página?"
+    const input_question_2 = document.createElement("input");
+    input_question_2.classList.add("input_question_2");
+    div_question_2_game_10.append(p_question_2, input_question_2);
+    game10_background_inputs.appendChild(div_question_2_game_10); 
+
+    input_question_2.addEventListener("input", function() {
+      this.value = this.value.toUpperCase();
+      checkRightAnswers()
+    });
+
+    const div_question_3_game_10 = document.createElement("div")
+    div_question_3_game_10.classList.add("div_question_3_game_10")
+    const p_question_3 = document.createElement("p");
+    p_question_3.classList.add("p_question_3");
+    p_question_3.innerText = "3 - ¿Cuántas figuritas tiene la página en total?"
+    const input_question_3 = document.createElement("input");
+    input_question_3.classList.add("input_question_3");
+    div_question_3_game_10.append(p_question_3, input_question_3);
+    game10_background_inputs.appendChild(div_question_3_game_10); 
+
+    input_question_3.addEventListener("input", function() {
+      this.value = this.value.toUpperCase();
+      checkRightAnswers()
+    });
+
+
+    //RENDERIZA O LORENZO INICIAL - FIM//
 
 
 
@@ -63,24 +106,28 @@ const game7 = () => {
 
 
 
-//BANCO DE DADOS DE TRANSPORTES - INICIO//
-const toys = [
-  "avión",
-  "bicicleta",
-  "camión",
-  "canoa",
-  "coche",
-  "carreta",
-  "cohete",
-  "helicóptero",
-  "metro",
-  "motocicleta",
-  "barco",
-  "autobús",
-  "tren",
-  "velero"
+
+  //BANCO DE DADOS DE ANIMAIS - INICIO//
+  const animals = [
+    "avión",
+    "bicicleta",
+    "camión",
+    "canoa",
+    "coche",
+    "carreta",
+    "cohete",
+    "helicóptero",
+    "metro",
+    "motocicleta",
+    "barco",
+    "autobús",
+    "tren",
+    "velero"
   ];
-  //BANCO DE DADOS DE TRANSPORTES - FIM//
+
+  //BANCO DE DADOS DE ANIMAIS - FIM//
+
+
 
 
 
@@ -109,12 +156,12 @@ const toys = [
   //FUNÇÃO QUE ESCOLHE ALEATORIAMENTE 12 BRINQUEDOS - INICIO//
   const chooseRandomtoys = () => {
     while (randomtoys.length < 12) {
-      const randomIndex = Math.floor(Math.random() * toys.length);
-      const randomToy = toys[randomIndex];
+      const randomIndex = Math.floor(Math.random() * animals.length);
+      const randomToy = animals[randomIndex];
 
       if (!randomtoys.includes(randomToy)) {
         randomtoys.push(randomToy);
-        toysImages.push(`../toys/${randomToy}.svg`);
+        toysImages.push(`../animals/${randomToy}.svg`);
       }
     }
   };
@@ -157,11 +204,9 @@ const toys = [
 
 
   //FUNÇÃO QUE VERIFICA SE OS BRINQUEDOS INSERIDOS ESTÃO CORRETOS - INICIO //
-  const renderResult = (total_correct) => {
+  const renderResult = (input1, input2, input3) => {
 
-    const divtoysImagesGame7 = document.querySelector(".divtoysImagesGame7");
-
-    if (total_correct === 5) {
+    if (input1 === "5" && input2 === "4" && input3 === "9") {
       const lorenzo_correct_game7 = document.createElement("img");
       lorenzo_correct_game7.classList.add("lorenzo_correct_game7");
       lorenzo_correct_game7.src = "../assets/lorenzo/lorenzo_ok1.png";
@@ -170,24 +215,45 @@ const toys = [
       continue_button.classList.add("button_continue_game7");
       continue_button.src = "../assets/botoes/bt_continua.png";
 
-      const verifyButtonGame7 = container.querySelector(".verifyButtonGame7");
-      if (verifyButtonGame7) {
-        container.removeChild(verifyButtonGame7);
+      const verifyButtonGame10 = document.querySelector(".verifyButtonGame10");
+      if (verifyButtonGame10) {
+        verifyButtonGame10.parentNode.removeChild(verifyButtonGame10);
+      }
+
+      const lorenzo_duvidas = document.querySelector(".lorenzo_duvidas");
+      if (lorenzo_duvidas) {
+        lorenzo_duvidas.parentNode.removeChild(lorenzo_duvidas)
+      }
+
+      const game10_background_inputs = document.querySelector(".game10_background_inputs");
+      if (game10_background_inputs) {
+        game10_background_inputs.parentNode.removeChild(game10_background_inputs)
       }
 
       continue_button.addEventListener("click", () => {
-        game8();
+        game11();
       });
 
       container.append(lorenzo_correct_game7, continue_button);
-    } else if (total_correct < 12) {
+    } else {
+
+      const lorenzo_duvidas = document.querySelector(".lorenzo_duvidas");
+      if (lorenzo_duvidas) {
+        lorenzo_duvidas.parentNode.removeChild(lorenzo_duvidas)
+      }
+
+      const game10_background_inputs = document.querySelector(".game10_background_inputs");
+      if (game10_background_inputs) {
+        game10_background_inputs.parentNode.removeChild(game10_background_inputs)
+      }
+
       const lorenzo_incorrect_game7 = document.createElement("img");
       lorenzo_incorrect_game7.classList.add("lorenzo_incorrect_game7");
       lorenzo_incorrect_game7.src = "../assets/lorenzo/lorenzo_ops.png";
 
-      const verifyButtonGame7 = container.querySelector(".verifyButtonGame7");
-      if (verifyButtonGame7) {
-        container.removeChild(verifyButtonGame7);
+      const verifyButtonGame10 = container.querySelector(".verifyButtonGame10");
+      if (verifyButtonGame10) {
+        container.removeChild(verifyButtonGame10);
       }
 
       container.appendChild(lorenzo_incorrect_game7);
@@ -195,6 +261,7 @@ const toys = [
       setTimeout(() => {
         container.removeChild(lorenzo_incorrect_game7);
         resetGameWrongtoys();
+        container.append(lorenzo_duvidas, game10_background_inputs)
       }, 4000);
     }
   };
@@ -208,29 +275,36 @@ const toys = [
 
 
   //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - INICIO //
-  const renderVerifyButton = (total_inserted, total_correct) => {
-    const existingButton = document.querySelector(".verifyButtonGame7");
+  const renderVerifyButton = (input1, input2, input3) => {
+
+    const existingButton = document.querySelector(".verifyButtonGame10");
+
     if (existingButton){
-      let divtoysImagesGame7 = document.querySelector(".divtoysImagesGame7")
       container.removeChild(existingButton)
     }
-    if (total_inserted === 5) {
-      const verifyButtonGame7 = document.createElement("img");
-      verifyButtonGame7.classList.add("verifyButtonGame7");
-      verifyButtonGame7.src = "../assets/botoes/bt_verifica.png";
 
-      verifyButtonGame7.addEventListener("click", () => {
-        renderResult(total_correct);
+    if (input1 === "") {
+      return;
+    }
+
+    if (input2 === "") {
+      return;
+    }
+
+    if (input3 === "") {
+      return;
+    }
+    
+      const verifyButtonGame10 = document.createElement("img");
+      verifyButtonGame10.classList.add("verifyButtonGame10");
+      verifyButtonGame10.src = "../assets/botoes/bt_verifica.png";
+
+      verifyButtonGame10.addEventListener("click", () => {
+        renderResult(input1, input2, input3);
       });
 
-      container.appendChild(verifyButtonGame7);
-    } else if (total_inserted < 5) {
-      const divtoysImagesGame7 = document.querySelector(".divtoysImagesGame7");
-      const verifyButtonGame7 = divtoysImagesGame7.querySelector(".verifyButtonGame7");
-      if (verifyButtonGame7) {
-        container.removeChild(verifyButtonGame7);
-      }
-    }
+      container.appendChild(verifyButtonGame10);
+
   };
   //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - FIM //
 
@@ -240,35 +314,16 @@ const toys = [
 
 
   //FUNÇÃO QUE VERIFICA SE OS BRINQUEDOS ENCAIXADOS ESTÃO CORRETOS - INICIO//
-  const checkRighttoysSlots = (element) => {
+  const checkRightAnswers = () => {
 
 
-    let total_inserted = 0;
-    let total_correct = 0;
+    const input_question_1 = document.querySelector(".input_question_1");
+    const input_question_2 = document.querySelector(".input_question_2");
+    const input_question_3 = document.querySelector(".input_question_3");
 
-    element?.childNodes?.forEach((slot) => {
-
-      const toy_slot_name = slot.id.split("_slot")[0];
-
-      const input_toy = slot.querySelector(".inputToy")
-
-      if(input_toy){
-        if (input_toy.value !== ""){
-          total_inserted += 1
-        }
-        if (input_toy.value === toy_slot_name.toUpperCase()){
-          total_correct += 1
-        }
-      }
-
-      //const animal_input_name = input_toy.value.toUpperCase()
+    renderVerifyButton(input_question_1.value, input_question_2.value, input_question_3.value);
 
 
-  
-
-    });
-
-    renderVerifyButton(total_inserted, total_correct);
   };
   //FUNÇÃO QUE VERIFICA SE OS BRINQUEDOS ENCAIXADOS ESTÃO CORRETOS - FIM//
 
@@ -293,10 +348,6 @@ const toys = [
   const placeToyInputs = () => {
 
 
-
-
-
-
     //CRIAÇÃO DA DIV QUE CONTERÁ AS FIGURINHAS ARRASTÁVEIS - INICIO//
     const divtoysImagesGame7 = document.createElement("div");
     divtoysImagesGame7.classList.add("divtoysImagesGame7");
@@ -305,44 +356,18 @@ const toys = [
     //CRIAÇÃO DA DIV QUE CONTERÁ AS FIGURINHAS ARRASTÁVEIS - FIM//
 
 
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
     //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - INICIO//
     const divSlotTransportsGame7 = document.createElement("div");
     divSlotTransportsGame7.classList.add("divSlotTransportsGame7");
     //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - FIM//
 
 
-
-
-
-
-
-
-
-
 //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS - INICIO//
 setTimeout(() => {
-    for (let i = 0; i < randomtoys.length; i++) {
+    for (let i = 0; i < 9; i++) {
         //SLOT PARA SOLTAR BRINQUEDOS - INÍCIO
         const divSlotAnimal = document.createElement("div");
-        divSlotAnimal.classList.add("divSlotTransport");
+        divSlotAnimal.classList.add("divSlotTransportGame10");
         divSlotAnimal.classList.add("containerDroppable");
         divSlotAnimal.id = `${randomtoys[i]}_slot`;
         //SLOT PARA SOLTAR BRINQUEDOS - FIM
@@ -350,32 +375,22 @@ setTimeout(() => {
         
 
         //NÚMERO QUE FICA DENTRO DO SLOT CENTRALIZADO - INÍCIO
-        const numberAnimal = document.createElement("h2");
-        numberAnimal.classList.add("numberAnimal");
-        numberAnimal.innerText = i + 1;
+        const numberAnimalGame10 = document.createElement("h2");
+        numberAnimalGame10.classList.add("numberAnimalGame10");
+        numberAnimalGame10.innerText = i + 1;
         //NÚMERO QUE FICA DENTRO DO SLOT CENTRALIZADO - FIM
 
         //TEXTO QUE FICA ABAIXO DO SLOT - INÍCIO
         let textAnimal
-        if (i === 0 || i === 2 || i === 5 || i === 7 || i === 10) {
-          textAnimal = document.createElement("input");
-          textAnimal.type = "text"
-          textAnimal.classList.add(`textToyGame7`);
-          textAnimal.id = randomtoys[i]
-          textAnimal.classList.add(`inputToy`);
-          textAnimal.addEventListener("input", function() {
-            this.value = this.value.toUpperCase();
-            checkRighttoysSlots(divSlotTransportsGame7)
-          });
-        } else {
+
           textAnimal = document.createElement("p");
-          textAnimal.classList.add(`textToyGame7`);
+          textAnimal.classList.add(`textToyGame10`);
           textAnimal.innerText = `${randomtoys[i].toUpperCase()}`;
-        }
+
         //TEXTO QUE FICA ABAIXO DO SLOT - FIM
 
         //INSERÇÃO DO NÚMERO DO ANIMAL E DO TEXTO NO SLOT SOLTÁVEL DOS BRINQUEDOS - INICIO//
-        divSlotAnimal.append(numberAnimal, textAnimal);
+        divSlotAnimal.append(numberAnimalGame10, textAnimal);
         //INSERÇÃO DO NÚMERO DO ANIMAL E DO TEXTO NO SLOT SOLTÁVEL DOS BRINQUEDOS - FIM//
 
         //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE BRINQUEDOS - INICIO//
@@ -410,43 +425,27 @@ setTimeout(() => {
 
 
         //IMAGEM DO ANIMAL QUE SERÁ INSERIDA NA FIGURINHA - INICIO//
-        if (i === 0 || i === 2 || i === 5 || i === 7 || i === 10) {
           const imgPicAnimal = document.createElement("img");
           imgPicAnimal.classList.add("imgPicAnimal");
           imgPicAnimal.classList.add("imgPicAnimalGame5");
           imgPicAnimal.src = `../assets/veiculos/${randomtoys[i]}.svg`;
-          const imgRipped = document.createElement("img")
-          imgRipped.classList.add("imgRipped")
-          if (i === 0 || i === 7) {
-            imgRipped.src = "../assets/book_details/ripped1.png"
-          }
-          if (i === 2 || i === 10) {
-            imgRipped.src = "../assets/book_details/ripped2.png"
-          }
-          if (i === 5) {
-            imgRipped.src = "../assets/book_details/ripped3.png"
-          }
+        
           
         //INSERÇÃO DO FUNDO DA FIGURINHA E IMAGEM DA FIGURINHA NA DIV ARRASTÁVEL DA FIGURINHA - INICIO//
-        divImgAnimal.append(imgAnimal, imgPicAnimal, imgRipped);
+        divImgAnimal.append(imgAnimal, imgPicAnimal);
         //INSERÇÃO DO FUNDO DA FIGURINHA E IMAGEM DA FIGURINHA NA DIV ARRASTÁVEL DA FIGURINHA - FIM//
 
-        } else {
-        const imgPicAnimal = document.createElement("img");
-        imgPicAnimal.classList.add("imgPicAnimal");
-        imgPicAnimal.classList.add("imgPicAnimalGame5");
-        imgPicAnimal.src = `../assets/veiculos/${randomtoys[i]}.svg`;
 
-                //INSERÇÃO DO FUNDO DA FIGURINHA E IMAGEM DA FIGURINHA NA DIV ARRASTÁVEL DA FIGURINHA - INICIO//
-                divImgAnimal.append(imgAnimal, imgPicAnimal);
-                //INSERÇÃO DO FUNDO DA FIGURINHA E IMAGEM DA FIGURINHA NA DIV ARRASTÁVEL DA FIGURINHA - FIM//
-        }
         //IMAGEM DO ANIMAL QUE SERÁ INSERIDA NA FIGURINHA - FIM//
 
 
 
         //INSERÇÃO DE FIGURINHA ARRASTÁVEL NA DIV DE FIGURINHAS ARRASTÁVEIS - INICIO//
-        divSlotAnimal.appendChild(divImgAnimal);
+        if (i === 0 || i === 2 || i === 3 || i === 5 || i === 8) {
+          null
+        } else {
+          divSlotAnimal.appendChild(divImgAnimal);
+        }
         //INSERÇÃO DE FIGURINHA ARRASTÁVEL NA DIV DE FIGURINHAS ARRASTÁVEIS - FIM//
 
     }
@@ -472,4 +471,4 @@ setTimeout(() => {
 //FUNÇÃO QUE RENDERIZA O GAME #6 - FIM//
 
 //TORNA ACESSÍVEL PARA ARQUIVOS EXTERNOS
-export default game7;
+export default game10;

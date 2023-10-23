@@ -24,20 +24,17 @@ const game4 = () => {
 
 
     //APENAS PARA PULAR PARA O JOGO 5//
-    const botao_pula = document.createElement("button");
-    botao_pula.style.position = "absolute";
-    botao_pula.style.top = "0";
-    botao_pula.style.left = "30%";
-    botao_pula.innerText = "Jogo 5";
-    botao_pula.style.zIndex = "999"
-    botao_pula.addEventListener("click", () => {
-      game5();
-    });
-    container.appendChild(botao_pula);
+    //const botao_pula = document.createElement("button");
+    //botao_pula.style.position = "absolute";
+    //botao_pula.style.top = "0";
+    //botao_pula.style.left = "30%";
+    //botao_pula.innerText = "Jogo 5";
+    //botao_pula.style.zIndex = "999"
+    //botao_pula.addEventListener("click", () => {
+    //  game5();
+    //});
+    //container.appendChild(botao_pula);
     //APENAS PARA PULAR PARA O JOGO 5//
-
-    console.log(botao_pula)
-    console.log(container)
 
 
 
@@ -75,20 +72,20 @@ const game4 = () => {
 
     //BANCO DE DADOS DE ItemES - INICIO//
     const transports = [
-        "avião",
-        "bicicleta",
-        "caminhão",
-        "canoa",
-        "carro",
-        "carroça",
-        "foguete",
-        "helicóptero",
-        "metrô",
-        "moto",
-        "navio",
-        "ônibus",
-        "trem",
-        "veleiro"
+      "avión",
+      "bicicleta",
+      "camión",
+      "canoa",
+      "coche",
+      "carreta",
+      "cohete",
+      "helicóptero",
+      "metro",
+      "motocicleta",
+      "barco",
+      "autobús",
+      "tren",
+      "velero"
     ];
     //BANCO DE DADOS DE ItemES - FIM//
 
@@ -98,20 +95,20 @@ const game4 = () => {
 
     //BANCO DE DADOS DE BRINQUEDOS - INICIO//
       const toys = [
-        "bola",
-        "boneca",
-        "cavalo de pau",
-        "corda",
+        "pelota",
+        "muñeca",
+        "caballo_de_palo",
+        "cuerda",
         "dado",
         "dominó",
-        "estilingue",
-        "ioiô",
+        "tirachinas",
+        "yoyó",
         "patinete",
-        "patins",
-        "peteca",
-        "pião",
-        "pipa",
-        "skate"
+        "patines",
+        "volante",
+        "trompo",
+        "cometa",
+        "monopatín"
     ];
     //BANCO DE DADOS DE BRINQUEDOS - FIM//
 
@@ -120,59 +117,59 @@ const game4 = () => {
 
     //BANCO DE DADOS DE ANIMAIS - INICIO//
     const animals = [
-        "abelha",
-        "águia",
-        "aranha",
-        "arara",
-        "avestruz",
-        "baleia",
-        "barata",
-        "besouro",
-        "bode",
-        "cachorro",
-        "camelo",
-        "cavalo",
-        "cobra",
-        "coelho",
-        "coruja",
-        "dinossauro",
-        "dragão",
-        "elefante",
-        "esquilo",
-        "foca",
-        "formiga",
-        "galinha",
-        "galo",
-        "gato",
-        "girafa",
-        "gorila",
-        "hipopótamo",
-        "jacaré",
-        "jegue",
-        "joaninha",
-        "lagarto",
-        "leão",
-        "macaco",
-        "mosquito",
-        "onça",
-        "ovelha",
-        "papagaio",
-        "pato",
-        "pavão",
-        "peixe",
-        "polvo",
-        "porco",
-        "raposa",
-        "rato",
-        "sagui",
-        "sapo",
-        "tartaruga",
-        "tatu",
-        "tucano",
-        "urso",
-        "urubu",
-        "vaca",
-        "zebra",
+      "abeja",
+      "águila",
+      "araña",
+      "guacamayo",
+      "avestruz",
+      "ballena",
+      "cucaracha",
+      "escarabajo",
+      "cabra",
+      "perro",
+      "camello",
+      "caballo",
+      "serpiente",
+      "conejo",
+      "búho",
+      "dinosaurio",
+      "dragón",
+      "elefante",
+      "ardilla",
+      "foca",
+      "hormiga",
+      "gallina",
+      "gallo",
+      "gato",
+      "jirafa",
+      "gorila",
+      "hipopótamo",
+      "cocodrilo",
+      "burro",
+      "mariquita",
+      "lagarto",
+      "león",
+      "mono",
+      "mosquito",
+      "leopardo",
+      "oveja",
+      "loro",
+      "pato",
+      "pavo real",
+      "pez",
+      "pulpo",
+      "cerdo",
+      "zorro",
+      "ratón",
+      "tamarín",
+      "sapo",
+      "tortuga",
+      "armadillo",
+      "tucán",
+      "oso",
+      "buitre",
+      "vaca",
+      "cebra"
     ];
     //BANCO DE DADOS DE ANIMAIS - FIM//
 
@@ -226,7 +223,6 @@ const game4 = () => {
         }
   
       }
-      console.log(randomShuffledItems)
 
     };
     //FUNÇÃO QUE EMBARALHA OS ITENS - FIM//
@@ -252,37 +248,37 @@ const game4 = () => {
       const divSlotFigureNamesAnimals = document.querySelector(".divSlotFigureNamesAnimals")
 
 
-      console.log("TRANSPORTES A CORRIGIR*************************")
+
       divSlotFigureNamesTransports.childNodes.forEach((transportSlot) => {
-        console.log("A figurinha encaixada é", transportSlot.firstChild.id.split("_figurinha")[0])
+      
         if (transports.includes(transportSlot.firstChild.id.split("_figurinha")[0])){
-          console.log("E ela está correta!")
+
         } else {
-          console.log("E ela está errada!")
+
           transportSlot.firstChild.classList.remove("divTextFigureNameAfterDropped")
           divFigureNames.appendChild(transportSlot.firstChild)
         }
       })
 
-      console.log("BRINQUEDOS A CORRIGIR*************************")
+
       divSlotFigureNamesToys.childNodes.forEach((toySlot) => {
-        console.log("A figurinha encaixada é", toySlot.firstChild.id.split("_figurinha")[0])
+
         if (toys.includes(toySlot.firstChild.id.split("_figurinha")[0])){
-          console.log("E ela está correta!")
+
         } else {
-          console.log("E ela está errada!")
+
           toySlot.firstChild.classList.remove("divTextFigureNameAfterDropped")
           divFigureNames.appendChild(toySlot.firstChild)
         }
       })
 
-      console.log("ANIMAIS A CORRIGIR*************************")
+
       divSlotFigureNamesAnimals.childNodes.forEach((animalSlot) => {
-        console.log("A figurinha encaixada é", animalSlot.firstChild.id.split("_figurinha")[0])
+
         if (animals.includes(animalSlot.firstChild.id.split("_figurinha")[0])){
-          console.log("E ela está correta!")
+
         } else {
-          console.log("E ela está errada!")
+
           animalSlot.firstChild.classList.remove("divTextFigureNameAfterDropped")
           divFigureNames.appendChild(animalSlot.firstChild)
         }
@@ -361,7 +357,6 @@ const game4 = () => {
       } else if (total_animal_inserted < 5 || total_transports_inserted < 5 || total_toys_inserted < 5) {
         const divFigureNames = document.querySelector(".divFigureNames")
         const verifyButton = divFigureNames.querySelector(".verifyButton")
-        console.log("not complete")
         if(verifyButton){
           divFigureNames.removeChild(verifyButton)
         }
@@ -393,7 +388,6 @@ const game4 = () => {
 
         const item_inserted = animalSlot.querySelector(".divTextFigureName")
 
-        console.log(item_inserted)
 
         if (item_inserted) {
           const item_inserted_name = item_inserted.id.split("_figurinha")[0]

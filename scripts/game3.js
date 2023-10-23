@@ -17,15 +17,15 @@ const game1 = () => {
     //LIMPA OS ELEMENTOS DO JOGOA ANTERIOR - FIM//
 
       //APENAS PARA PULAR PARA O JOGO 4//
-      const botao_pula = document.createElement("button")
-      botao_pula.style.position = "absolute"
-      botao_pula.style.top = "0"
-      botao_pula.style.left = "30%"
-      botao_pula.innerText = "Jogo 4"
-      botao_pula.addEventListener("click", () =>{
-        game4();
-      })
-      container.appendChild(botao_pula)
+      //const botao_pula = document.createElement("button")
+      //botao_pula.style.position = "absolute"
+      //botao_pula.style.top = "0"
+      //botao_pula.style.left = "30%"
+      //botao_pula.innerText = "Jogo 4"
+      //botao_pula.addEventListener("click", () =>{
+      //  game4();
+      //})
+      //container.appendChild(botao_pula)
       //APENAS PARA PULAR PARA O JOGO 4//
 
 
@@ -41,20 +41,20 @@ const game1 = () => {
 
 //BANCO DE DADOS DE TRANSPORTES - INICIO//
 const Transports = [
-  "avião",
+  "avión",
   "bicicleta",
-  "caminhão",
+  "camión",
   "canoa",
-  "carro",
-  "carroça",
-  "foguete",
+  "coche",
+  "carreta",
+  "cohete",
   "helicóptero",
-  "metrô",
-  "moto",
-  "navio",
-  "ônibus",
-  "trem",
-  "veleiro"
+  "metro",
+  "motocicleta",
+  "barco",
+  "autobús",
+  "tren",
+  "velero"
   ];
   //BANCO DE DADOS DE TRANSPORTES - FIM//
 
@@ -99,7 +99,6 @@ const Transports = [
     divSlotTransports.childNodes.forEach((slot) => {
 
       if(slot.id.split("_slot")[0] === slot.lastChild.id.split("_figurinha")[0]) {
-        console.log("CORRETO!")
       } else {        
         const imgPicTransport = slot.lastChild.querySelector(".imgPicTransportAfterDropped");
         if(imgPicTransport){
@@ -236,9 +235,6 @@ const Transports = [
 
 
     })
-
-    console.log("TRANSPORTES inseridos: " + total_inserted)
-    console.log("TRANSPORTES corretos: " + total_correct)
 
     renderVerifyButton(total_inserted, total_correct)
 

@@ -1,4 +1,4 @@
-import game9 from "./game9.js";
+import game10 from "./game10.js";
 
 
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - INICIO//
@@ -6,7 +6,7 @@ let container = document.querySelector(".container");
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - FIM//
 
 //FUNÇÃO QUE RENDERIZA O GAME #6 - INICIO//
-const game8 = () => {
+const game9 = () => {
 
   //LIMPA OS ELEMENTOS DO JOGO ANTERIOR - INICIO//
   while (container.firstChild) {
@@ -14,41 +14,41 @@ const game8 = () => {
   }
   //LIMPA OS ELEMENTOS DO JOGOA ANTERIOR - FIM//
 
-  //APENAS PARA PULAR PARA O JOGO 9//
+  //APENAS PARA PULAR PARA O JOGO 10//
   //const botao_pula = document.createElement("button");
   //botao_pula.style.position = "absolute";
   //botao_pula.style.top = "0";
   //botao_pula.style.left = "30%";
-  //botao_pula.innerText = "Jogo 9";
+  //botao_pula.innerText = "Jogo 10";
   //botao_pula.style.zIndex = "38"
   //botao_pula.addEventListener("click", () => {
-  //  game9();
+  //  game10();
   //});
   //container.appendChild(botao_pula);
   //APENAS PARA PULAR PARA O JOGO 9//
 
     //RENDERIZA O LORENZO INICIAL - INICIO//
-    const lorenzo_duvidas = document.createElement("img")
-    lorenzo_duvidas.classList.add("lorenzo_duvidas")
-    lorenzo_duvidas.src = "../assets/lorenzo/lorenzo_duvidas.png"
+    const lorenzo_duvidas_game_9 = document.createElement("img")
+    lorenzo_duvidas_game_9.classList.add("lorenzo_duvidas_game_9")
+    lorenzo_duvidas_game_9.src = "../assets/lorenzo/lorenzo_duvidas.png"
 
-    container.append(lorenzo_duvidas)
+    container.append(lorenzo_duvidas_game_9)
 
     //RENDERIZA O BACKGROUND DE INPUTS - INICIO//
-    const game8_background_inputs = document.createElement("div");
-    game8_background_inputs.classList.add("game8_background_inputs");
-    container.appendChild(game8_background_inputs);  
+    const game9_background_inputs = document.createElement("div");
+    game9_background_inputs.classList.add("game9_background_inputs");
+    container.appendChild(game9_background_inputs);  
     //RENDERIZA O BACKGROUND DE INPUTS - FIM//
 
-    const div_question_1_game_8 = document.createElement("div")
-    div_question_1_game_8.classList.add("div_question_1_game_8")
-    const p_question_1_game_8 = document.createElement("p");
-    p_question_1_game_8.classList.add("p_question_1_game_8");
-    p_question_1_game_8.innerText = "1 - ¿Cuántas figuritas quedan para completar esta página?"
+    const div_question_1_game_9 = document.createElement("div")
+    div_question_1_game_9.classList.add("div_question_1_game_9")
+    const p_question_1 = document.createElement("p");
+    p_question_1.classList.add("p_question_1");
+    p_question_1.innerText = "1 - ¿Cuántas figuritas quedan para completar esta página?"
     const input_question_1 = document.createElement("input");
     input_question_1.classList.add("input_question_1");
-    div_question_1_game_8.append(p_question_1_game_8, input_question_1);
-    game8_background_inputs.appendChild(div_question_1_game_8); 
+    div_question_1_game_9.append(p_question_1, input_question_1);
+    game9_background_inputs.appendChild(div_question_1_game_9); 
 
     input_question_1.addEventListener("input", function() {
       this.value = this.value.toUpperCase();
@@ -56,30 +56,30 @@ const game8 = () => {
     });
 
 
-    const div_question_2_game_8 = document.createElement("div")
-    div_question_2_game_8.classList.add("div_question_2_game_8")
+    const div_question_2_game_9 = document.createElement("div")
+    div_question_2_game_9.classList.add("div_question_2_game_9")
     const p_question_2 = document.createElement("p");
     p_question_2.classList.add("p_question_2");
     p_question_2.innerText = "2 - ¿Cuántas figuritas ya se han pegado en la página?"
     const input_question_2 = document.createElement("input");
     input_question_2.classList.add("input_question_2");
-    div_question_2_game_8.append(p_question_2, input_question_2);
-    game8_background_inputs.appendChild(div_question_2_game_8); 
+    div_question_2_game_9.append(p_question_2, input_question_2);
+    game9_background_inputs.appendChild(div_question_2_game_9); 
 
     input_question_2.addEventListener("input", function() {
       this.value = this.value.toUpperCase();
       checkRightAnswers()
     });
 
-    const div_question_3_game_8 = document.createElement("div")
-    div_question_3_game_8.classList.add("div_question_3_game_8")
+    const div_question_3_game_9 = document.createElement("div")
+    div_question_3_game_9.classList.add("div_question_3_game_9")
     const p_question_3 = document.createElement("p");
     p_question_3.classList.add("p_question_3");
     p_question_3.innerText = "3 - ¿Cuántas figuritas tiene la página en total?"
     const input_question_3 = document.createElement("input");
     input_question_3.classList.add("input_question_3");
-    div_question_3_game_8.append(p_question_3, input_question_3);
-    game8_background_inputs.appendChild(div_question_3_game_8); 
+    div_question_3_game_9.append(p_question_3, input_question_3);
+    game9_background_inputs.appendChild(div_question_3_game_9); 
 
     input_question_3.addEventListener("input", function() {
       this.value = this.value.toUpperCase();
@@ -96,7 +96,7 @@ const game8 = () => {
   const backgroundImage = "../assets/backgrounds/background_game1.png";
   container.style.backgroundImage = `url(${backgroundImage})`;
   const background_book = document.createElement("img");
-  background_book.classList.add("background_book_game8");
+  background_book.classList.add("background_book_game9");
   background_book.src = "../assets/backgrounds/album_animals_toys.png";
   container.appendChild(background_book);
   //RENDERIZA ELEMENTOS DO BACKGROUND - FIM//
@@ -107,59 +107,20 @@ const game8 = () => {
 
   //BANCO DE DADOS DE ANIMAIS - INICIO//
   const animals = [
-    "abeja",
-    "águila",
-    "araña",
-    "guacamayo",
-    "avestruz",
-    "ballena",
-    "cucaracha",
-    "escarabajo",
-    "cabra",
-    "perro",
-    "camello",
-    "caballo",
-    "serpiente",
-    "conejo",
-    "búho",
-    "dinosaurio",
-    "dragón",
-    "elefante",
-    "ardilla",
-    "foca",
-    "hormiga",
-    "gallina",
-    "gallo",
-    "gato",
-    "jirafa",
-    "gorila",
-    "hipopótamo",
-    "cocodrilo",
-    "burro",
-    "mariquita",
-    "lagarto",
-    "león",
-    "mono",
-    "mosquito",
-    "leopardo",
-    "oveja",
-    "loro",
-    "pato",
-    "pavo real",
-    "pez",
-    "pulpo",
-    "cerdo",
-    "zorro",
-    "ratón",
-    "tamarín",
-    "sapo",
-    "tortuga",
-    "armadillo",
-    "tucán",
-    "oso",
-    "buitre",
-    "vaca",
-    "cebra"
+    "pelota",
+    "muñeca",
+    "caballo_de_palo",
+    "cuerda",
+    "dado",
+    "dominó",
+    "tirachinas",
+    "yoyó",
+    "patinete",
+    "patines",
+    "volante",
+    "trompo",
+    "cometa",
+    "monopatín"
   ];
   //BANCO DE DADOS DE ANIMAIS - FIM//
 
@@ -197,7 +158,7 @@ const game8 = () => {
 
       if (!randomtoys.includes(randomToy)) {
         randomtoys.push(randomToy);
-        toysImages.push(`../animals/${randomToy}.svg`);
+        toysImages.push(`../brinquedos/${randomToy}.svg`);
       }
     }
   };
@@ -213,9 +174,9 @@ const game8 = () => {
   //FUNÇÃO QUE RESETA O JOGO APENAS COM OS ANIMAIS INCORRETOS - INICIO//
   const resetGameWrongtoys = () => {
 
-    const divSlotTransportsgame8 = document.querySelector(".divSlotTransportsgame8");
+    const divSlotTransportsGame9 = document.querySelector(".divSlotTransportsGame9");
 
-    divSlotTransportsgame8.childNodes.forEach((slot) => {
+    divSlotTransportsGame9.childNodes.forEach((slot) => {
 
       let inputToy = slot.querySelector(".inputToy")
 
@@ -243,62 +204,60 @@ const game8 = () => {
   //FUNÇÃO QUE VERIFICA SE OS BRINQUEDOS INSERIDOS ESTÃO CORRETOS - INICIO //
   const renderResult = (input1, input2, input3) => {
 
-    if (input1 === "3" && input2 === "4" && input3 === "7") {
-      const lorenzo_correct_game8 = document.createElement("img");
-      lorenzo_correct_game8.classList.add("lorenzo_correct_game8");
-      lorenzo_correct_game8.src = "../assets/lorenzo/lorenzo_ok1.png";
+    if (input1 === "3" && input2 === "6" && input3 === "9") {
+      const lorenzo_correct_game9 = document.createElement("img");
+      lorenzo_correct_game9.classList.add("lorenzo_correct_game9");
+      lorenzo_correct_game9.src = "../assets/lorenzo/lorenzo_ok1.png";
 
       const continue_button = document.createElement("img");
-      continue_button.classList.add("button_continue_game8");
+      continue_button.classList.add("button_continue_game9");
       continue_button.src = "../assets/botoes/bt_continua.png";
 
-      const verifyButtonGame8 = document.querySelector(".verifyButtonGame8");
-      if (verifyButtonGame8) {
-        verifyButtonGame8.parentNode.removeChild(verifyButtonGame8);
+      const verifyButtonGame9 = document.querySelector(".verifyButtonGame9");
+      if (verifyButtonGame9) {
+        verifyButtonGame9.parentNode.removeChild(verifyButtonGame9);
       }
 
-      const lorenzo_duvidas = document.querySelector(".lorenzo_duvidas");
-      if (lorenzo_duvidas) {
-        lorenzo_duvidas.parentNode.removeChild(lorenzo_duvidas)
+      const lorenzo_duvidas_game_9 = document.querySelector(".lorenzo_duvidas_game_9");
+      if (lorenzo_duvidas_game_9) {
+        lorenzo_duvidas_game_9.parentNode.removeChild(lorenzo_duvidas_game_9)
       }
 
-      const game8_background_inputs = document.querySelector(".game8_background_inputs");
-      if (game8_background_inputs) {
-        game8_background_inputs.parentNode.removeChild(game8_background_inputs)
+      const game9_background_inputs = document.querySelector(".game9_background_inputs");
+      if (game9_background_inputs) {
+        game9_background_inputs.parentNode.removeChild(game9_background_inputs)
       }
 
       continue_button.addEventListener("click", () => {
-        game9();
+        game10();
       });
 
-      container.append(lorenzo_correct_game8, continue_button);
+      container.append(lorenzo_correct_game9, continue_button);
     } else {
+      const lorenzo_incorrect_game9 = document.createElement("img");
+      lorenzo_incorrect_game9.classList.add("lorenzo_incorrect_game9");
+      lorenzo_incorrect_game9.src = "../assets/lorenzo/lorenzo_ops.png";
 
-      const lorenzo_duvidas = document.querySelector(".lorenzo_duvidas");
-      if (lorenzo_duvidas) {
-        lorenzo_duvidas.parentNode.removeChild(lorenzo_duvidas)
+      const verifyButtonGame9 = container.querySelector(".verifyButtonGame9");
+      if (verifyButtonGame9) {
+        container.removeChild(verifyButtonGame9);
+      }
+      const lorenzo_duvidas_game_9 = document.querySelector(".lorenzo_duvidas_game_9");
+      if (lorenzo_duvidas_game_9) {
+        lorenzo_duvidas_game_9.parentNode.removeChild(lorenzo_duvidas_game_9)
       }
 
-      const game8_background_inputs = document.querySelector(".game8_background_inputs");
-      if (game8_background_inputs) {
-        game8_background_inputs.parentNode.removeChild(game8_background_inputs)
-      }
-      
-      const lorenzo_incorrect_game8 = document.createElement("img");
-      lorenzo_incorrect_game8.classList.add("lorenzo_incorrect_game8");
-      lorenzo_incorrect_game8.src = "../assets/lorenzo/lorenzo_ops.png";
-
-      const verifyButtonGame8 = container.querySelector(".verifyButtonGame8");
-      if (verifyButtonGame8) {
-        container.removeChild(verifyButtonGame8);
+      const game9_background_inputs = document.querySelector(".game9_background_inputs");
+      if (game9_background_inputs) {
+        game9_background_inputs.parentNode.removeChild(game9_background_inputs)
       }
 
-      container.appendChild(lorenzo_incorrect_game8);
+      container.appendChild(lorenzo_incorrect_game9);
 
       setTimeout(() => {
-        container.removeChild(lorenzo_incorrect_game8);
+        container.removeChild(lorenzo_incorrect_game9);
         resetGameWrongtoys();
-        container.append(lorenzo_duvidas, game8_background_inputs)
+        container.append(lorenzo_duvidas_game_9, game9_background_inputs)
       }, 4000);
     }
   };
@@ -314,7 +273,7 @@ const game8 = () => {
   //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - INICIO //
   const renderVerifyButton = (input1, input2, input3) => {
 
-    const existingButton = document.querySelector(".verifyButtonGame8");
+    const existingButton = document.querySelector(".verifyButtonGame9");
 
     if (existingButton){
       container.removeChild(existingButton)
@@ -332,15 +291,15 @@ const game8 = () => {
       return;
     }
     
-      const verifyButtonGame8 = document.createElement("img");
-      verifyButtonGame8.classList.add("verifyButtonGame8");
-      verifyButtonGame8.src = "../assets/botoes/bt_verifica.png";
+      const verifyButtonGame9 = document.createElement("img");
+      verifyButtonGame9.classList.add("verifyButtonGame9");
+      verifyButtonGame9.src = "../assets/botoes/bt_verifica.png";
 
-      verifyButtonGame8.addEventListener("click", () => {
+      verifyButtonGame9.addEventListener("click", () => {
         renderResult(input1, input2, input3);
       });
 
-      container.appendChild(verifyButtonGame8);
+      container.appendChild(verifyButtonGame9);
 
   };
   //RENDERIZA BOTÃO DE VERIFICAR CASO TODOS OS SLOTS ESTEJAM PREENCHIDOS - FIM //
@@ -386,25 +345,25 @@ const game8 = () => {
 
 
     //CRIAÇÃO DA DIV QUE CONTERÁ AS FIGURINHAS ARRASTÁVEIS - INICIO//
-    const divtoysImagesgame8 = document.createElement("div");
-    divtoysImagesgame8.classList.add("divtoysImagesgame8");
-    divtoysImagesgame8.classList.add("containerDroppable");
-    divtoysImagesgame8.id = "figurinhasIniciais"; //CADA "containerX" poderá receber uma figurinha. Apenas esse receberá várias.
+    const divtoysImagesGame7 = document.createElement("div");
+    divtoysImagesGame7.classList.add("divtoysImagesGame7");
+    divtoysImagesGame7.classList.add("containerDroppable");
+    divtoysImagesGame7.id = "figurinhasIniciais"; //CADA "containerX" poderá receber uma figurinha. Apenas esse receberá várias.
     //CRIAÇÃO DA DIV QUE CONTERÁ AS FIGURINHAS ARRASTÁVEIS - FIM//
 
 
     //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - INICIO//
-    const divSlotTransportsgame8 = document.createElement("div");
-    divSlotTransportsgame8.classList.add("divSlotTransportsgame8");
+    const divSlotTransportsGame9 = document.createElement("div");
+    divSlotTransportsGame9.classList.add("divSlotTransportsGame9");
     //CRIAÇÃO DA DIV QUE RECEBERÁ AS FIGURINHAS ONDE SERÃO SOLTAS - FIM//
 
 
 //LOOP PARA RENDERIZAR AS DIVS RECEBEDORAS - INICIO//
 setTimeout(() => {
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 9; i++) {
         //SLOT PARA SOLTAR BRINQUEDOS - INÍCIO
         const divSlotAnimal = document.createElement("div");
-        divSlotAnimal.classList.add("divSlotTransportGame8");
+        divSlotAnimal.classList.add("divSlotTransportGame9");
         divSlotAnimal.classList.add("containerDroppable");
         divSlotAnimal.id = `${randomtoys[i]}_slot`;
         //SLOT PARA SOLTAR BRINQUEDOS - FIM
@@ -413,7 +372,7 @@ setTimeout(() => {
 
         //NÚMERO QUE FICA DENTRO DO SLOT CENTRALIZADO - INÍCIO
         const numberAnimal = document.createElement("h2");
-        numberAnimal.classList.add("numberAnimal");
+        numberAnimal.classList.add("numberToy");
         numberAnimal.innerText = i + 1;
         //NÚMERO QUE FICA DENTRO DO SLOT CENTRALIZADO - FIM
 
@@ -421,7 +380,7 @@ setTimeout(() => {
         let textAnimal
 
           textAnimal = document.createElement("p");
-          textAnimal.classList.add(`textToyGame8`);
+          textAnimal.classList.add(`textToyGame9`);
           textAnimal.innerText = `${randomtoys[i].toUpperCase()}`;
 
         //TEXTO QUE FICA ABAIXO DO SLOT - FIM
@@ -431,7 +390,7 @@ setTimeout(() => {
         //INSERÇÃO DO NÚMERO DO ANIMAL E DO TEXTO NO SLOT SOLTÁVEL DOS BRINQUEDOS - FIM//
 
         //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE BRINQUEDOS - INICIO//
-        divSlotTransportsgame8.appendChild(divSlotAnimal);
+        divSlotTransportsGame9.appendChild(divSlotAnimal);
         //INSERÇÃO DE SLOT RECEBEDOR NA DIV DE SLOTS DE BRINQUEDOS - FIM//
 
         //DIV ARRASTÁVEL QUE CONTERÁ A FIGURINHA DO ANIMAL - INICIO//
@@ -455,7 +414,7 @@ setTimeout(() => {
         //imgAnimal.style.maxWidth = "80%";
         //imgAnimal.style.maxHeigth = "80%"
         imgAnimal.classList.add("imgAnimalAfterDropped");
-        imgAnimal.src = "../assets/book_details/figanimals.svg";
+        imgAnimal.src = "../assets/book_details/figtoys.svg";
         //BACKGROUND DA FIGURINHA DO ANIMAL - FIM//
 
 
@@ -465,7 +424,7 @@ setTimeout(() => {
           const imgPicAnimal = document.createElement("img");
           imgPicAnimal.classList.add("imgPicAnimal");
           imgPicAnimal.classList.add("imgPicAnimalGame5");
-          imgPicAnimal.src = `../assets/animals/${randomtoys[i]}.svg`;
+          imgPicAnimal.src = `../assets/brinquedos/${randomtoys[i]}.svg`;
         
           
         //INSERÇÃO DO FUNDO DA FIGURINHA E IMAGEM DA FIGURINHA NA DIV ARRASTÁVEL DA FIGURINHA - INICIO//
@@ -478,10 +437,10 @@ setTimeout(() => {
 
 
         //INSERÇÃO DE FIGURINHA ARRASTÁVEL NA DIV DE FIGURINHAS ARRASTÁVEIS - INICIO//
-        if (i === 0 || i === 4 || i === 6) {
-          null
-        } else {
+        if (i === 0 || i === 2 || i === 3 || i == 4 || i === 7 || i === 8) {
           divSlotAnimal.appendChild(divImgAnimal);
+        } else {
+          null
         }
         //INSERÇÃO DE FIGURINHA ARRASTÁVEL NA DIV DE FIGURINHAS ARRASTÁVEIS - FIM//
 
@@ -493,8 +452,8 @@ setTimeout(() => {
 
 
     //INSERÇÃO
-    container.appendChild(divtoysImagesgame8);
-    container.appendChild(divSlotTransportsgame8);
+    container.appendChild(divtoysImagesGame7);
+    container.appendChild(divSlotTransportsGame9);
 
 
         
@@ -508,4 +467,4 @@ setTimeout(() => {
 //FUNÇÃO QUE RENDERIZA O GAME #6 - FIM//
 
 //TORNA ACESSÍVEL PARA ARQUIVOS EXTERNOS
-export default game8;
+export default game9;

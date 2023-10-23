@@ -33,18 +33,18 @@ const game5 = () => {
   container.appendChild(button_continue)
   //RENDERIZA O LORENZO INICIAL - FIM//
 
-
-  //APENAS PARA PULAR PARA O JOGO 6//
-  const botao_pula = document.createElement("button");
-  botao_pula.style.position = "absolute";
-  botao_pula.style.top = "0";
-  botao_pula.style.left = "30%";
-  botao_pula.innerText = "Jogo 6";
-  botao_pula.style.zIndex = "38"
-  botao_pula.addEventListener("click", () => {
-    game6();
-  });
-  container.appendChild(botao_pula);
+  //
+  ////APENAS PARA PULAR PARA O JOGO 6//
+  //const botao_pula = document.createElement("button");
+  //botao_pula.style.position = "absolute";
+  //botao_pula.style.top = "0";
+  //botao_pula.style.left = "30%";
+  //botao_pula.innerText = "Jogo 6";
+  //botao_pula.style.zIndex = "38"
+  //botao_pula.addEventListener("click", () => {
+  //  game6();
+  //});
+  //container.appendChild(botao_pula);
   //APENAS PARA PULAR PARA O JOGO 6//
 
 
@@ -64,59 +64,59 @@ const game5 = () => {
 
   //BANCO DE DADOS DE ANIMAIS - INICIO//
   const animals = [
-    "abelha",
-    "águia",
-    "aranha",
-    "arara",
+    "abeja",
+    "águila",
+    "araña",
+    "guacamayo",
     "avestruz",
-    "baleia",
-    "barata",
-    "besouro",
-    "bode",
-    "cachorro",
-    "camelo",
-    "cavalo",
-    "cobra",
-    "coelho",
-    "coruja",
-    "dinossauro",
-    "dragão",
+    "ballena",
+    "cucaracha",
+    "escarabajo",
+    "cabra",
+    "perro",
+    "camello",
+    "caballo",
+    "serpiente",
+    "conejo",
+    "búho",
+    "dinosaurio",
+    "dragón",
     "elefante",
-    "esquilo",
+    "ardilla",
     "foca",
-    "formiga",
-    "galinha",
-    "galo",
+    "hormiga",
+    "gallina",
+    "gallo",
     "gato",
-    "girafa",
+    "jirafa",
     "gorila",
     "hipopótamo",
-    "jacaré",
-    "jegue",
-    "joaninha",
+    "cocodrilo",
+    "burro",
+    "mariquita",
     "lagarto",
-    "leão",
-    "macaco",
+    "león",
+    "mono",
     "mosquito",
-    "onça",
-    "ovelha",
-    "papagaio",
+    "leopardo",
+    "oveja",
+    "loro",
     "pato",
-    "pavão",
-    "peixe",
-    "polvo",
-    "porco",
-    "raposa",
-    "rato",
-    "sagui",
+    "pavo real",
+    "pez",
+    "pulpo",
+    "cerdo",
+    "zorro",
+    "ratón",
+    "tamarín",
     "sapo",
-    "tartaruga",
-    "tatu",
-    "tucano",
-    "urso",
-    "urubu",
+    "tortuga",
+    "armadillo",
+    "tucán",
+    "oso",
+    "buitre",
     "vaca",
-    "zebra",
+    "cebra"
   ];
   //BANCO DE DADOS DE ANIMAIS - FIM//
 
@@ -175,13 +175,12 @@ const game5 = () => {
       let inputAnimal = slot.querySelector(".inputAnimal")
 
       if(inputAnimal){
-        console.log("neste input:" + inputAnimal.value)
-        console.log("slot do " + slot.id.split("_slot")[0].toUpperCase()) 
+
         
         if (inputAnimal.value === slot.id.split("_slot")[0].toUpperCase()){
-          console.log("correto")
+
         } else {
-          console.log("incorreto")
+
           inputAnimal.value = ""
         }
       }
@@ -283,8 +282,6 @@ const game5 = () => {
   //FUNÇÃO QUE VERIFICA SE OS ANIMAIS ENCAIXADOS ESTÃO CORRETOS - INICIO//
   const checkRightAnimalsSlots = (element) => {
 
-    console.log("checando inserções")
-
     let total_inserted = 0;
     let total_correct = 0;
 
@@ -305,13 +302,11 @@ const game5 = () => {
 
       //const animal_input_name = input_animal.value.toUpperCase()
 
-      console.log("slot do " + animal_slot_name.toUpperCase())
+
   
 
     });
 
-    console.log("Animais corretos: " + total_correct);
-    console.log("Animais inseridos: " + total_inserted);
 
     renderVerifyButton(total_inserted, total_correct);
   };

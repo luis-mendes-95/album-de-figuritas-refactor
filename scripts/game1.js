@@ -1,27 +1,14 @@
 import game2 from "./game2.js"
-import game3 from "./game3.js";
-import game4 from "./game4.js";
+
+import game8 from "./game8.js";
 
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - INICIO//
 let body = document.querySelector("body");
 let container = document.querySelector(".container");
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - FIM//
 
-
-let isRed = false;
 let intervalId;
 let currentFigureId;
-
-let mouseX = 0;
-let mouseY = 0;
-
-function updateMousePosition(e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    console.log(mouseX, mouseY)
-}
-
-document.addEventListener("mousemove", updateMousePosition);
 
 
 
@@ -35,7 +22,7 @@ const game1 = () => {
   botao_pula.style.left = "30%"
   botao_pula.innerText = "Jogo 2"
   botao_pula.addEventListener("click", () =>{
-    game2();
+    game8();
   })
   container.appendChild(botao_pula)
   //APENAS PARA PULAR PARA O JOGO 2//
@@ -53,59 +40,59 @@ const game1 = () => {
 
   //BANCO DE DADOS DE ANIMAIS - INICIO//
   const animals = [
-    "abelha",
-    "águia",
-    "aranha",
-    "arara",
+    "abeja",
+    "águila",
+    "araña",
+    "guacamayo",
     "avestruz",
-    "baleia",
-    "barata",
-    "besouro",
-    "bode",
-    "cachorro",
-    "camelo",
-    "cavalo",
-    "cobra",
-    "coelho",
-    "coruja",
-    "dinossauro",
-    "dragão",
+    "ballena",
+    "cucaracha",
+    "escarabajo",
+    "cabra",
+    "perro",
+    "camello",
+    "caballo",
+    "serpiente",
+    "conejo",
+    "búho",
+    "dinosaurio",
+    "dragón",
     "elefante",
-    "esquilo",
+    "ardilla",
     "foca",
-    "formiga",
-    "galinha",
-    "galo",
+    "hormiga",
+    "gallina",
+    "gallo",
     "gato",
-    "girafa",
+    "jirafa",
     "gorila",
     "hipopótamo",
-    "jacaré",
-    "jegue",
-    "joaninha",
+    "cocodrilo",
+    "burro",
+    "mariquita",
     "lagarto",
-    "leão",
-    "macaco",
+    "león",
+    "mono",
     "mosquito",
-    "onça",
-    "ovelha",
-    "papagaio",
+    "leopardo",
+    "oveja",
+    "loro",
     "pato",
-    "pavão",
-    "peixe",
-    "polvo",
-    "porco",
-    "raposa",
-    "rato",
-    "sagui",
+    "pavo real",
+    "pez",
+    "pulpo",
+    "cerdo",
+    "zorro",
+    "ratón",
+    "tamarín",
     "sapo",
-    "tartaruga",
-    "tatu",
-    "tucano",
-    "urso",
-    "urubu",
+    "tortuga",
+    "armadillo",
+    "tucán",
+    "oso",
+    "buitre",
     "vaca",
-    "zebra",
+    "cebra"
   ];
   //BANCO DE DADOS DE ANIMAIS - FIM//
 
@@ -150,7 +137,6 @@ const game1 = () => {
     divSlotAnimals.childNodes.forEach((slot) => {
 
       if(slot.id.split("_slot")[0] === slot.lastChild.id.split("_figurinha")[0]) {
-        console.log("CORRETO!")
       } else {        
         const imgPicAnimal = slot.lastChild.querySelector(".imgPicAnimalAfterDropped");
         if(imgPicAnimal){
@@ -288,9 +274,6 @@ const game1 = () => {
 
     })
 
-    console.log("Animais inseridos: " + total_inserted)
-    console.log("Animais corretos: " + total_correct)
-
     renderVerifyButton(total_inserted, total_correct)
 
   };
@@ -344,7 +327,6 @@ const game1 = () => {
           e.preventDefault();
           const draggableId = e.dataTransfer.getData("text/plain");
           const draggedElement = document.getElementById(draggableId);
-          draggedElement.style.border = ""
           clearInterval(intervalId);
           const imgPicAnimal = draggedElement.querySelector(".imgPicAnimalAfterDropped");
           if(imgPicAnimal){
@@ -393,7 +375,9 @@ const game1 = () => {
 
     document.addEventListener("mouseup", ()=> {
       let currentFigure = document.getElementById(currentFigureId)
-      currentFigure.style.border = "";
+      if(currentFigure){
+        currentFigure.style.border = "";
+      }
       clearInterval(intervalId);
     })
 
@@ -401,13 +385,6 @@ const game1 = () => {
     divImgAnimal.addEventListener("dragstart", (e) => {
         e.dataTransfer.setData("text/plain", divImgAnimal.id)
         currentFigureId = divImgAnimal.id
-        clearInterval(intervalId);
-        intervalId = setInterval(() => {
-          isRed = !isRed;
-          divImgAnimal.style.border = isRed ? "3px solid red" : "";
-          console.log(`Posição do mouse: ${e.clientX}, ${e.clientY}`);
-        }, 500);
-
     })
     //FUNÇÃO QUE TORNA A FIGURINHA ARRASTÁVEL - FIM//
 

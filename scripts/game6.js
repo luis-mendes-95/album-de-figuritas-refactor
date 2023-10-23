@@ -35,16 +35,16 @@ const game6 = () => {
 
 
   //APENAS PARA PULAR PARA O JOGO 7//
-  const botao_pula = document.createElement("button");
-  botao_pula.style.position = "absolute";
-  botao_pula.style.top = "0";
-  botao_pula.style.left = "30%";
-  botao_pula.innerText = "Jogo 7";
-  botao_pula.style.zIndex = "38"
-  botao_pula.addEventListener("click", () => {
-    game7();
-  });
-  container.appendChild(botao_pula);
+  //const botao_pula = document.createElement("button");
+  //botao_pula.style.position = "absolute";
+  //botao_pula.style.top = "0";
+  //botao_pula.style.left = "30%";
+  //botao_pula.innerText = "Jogo 7";
+  //botao_pula.style.zIndex = "38"
+  //botao_pula.addEventListener("click", () => {
+  //  game7();
+  //});
+  //container.appendChild(botao_pula);
   //APENAS PARA PULAR PARA O JOGO 7//
 
 
@@ -64,20 +64,20 @@ const game6 = () => {
 
     //BANCO DE DADOS DE BRINQUEDOS - INICIO//
     const toys = [
-      "bola",
-      "boneca",
-      "cavalo de pau",
-      "corda",
+      "pelota",
+      "muñeca",
+      "caballo_de_palo",
+      "cuerda",
       "dado",
       "dominó",
-      "estilingue",
-      "ioiô",
+      "tirachinas",
+      "yoyó",
       "patinete",
-      "patins",
-      "peteca",
-      "pião",
-      "pipa",
-      "skate"
+      "patines",
+      "volante",
+      "trompo",
+      "cometa",
+      "monopatín"
   ];
   //BANCO DE DADOS DE BRINQUEDOS - FIM//
 
@@ -136,13 +136,11 @@ const game6 = () => {
       let inputToy = slot.querySelector(".inputToy")
 
       if(inputToy){
-        console.log("neste input:" + inputToy.value)
-        console.log("slot do " + slot.id.split("_slot")[0].toUpperCase()) 
         
         if (inputToy.value === slot.id.split("_slot")[0].toUpperCase()){
-          console.log("correto")
+
         } else {
-          console.log("incorreto")
+
           inputToy.value = ""
         }
       }
@@ -177,7 +175,7 @@ const game6 = () => {
       }
 
       continue_button.addEventListener("click", () => {
-        game6();
+        game7();
       });
 
       divtoysImages.append(lorenzo_correct_game6, continue_button);
@@ -244,8 +242,6 @@ const game6 = () => {
   //FUNÇÃO QUE VERIFICA SE OS BRINQUEDOS ENCAIXADOS ESTÃO CORRETOS - INICIO//
   const checkRighttoysSlots = (element) => {
 
-    console.log("checando inserções")
-
     let total_inserted = 0;
     let total_correct = 0;
 
@@ -265,14 +261,10 @@ const game6 = () => {
       }
 
       //const animal_input_name = input_toy.value.toUpperCase()
-
-      console.log("slot do " + toy_slot_name.toUpperCase())
   
 
     });
 
-    console.log("BRINQUEDOS corretos: " + total_correct);
-    console.log("BRINQUEDOS inseridos: " + total_inserted);
 
     renderVerifyButton(total_inserted, total_correct);
   };
