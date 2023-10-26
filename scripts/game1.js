@@ -1,6 +1,5 @@
 import game2 from "./game2.js"
 
-import game8 from "./game8.js";
 
 //CRIA UMA REFERÊNCIA AOS ELEMENTOS QUE VÃO COMPOR O BACKGROUND - INICIO//
 let body = document.querySelector("body");
@@ -22,7 +21,7 @@ const game1 = () => {
   //botao_pula.style.left = "30%"
   //botao_pula.innerText = "Jogo 2"
   //botao_pula.addEventListener("click", () =>{
-  //  game8();
+  //  game12();
   //})
   //container.appendChild(botao_pula)
   //APENAS PARA PULAR PARA O JOGO 2//

@@ -109,7 +109,7 @@ const game9 = () => {
   const animals = [
     "pelota",
     "muñeca",
-    "caballo_de_palo",
+    "caballito de palo",
     "cuerda",
     "dado",
     "dominó",

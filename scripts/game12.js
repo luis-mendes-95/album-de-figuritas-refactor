@@ -108,7 +108,7 @@ const game12 = () => {
   const animals = [
     "pelota",
     //"muñeca",
-    "caballo_de_palo",
+    //"caballito de palo",
     "cuerda",
     "dado",
     "dominó",
@@ -324,7 +324,13 @@ const game12 = () => {
             const divSlotAnimal = document.createElement("div");
             divSlotAnimal.classList.add("divSlotTransportGame11");
             divSlotAnimal.id = `${arrayNovo[i]}`; //ID DO ITEM INSERIDO**************************************
-            divSlotAnimal.classList.add(`${arrayNovo[i]}`)
+            if(arrayNovo[i] === "caballito de palo") {
+              divSlotAnimal.classList.add(`caballito_de_palo`)
+            } else {
+              divSlotAnimal.classList.add(`${arrayNovo[i]}`)
+            }
+            
+
 
 
             //SLOT COM IMAGEM DO ITEM - FIM
@@ -385,7 +391,12 @@ const game12 = () => {
             divImgName.classList.add("divImgName");
             setTimeout(() => {
               if(arrayAleatorio[i]){
-                divImgName.classList.add(`${arrayAleatorio[i]}_par`);
+                if(arrayAleatorio[i] === "caballito de palo") {
+                  divImgName.classList.add(`caballito_de_palo_par`);
+                } else {
+                  divImgName.classList.add(`${arrayAleatorio[i]}_par`);
+                }
+
               }
             }, 500);
 

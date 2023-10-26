@@ -97,7 +97,7 @@ const game4 = () => {
       const toys = [
         "pelota",
         "muñeca",
-        "caballo_de_palo",
+        "caballito de palo",
         "cuerda",
         "dado",
         "dominó",
